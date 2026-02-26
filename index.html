@@ -1,314 +1,1558 @@
-<!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoSpas | Эвакуатор Астана 24/7</title>
-    <meta name="description" content="Быстрый и надежный эвакуатор в Астане. Подача от 15 минут. Звоните: +7 775 839 2666">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B1220" />
+  <meta name="color-scheme" content="dark light" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <title>TezEvakuator — Эвакуатор Астана 24/7 | +7 775 839 2666</title>
+  <meta name="description" content="Эвакуатор в Астане 24/7. Быстрый выезд по городу и области. Аккуратная погрузка, помощь при ДТП и поломках. Звоните: +7 775 839 2666" />
+  <meta name="robots" content="index, follow" />
 
-    <style>
-        /* Custom styles for the scrollbar to look aesthetic */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        .hero-bg {
-            /* Placeholder for hero background, you can replace with an actual image URL later */
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('images/hero-bg.jpg') center/cover;
-        }
-    </style>
+  <meta property="og:title" content="TezEvakuator — Эвакуатор Астана 24/7" />
+  <meta property="og:description" content="Быстрый эвакуатор по Астане. 24/7. +7 775 839 2666" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdftzHttn6nRVmV0nQKxVbZpY8pKQb4o0Wm2yX4QkWm9b2qG0o0B3i2m1rYwUQeWmQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root{
+      --bg0:#070B14;
+      --bg1:#0B1220;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.12);
+      --text:#EAF0FF;
+      --muted:rgba(234,240,255,.72);
+      --muted2:rgba(234,240,255,.55);
+
+      --a:#4F8BFF;      /* blue */
+      --b:#22D3EE;      /* cyan */
+      --c:#FBBF24;      /* amber */
+      --d:#34D399;      /* green */
+      --danger:#FB7185; /* rose */
+
+      --radius:22px;
+      --radius2:28px;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --shadow2: 0 10px 30px rgba(0,0,0,.25);
+      --max: 1160px;
+
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(79,139,255,.20), transparent 60%),
+        radial-gradient(900px 500px at 90% 15%, rgba(34,211,238,.16), transparent 55%),
+        radial-gradient(900px 700px at 50% 95%, rgba(251,191,36,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 60%, var(--bg0));
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+    .row{ display:flex; gap:16px; align-items:center; }
+    .grid{ display:grid; gap:16px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:var(--muted);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn{
+      position:relative;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px;
+      border-radius:16px;
+      border:1px solid transparent;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+      font-weight:800;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .btn:active{ transform: translateY(1px) scale(.99); }
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(79,139,255,.95), rgba(34,211,238,.85));
+      box-shadow: 0 16px 40px rgba(79,139,255,.20);
+    }
+    .btn-primary:hover{ box-shadow: 0 18px 55px rgba(79,139,255,.26); transform: translateY(-1px); }
+    .btn-ghost{
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.12);
+      color: var(--text);
+    }
+    .btn-ghost:hover{ background: rgba(255,255,255,.08); transform: translateY(-1px); }
+    .btn-wapp{
+      background: linear-gradient(135deg, rgba(52,211,153,.92), rgba(34,211,238,.85));
+      box-shadow: 0 16px 40px rgba(52,211,153,.18);
+    }
+    .btn-wapp:hover{ box-shadow: 0 18px 55px rgba(52,211,153,.24); transform: translateY(-1px); }
+    .btn-danger{
+      background: linear-gradient(135deg, rgba(251,113,133,.95), rgba(251,191,36,.70));
+      box-shadow: 0 16px 40px rgba(251,113,133,.16);
+    }
+    .btn-danger:hover{ box-shadow: 0 18px 55px rgba(251,113,133,.22); transform: translateY(-1px); }
+
+    .iconbtn{
+      width:44px; height:44px;
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+      position:relative;
+    }
+    .iconbtn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); }
+    .iconbtn:active{ transform: translateY(0px) scale(.98); }
+    .iconbtn i{ font-size:18px; opacity:.92; }
+    .iconbtn.whats i{ color: #34D399; }
+    .iconbtn.call i{ color: #60A5FA; }
+    .iconbtn.ig i{ color: #F472B6; }
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background: rgba(7,11,20,.55);
+      backdrop-filter: blur(14px);
+    }
+    .topbar-inner{
+      height:64px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width: 180px;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:14px;
+      background:
+        radial-gradient(16px 16px at 30% 30%, rgba(255,255,255,.35), transparent 70%),
+        linear-gradient(135deg, rgba(79,139,255,.95), rgba(34,211,238,.75), rgba(251,191,36,.55));
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:before{
+      content:"";
+      position:absolute; inset:-40%;
+      background: conic-gradient(from 210deg, transparent, rgba(255,255,255,.22), transparent 55%);
+      animation: spin 5.5s linear infinite;
+      opacity:.9;
+    }
+    .logo span{
+      position:relative; z-index:1;
+      font-weight:900; font-size:16px; letter-spacing:.6px;
+      text-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    @keyframes spin{ to{ transform: rotate(360deg); } }
+
+    .brand-title{
+      display:flex; flex-direction:column; line-height:1.06;
+    }
+    .brand-title strong{ font-size:14.5px; letter-spacing:.2px; }
+    .brand-title small{ color: var(--muted2); font-size:12px; }
+
+    nav.desktop-nav{
+      display:none;
+      align-items:center;
+      gap:18px;
+      color: var(--muted);
+      font-weight:700;
+    }
+    nav.desktop-nav a{
+      padding:10px 10px;
+      border-radius:12px;
+      transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+    }
+    nav.desktop-nav a:hover{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .header-actions{
+      display:flex; align-items:center; gap:10px;
+    }
+
+    .hamburger{
+      width:46px; height:46px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      display:inline-flex;
+      align-items:center; justify-content:center;
+      cursor:pointer;
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+    }
+    .hamburger:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); }
+    .hamburger:active{ transform: translateY(0px) scale(.98); }
+    .hamburger .bars{
+      width:18px; height:12px; position:relative;
+    }
+    .hamburger .bars span{
+      position:absolute; left:0;
+      width:100%; height:2px;
+      background: rgba(234,240,255,.92);
+      border-radius:999px;
+      transition: transform .25s var(--ease), top .25s var(--ease), opacity .25s var(--ease);
+    }
+    .hamburger .bars span:nth-child(1){ top:0; }
+    .hamburger .bars span:nth-child(2){ top:5px; opacity:.9; }
+    .hamburger .bars span:nth-child(3){ top:10px; opacity:.85; }
+
+    .hamburger.active .bars span:nth-child(1){ top:5px; transform: rotate(45deg); }
+    .hamburger.active .bars span:nth-child(2){ opacity:0; }
+    .hamburger.active .bars span:nth-child(3){ top:5px; transform: rotate(-45deg); }
+
+    /* Mobile menu drawer */
+    .drawer-backdrop{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.55);
+      opacity:0; pointer-events:none;
+      transition: opacity .25s var(--ease);
+      z-index:80;
+    }
+    .drawer{
+      position:fixed; top:0; right:0;
+      width:min(420px, 92vw);
+      height:100%;
+      background: rgba(11,18,32,.92);
+      backdrop-filter: blur(18px);
+      border-left:1px solid rgba(255,255,255,.10);
+      transform: translateX(110%);
+      transition: transform .3s var(--ease);
+      z-index:90;
+      display:flex;
+      flex-direction:column;
+      padding:18px;
+      gap:14px;
+    }
+    .drawer.open{ transform: translateX(0); }
+    .drawer-backdrop.open{ opacity:1; pointer-events:auto; }
+    .drawer .drawer-top{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .drawer nav{
+      display:flex; flex-direction:column; gap:10px;
+      padding:10px 0;
+    }
+    .drawer nav a{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 14px;
+      border-radius:16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      color: var(--text);
+      font-weight:800;
+      transition: transform .2s var(--ease), background .2s var(--ease);
+    }
+    .drawer nav a:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); }
+    .drawer .drawer-cta{
+      margin-top:auto;
+      display:grid; gap:10px;
+      padding-top:12px;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      padding: 34px 0 18px;
+    }
+    .hero-wrap{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero-card{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
+        radial-gradient(900px 420px at 10% 20%, rgba(79,139,255,.18), transparent 62%),
+        radial-gradient(650px 350px at 95% 20%, rgba(34,211,238,.14), transparent 58%);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      min-height: 460px;
+    }
+    .hero-card:after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.08), transparent 35%),
+        radial-gradient(400px 200px at 30% 10%, rgba(251,191,36,.12), transparent 60%);
+      pointer-events:none;
+      mix-blend-mode: screen;
+      opacity:.8;
+    }
+    .hero-inner{
+      position:relative;
+      padding: 24px;
+      z-index:1;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+
+    .hero h1{
+      font-size: clamp(28px, 4.2vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.8px;
+      margin: 14px 0 10px;
+    }
+    .hero p{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+    .hero-badges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 6px;
+    }
+    .hero-cta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 14px;
+    }
+
+    .hero-mini{
+      margin-top:auto;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:10px;
+      padding-top: 18px;
+    }
+    .mini{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:12px;
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+    }
+    .mini:hover{ transform: translateY(-2px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); }
+    .mini .top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:8px;
+    }
+    .mini .top i{ font-size:18px; opacity:.95; }
+    .mini strong{ font-size:13px; }
+    .mini small{ display:block; margin-top:4px; font-size:12px; color: var(--muted2); line-height:1.3; }
+
+    .hero-media{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      position:relative;
+      min-height: 460px;
+      isolation:isolate;
+    }
+    .hero-media .bg{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(7,11,20,.0), rgba(7,11,20,.80) 78%),
+        url("images/img1.jpg") center/cover no-repeat;
+      filter: saturate(1.06) contrast(1.06);
+      transform: scale(1.02);
+    }
+    .hero-media .glow{
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(34,211,238,.18), transparent 55%),
+                  radial-gradient(circle at 70% 40%, rgba(79,139,255,.18), transparent 55%),
+                  radial-gradient(circle at 45% 75%, rgba(251,191,36,.16), transparent 55%);
+      animation: floatGlow 9s var(--ease) infinite alternate;
+      pointer-events:none;
+      mix-blend-mode: screen;
+      opacity:.9;
+      z-index:1;
+    }
+    @keyframes floatGlow{
+      0%{ transform: translate3d(-1.5%, -1%, 0) scale(1.02); }
+      100%{ transform: translate3d(1.5%, 1%, 0) scale(1.06); }
+    }
+    .hero-media .panel{
+      position:absolute; inset:auto 14px 14px 14px;
+      z-index:2;
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(11,18,32,.70);
+      backdrop-filter: blur(14px);
+      padding: 14px;
+      display:grid;
+      gap:10px;
+    }
+    .panel .line{
+      display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    }
+    .panel .line .left{ display:flex; align-items:center; gap:10px; }
+    .panel .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .panel .chip i{ opacity:.92; }
+    .panel .phone{
+      font-weight: 900;
+      letter-spacing:.3px;
+      font-size: 16px;
+    }
+
+    /* Sections */
+    section{
+      padding: 22px 0;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom: 14px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: clamp(20px, 2.5vw, 30px);
+      letter-spacing:-.4px;
+      line-height:1.1;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      max-width: 62ch;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 4;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.045);
+      box-shadow: 0 14px 45px rgba(0,0,0,.22);
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+    }
+    .card:hover{ transform: translateY(-2px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); }
+    .card .title{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .card .title strong{
+      font-size: 15px;
+      letter-spacing: -.2px;
+    }
+    .card .title i{
+      font-size: 18px;
+      opacity:.95;
+      padding: 10px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .card p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .card .list{
+      margin-top: 12px;
+      display:grid;
+      gap:8px;
+    }
+    .li{
+      display:flex; align-items:flex-start; gap:10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.45;
+    }
+    .li i{
+      margin-top:2px;
+      font-size: 14px;
+      opacity:.95;
+      color: rgba(234,240,255,.82);
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .feature{
+      grid-column: span 6;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));
+      padding: 16px;
+      box-shadow: 0 14px 45px rgba(0,0,0,.22);
+      overflow:hidden;
+      position:relative;
+      transition: transform .2s var(--ease), border-color .2s var(--ease);
+    }
+    .feature:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.16); }
+    .feature .head{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px;
+    }
+    .feature .head strong{ font-size: 15px; letter-spacing: -.2px; }
+    .feature .head .bubble{
+      width:44px; height:44px;
+      border-radius:16px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .feature .head .bubble i{ font-size:18px; opacity:.95; }
+    .feature p{ margin:0; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .step{
+      grid-column: span 3;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.045);
+      padding: 16px;
+      box-shadow: 0 14px 45px rgba(0,0,0,.22);
+      position:relative;
+      overflow:hidden;
+      transition: transform .2s var(--ease), border-color .2s var(--ease);
+    }
+    .step:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.16); }
+    .step .n{
+      width:44px; height:44px;
+      border-radius:16px;
+      display:grid; place-items:center;
+      font-weight: 900;
+      background: linear-gradient(135deg, rgba(79,139,255,.30), rgba(34,211,238,.18));
+      border:1px solid rgba(255,255,255,.12);
+      margin-bottom:10px;
+    }
+    .step strong{ display:block; font-size: 14.5px; letter-spacing:-.2px; margin-bottom:6px; }
+    .step p{ margin:0; color: var(--muted); font-size: 13.3px; line-height:1.55; }
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .shot{
+      grid-column: span 4;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      overflow:hidden;
+      box-shadow: 0 14px 45px rgba(0,0,0,.22);
+      position:relative;
+      transform: translateZ(0);
+      transition: transform .25s var(--ease), border-color .25s var(--ease);
+      min-height: 220px;
+    }
+    .shot:hover{ transform: translateY(-3px); border-color: rgba(255,255,255,.18); }
+    .shot img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform: scale(1.02);
+      filter: saturate(1.04) contrast(1.02);
+      transition: transform .35s var(--ease);
+    }
+    .shot:hover img{ transform: scale(1.06); }
+    .shot .cap{
+      position:absolute; left:12px; right:12px; bottom:12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(11,18,32,.65);
+      backdrop-filter: blur(14px);
+      padding: 10px 12px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+    .shot .cap i{ opacity:.92; }
+
+    .faq{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    details.faq-item{
+      grid-column: span 6;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.045);
+      box-shadow: 0 14px 45px rgba(0,0,0,.22);
+      overflow:hidden;
+      transition: border-color .2s var(--ease), background .2s var(--ease), transform .2s var(--ease);
+    }
+    details.faq-item:hover{
+      border-color: rgba(255,255,255,.16);
+      background: rgba(255,255,255,.055);
+      transform: translateY(-1px);
+    }
+    details.faq-item summary{
+      list-style:none;
+      cursor:pointer;
+      padding: 16px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      font-weight: 900;
+    }
+    details.faq-item summary::-webkit-details-marker{ display:none; }
+    .faq-a{
+      padding: 0 16px 16px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+    .chev{
+      width:40px; height:40px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      transition: transform .25s var(--ease);
+      flex: 0 0 auto;
+    }
+    details[open] .chev{ transform: rotate(180deg); }
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items:stretch;
+    }
+    .panel-card{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.045);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+      overflow:hidden;
+      position:relative;
+    }
+    .panel-card h3{
+      margin:0 0 8px;
+      font-size: 18px;
+      letter-spacing:-.3px;
+    }
+    .panel-card p{
+      margin:0 0 12px;
+      color: var(--muted);
+      font-size: 13.8px;
+      line-height: 1.6;
+    }
+    .kvs{
+      display:grid;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .kv{
+      display:flex; align-items:flex-start; gap:12px;
+      padding: 12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .kv .ico{
+      width:44px; height:44px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      flex: 0 0 auto;
+    }
+    .kv .ico i{ font-size:18px; opacity:.95; }
+    .kv strong{ display:block; font-size: 13.5px; }
+    .kv span{ display:block; margin-top:4px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+    form.lead{
+      display:grid; gap:10px;
+      margin-top: 10px;
+    }
+    .field{
+      display:flex; align-items:center; gap:10px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 12px 12px;
+      transition: border-color .2s var(--ease), background .2s var(--ease);
+    }
+    .field:focus-within{ border-color: rgba(34,211,238,.35); background: rgba(255,255,255,.055); }
+    .field i{ opacity:.9; }
+    input, textarea{
+      width:100%;
+      border:none;
+      outline:none;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+    }
+    input::placeholder, textarea::placeholder{ color: rgba(234,240,255,.45); font-weight: 700; }
+    textarea{ resize:none; min-height: 96px; font-weight: 650; }
+
+    footer{
+      padding: 18px 0 36px;
+      color: var(--muted2);
+      font-size: 12.5px;
+    }
+    .foot{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 14px;
+    }
+    .foot .links{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .foot .links a{
+      padding:8px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.72);
+      font-weight: 800;
+      transition: transform .2s var(--ease), background .2s var(--ease);
+    }
+    .foot .links a:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); }
+
+    /* Floating actions */
+    .floatbar{
+      position:fixed;
+      right: 14px;
+      bottom: 14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index: 120;
+    }
+    .fab{
+      width:52px; height:52px;
+      border-radius: 18px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(11,18,32,.70);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), opacity .2s var(--ease);
+      opacity: .98;
+    }
+    .fab:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.18); background: rgba(11,18,32,.82); }
+    .fab i{ font-size: 18px; }
+    .fab.w{ background: rgba(16,185,129,.22); }
+    .fab.w i{ color: #34D399; }
+    .fab.c{ background: rgba(59,130,246,.22); }
+    .fab.c i{ color: #60A5FA; }
+    .fab.totop{ display:none; }
+    .fab.totop.show{ display:grid; }
+
+    /* Reveal animation (lightweight) */
+    [data-reveal]{
+      opacity: 0;
+      transform: translateY(14px) scale(.99);
+      transition: opacity .55s var(--ease), transform .55s var(--ease);
+      will-change: opacity, transform;
+    }
+    [data-reveal].in{
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    [data-reveal][data-delay="1"]{ transition-delay: .05s; }
+    [data-reveal][data-delay="2"]{ transition-delay: .10s; }
+    [data-reveal][data-delay="3"]{ transition-delay: .15s; }
+    [data-reveal][data-delay="4"]{ transition-delay: .20s; }
+
+    /* Responsive */
+    @media (min-width: 980px){
+      nav.desktop-nav{ display:flex; }
+    }
+    @media (max-width: 980px){
+      .hero-wrap{ grid-template-columns: 1fr; }
+      .hero-card, .hero-media{ min-height: auto; }
+      .hero-media{ min-height: 360px; }
+      .hero-mini{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+    }
+    @media (max-width: 860px){
+      .card{ grid-column: span 6; }
+      .feature{ grid-column: span 12; }
+      .step{ grid-column: span 6; }
+      .shot{ grid-column: span 6; }
+      details.faq-item{ grid-column: span 12; }
+      .contact{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .container{ width: calc(100% - 28px); }
+      .brand-title strong{ font-size: 13.5px; }
+      .brand-title small{ font-size: 11.5px; }
+      .hero-inner{ padding: 18px; }
+      .hero-mini{ grid-template-columns: 1fr; }
+      .card{ grid-column: span 12; }
+      .step{ grid-column: span 12; }
+      .shot{ grid-column: span 12; min-height: 200px; }
+      .topbar-inner{ height: 66px; }
+      .iconbtn{ width:42px; height:42px; border-radius: 14px; }
+      .hamburger{ width:46px; height:46px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .logo:before, .hero-media .glow{ animation:none; }
+      *{ transition:none !important; }
+      [data-reveal]{ opacity:1; transform:none; }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 20)">
 
-    <header :class="{ 'py-2 bg-slate-900 shadow-lg': scrolled, 'py-4 bg-slate-900/95': !scrolled }" class="fixed w-full top-0 z-50 transition-all duration-300 text-white border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                
-                <a href="#" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 bg-brand-500 rounded-lg flex items-center justify-center text-slate-900 group-hover:bg-brand-400 transition-colors">
-                        <i class="fa-solid fa-truck-fast text-xl"></i>
-                    </div>
-                    <div>
-                        <span class="font-bold text-xl tracking-tight block">AutoSpas</span>
-                        <span class="text-xs text-slate-400 block -mt-1">Астана 24/7</span>
-                    </div>
-                </a>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="На главную">
+          <div class="logo" aria-hidden="true"><span>TEZ</span></div>
+          <div class="brand-title">
+            <strong>TezEvakuator</strong>
+            <small>Астана • 24/7 • Выезд по городу и области</small>
+          </div>
+        </a>
 
-                <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#services" class="text-sm font-medium hover:text-brand-400 transition-colors">Услуги</a>
-                    <a href="#advantages" class="text-sm font-medium hover:text-brand-400 transition-colors">Преимущества</a>
-                    <a href="#gallery" class="text-sm font-medium hover:text-brand-400 transition-colors">Автопарк</a>
-                </nav>
+        <nav class="desktop-nav" aria-label="Навигация">
+          <a href="#services">Услуги</a>
+          <a href="#advantages">Преимущества</a>
+          <a href="#how">Как работаем</a>
+          <a href="#area">География</a>
+          <a href="#gallery">Фото</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Контакты</a>
+        </nav>
 
-                <div class="flex items-center gap-4">
-                    <div class="flex items-center gap-3">
-                        <a href="https://wa.me/77758392666" target="_blank" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-[#25D366]/10 text-[#25D366] flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                        </a>
-                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="w-9 h-9 rounded-full bg-[#E1306C]/10 text-[#E1306C] flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-all">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                        </a>
-                        <a href="tel:+77758392666" aria-label="Позвонить" class="w-9 h-9 rounded-full bg-brand-500/10 text-brand-500 flex items-center justify-center hover:bg-brand-500 hover:text-slate-900 transition-all shadow-[0_0_15px_rgba(245,158,11,0.3)]">
-                            <i class="fa-solid fa-phone text-lg"></i>
-                        </a>
-                    </div>
+        <div class="header-actions">
+          <!-- Иконки слева от гамбургера (особенно видно на мобильном) -->
+          <a class="iconbtn whats" id="waTop" aria-label="WhatsApp" href="https://wa.me/77758392666" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a class="iconbtn call" aria-label="Позвонить" href="tel:+77758392666">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <a class="iconbtn ig" aria-label="Instagram" href="https://instagram.com" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
 
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl" x-show="!mobileMenuOpen"></i>
-                        <i class="fa-solid fa-xmark text-2xl" x-show="mobileMenuOpen" x-cloak></i>
-                    </button>
-                </div>
+          <button class="hamburger" id="hamburger" aria-label="Меню" aria-controls="drawer" aria-expanded="false">
+            <div class="bars" aria-hidden="true">
+              <span></span><span></span><span></span>
             </div>
+          </button>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div x-show="mobileMenuOpen" x-transition x-cloak class="md:hidden bg-slate-800 border-t border-slate-700">
-            <div class="px-4 py-4 flex flex-col space-y-4">
-                <a @click="mobileMenuOpen = false" href="#services" class="text-slate-300 hover:text-white">Услуги</a>
-                <a @click="mobileMenuOpen = false" href="#advantages" class="text-slate-300 hover:text-white">Преимущества</a>
-                <a @click="mobileMenuOpen = false" href="#gallery" class="text-slate-300 hover:text-white">Автопарк</a>
-                <div class="pt-4 border-t border-slate-700">
-                    <p class="text-sm text-slate-400 mb-2">Связь с нами:</p>
-                    <a href="tel:+77758392666" class="flex items-center gap-2 text-xl font-bold text-brand-500">
-                        <i class="fa-solid fa-phone"></i> +7 775 839 2666
-                    </a>
-                </div>
-            </div>
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="backdrop" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" aria-label="Мобильное меню">
+    <div class="drawer-top">
+      <div class="row" style="gap:12px;">
+        <div class="logo" aria-hidden="true" style="width:40px;height:40px;border-radius:14px;"><span style="font-size:15px;">TEZ</span></div>
+        <div style="line-height:1.1;">
+          <div style="font-weight:900; letter-spacing:.2px;">TezEvakuator</div>
+          <div style="color:rgba(234,240,255,.62); font-size:12px; font-weight:800;">Эвакуатор Астана 24/7</div>
         </div>
-    </header>
-
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900 hero-bg text-white">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl mix-blend-overlay"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl mix-blend-overlay"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-2xl" data-aos="fade-right" data-aos-duration="1000">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-sm font-medium mb-6">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
-                    </span>
-                    Дежурим во всех районах Астаны
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                    Срочный вызов эвакуатора <span class="text-brand-500">от 15 минут</span>
-                </h1>
-                <p class="text-lg text-slate-300 mb-10 max-w-xl">
-                    Бережная погрузка. Низкие цены. Круглосуточная помощь на дорогах Астаны и за ее пределами.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="tel:+77758392666" class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-slate-900 font-bold text-lg transition-all shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-[0_0_30px_rgba(245,158,11,0.6)] hover:-translate-y-1">
-                        <i class="fa-solid fa-phone-volume"></i>
-                        Вызвать: +7 775 839 2666
-                    </a>
-                    <a href="https://wa.me/77758392666" target="_blank" class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium text-lg transition-all hover:-translate-y-1">
-                        <i class="fa-brands fa-whatsapp text-[#25D366] text-xl"></i>
-                        Написать в WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="bg-white border-b border-slate-200 shadow-sm relative z-20 -mt-8 mx-4 sm:mx-8 lg:mx-auto max-w-5xl rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 md:p-8">
-            <div class="text-center">
-                <i class="fa-solid fa-stopwatch text-3xl text-brand-500 mb-3"></i>
-                <h3 class="font-bold text-slate-900 text-xl">15 мин</h3>
-                <p class="text-sm text-slate-500">Среднее время подачи</p>
-            </div>
-            <div class="text-center">
-                <i class="fa-solid fa-money-bill-wave text-3xl text-brand-500 mb-3"></i>
-                <h3 class="font-bold text-slate-900 text-xl">от 5000 ₸</h3>
-                <p class="text-sm text-slate-500">Доступные цены</p>
-            </div>
-            <div class="text-center">
-                <i class="fa-solid fa-clock text-3xl text-brand-500 mb-3"></i>
-                <h3 class="font-bold text-slate-900 text-xl">24/7</h3>
-                <p class="text-sm text-slate-500">Без выходных</p>
-            </div>
-            <div class="text-center">
-                <i class="fa-solid fa-shield-halved text-3xl text-brand-500 mb-3"></i>
-                <h3 class="font-bold text-slate-900 text-xl">100%</h3>
-                <p class="text-sm text-slate-500">Гарантия сохранности</p>
-            </div>
-        </div>
+      </div>
+      <button class="iconbtn" id="closeDrawer" aria-label="Закрыть меню">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
 
-    <section id="services" class="py-20 lg:py-28">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Наши услуги</h2>
-                <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full"></div>
+    <nav aria-label="Разделы">
+      <a href="#services" data-close>
+        <span>Услуги</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
+      </a>
+      <a href="#advantages" data-close>
+        <span>Преимущества</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
+      </a>
+      <a href="#how" data-close>
+        <span>Как работаем</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
+      </a>
+      <a href="#area" data-close>
+        <span>География</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
+      </a>
+      <a href="#gallery" data-close>
+        <span>Фото</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
+      </a>
+      <a href="#faq" data-close>
+        <span>FAQ</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
+      </a>
+      <a href="#contact" data-close>
+        <span>Контакты</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
+      </a>
+    </nav>
+
+    <div class="drawer-cta">
+      <a class="btn btn-primary" href="tel:+77758392666" style="width:100%;">
+        <i class="fa-solid fa-phone"></i> Позвонить
+      </a>
+      <a class="btn btn-wapp" href="https://wa.me/77758392666" target="_blank" rel="noopener" style="width:100%;">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="https://instagram.com" target="_blank" rel="noopener" style="width:100%;">
+        <i class="fa-brands fa-instagram"></i> Instagram
+      </a>
+    </div>
+  </aside>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container">
+        <div class="hero-wrap">
+          <div class="hero-card" data-reveal>
+            <div class="hero-inner">
+              <div class="hero-badges">
+                <span class="pill"><i class="fa-solid fa-location-dot" style="opacity:.92;"></i> г. Астана</span>
+                <span class="pill"><i class="fa-solid fa-clock" style="opacity:.92;"></i> 24/7</span>
+                <span class="pill"><i class="fa-solid fa-truck-fast" style="opacity:.92;"></i> Эвакуация • Техпомощь</span>
+                <span class="pill"><i class="fa-solid fa-shield-halved" style="opacity:.92;"></i> Аккуратно и безопасно</span>
+              </div>
+
+              <h1>Эвакуатор в Астане<br>быстро • аккуратно • 24/7</h1>
+              <p>
+                Выезд по городу и области. Эвакуация легковых, кроссоверов, внедорожников, мотоциклов.
+                Помощь при ДТП, поломках, блокировке колёс, низкой посадке и сложных заездах.
+              </p>
+
+              <div class="hero-cta">
+                <a class="btn btn-primary" href="tel:+77758392666">
+                  <i class="fa-solid fa-phone"></i> +7 775 839 2666
+                </a>
+                <a class="btn btn-wapp" href="https://wa.me/77758392666" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
+                </a>
+                <a class="btn btn-ghost" href="#contact">
+                  <i class="fa-solid fa-pen-to-square"></i> Оставить заявку
+                </a>
+                <a class="btn btn-danger" href="#services">
+                  <i class="fa-solid fa-bolt"></i> Услуги
+                </a>
+              </div>
+
+              <div class="hero-mini" data-reveal data-delay="2">
+                <div class="mini">
+                  <div class="top">
+                    <strong>Выезд 24/7</strong>
+                    <i class="fa-solid fa-moon"></i>
+                  </div>
+                  <small>Работаем ночью, в выходные и праздники.</small>
+                </div>
+                <div class="mini">
+                  <div class="top">
+                    <strong>Сложные случаи</strong>
+                    <i class="fa-solid fa-wrench"></i>
+                  </div>
+                  <small>ДТП, низкая посадка, заблокированные колёса.</small>
+                </div>
+                <div class="mini">
+                  <div class="top">
+                    <strong>Аккуратно</strong>
+                    <i class="fa-solid fa-shield-heart"></i>
+                  </div>
+                  <small>Берём машину бережно, без лишних рисков.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media" data-reveal data-delay="1">
+            <div class="bg" aria-hidden="true"></div>
+            <div class="glow" aria-hidden="true"></div>
+
+            <div class="panel">
+              <div class="line">
+                <div class="left">
+                  <span class="chip"><i class="fa-solid fa-headset"></i> Быстрый контакт</span>
+                  <span class="chip"><i class="fa-solid fa-route"></i> Город + область</span>
+                </div>
+                <span class="chip"><i class="fa-solid fa-star"></i> 24/7</span>
+              </div>
+
+              <div class="line">
+                <div class="left">
+                  <span class="chip"><i class="fa-solid fa-car"></i> Легковые</span>
+                  <span class="chip"><i class="fa-solid fa-truck-pickup"></i> Кроссоверы</span>
+                  <span class="chip"><i class="fa-solid fa-motorcycle"></i> Мото</span>
+                </div>
+              </div>
+
+              <div class="line">
+                <div class="left">
+                  <i class="fa-solid fa-phone" style="color:#60A5FA;"></i>
+                  <a class="phone" href="tel:+77758392666">+7 775 839 2666</a>
+                </div>
+                <div class="row" style="gap:8px;">
+                  <a class="btn btn-ghost" href="tel:+77758392666" style="padding:10px 12px;border-radius:14px;">
+                    <i class="fa-solid fa-phone"></i>
+                  </a>
+                  <a class="btn btn-wapp" href="https://wa.me/77758392666" target="_blank" rel="noopener" style="padding:10px 12px;border-radius:14px;">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-car-burst text-2xl text-brand-500"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Эвакуация после ДТП</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">Аккуратная погрузка поврежденных автомобилей любой сложности. Используем лебедки и подкатные тележки.</p>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-truck-pickup text-2xl text-brand-500"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Спецтехника и внедорожники</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">Мощные эвакуаторы для тяжелых джипов, минивэнов и легкой коммерческой техники (Газели).</p>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-route text-2xl text-brand-500"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Межгород</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">Транспортировка автомобилей из Астаны в другие города Казахстана по выгодным тарифам.</p>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+    </header>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <h2>Услуги эвакуатора</h2>
+            <p>Под разные ситуации — от стандартной эвакуации до сложных погрузок. Много удобных вариантов связи и быстрые действия.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="card" data-reveal data-delay="1">
+            <div class="title"><strong>Эвакуация легковых</strong><i class="fa-solid fa-car"></i></div>
+            <p>Городские авто, седаны, хэтчбеки. Аккуратная погрузка и фиксация.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Безопасные крепления</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Быстрая подача</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Бережная перевозка</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="2">
+            <div class="title"><strong>Кроссоверы и внедорожники</strong><i class="fa-solid fa-truck-pickup"></i></div>
+            <p>Тяжелее и выше — используем правильную технику погрузки.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Надёжная фиксация</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Удобный заезд</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Контроль на маршруте</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="3">
+            <div class="title"><strong>Мотоциклы</strong><i class="fa-solid fa-motorcycle"></i></div>
+            <p>Перевозка мото и скутеров с фиксацией по точкам крепления.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Стропы и ремни</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Защита пластика</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Аккуратная разгрузка</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="1">
+            <div class="title"><strong>После ДТП</strong><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <p>Аккуратная эвакуация повреждённого авто, включая проблемные колёса.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Сложные случаи</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Осторожная погрузка</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Доставка до сервиса</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="2">
+            <div class="title"><strong>Заблокированные колёса</strong><i class="fa-solid fa-lock"></i></div>
+            <p>Когда авто не катится — подбираем корректный способ перемещения.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Без лишних рисков</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Контроль углов заезда</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Плавная погрузка</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="3">
+            <div class="title"><strong>Низкая посадка</strong><i class="fa-solid fa-road"></i></div>
+            <p>Авто с низким клиренсом — заезд с вниманием к бамперу и порогам.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Аккуратный угол</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Бережная фиксация</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Без повреждений</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="1">
+            <div class="title"><strong>Межгород / область</strong><i class="fa-solid fa-route"></i></div>
+            <p>Перевозка за пределы города по договорённости — надёжно и безопасно.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Маршрут заранее</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Контроль по пути</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Доставка до точки</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="2">
+            <div class="title"><strong>Техпомощь на дороге</strong><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <p>Помощь в ситуациях, когда нужно быстро решить проблему на месте.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Быстрый выезд</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Поддержка в пути</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Удобная связь 24/7</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="3">
+            <div class="title"><strong>Погрузка со сложного места</strong><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Дворы, узкие въезды, парковки, подземки — работаем аккуратно.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Манёвренность</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Спокойно и точно</div>
+              <div class="li"><i class="fa-solid fa-circle-check"></i> Минимум времени</div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="gallery" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-right">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Наш автопарк</h2>
-                    <div class="w-20 h-1 bg-brand-500 rounded-full"></div>
-                    <p class="text-slate-400 mt-4 max-w-md">Современная техника, готовая к любым задачам. Регулярно проходит ТО.</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group relative overflow-hidden rounded-2xl aspect-video bg-slate-800" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="images/img1.jpg" alt="Эвакуатор в работе" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1605651239563-04e87d46dc75?auto=format&fit=crop&q=80'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <p class="font-medium text-lg">Эвакуатор со сдвижной платформой</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl aspect-video bg-slate-800" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="images/img2.jpg" alt="Погрузка авто" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1549557088-25f0a068019e?auto=format&fit=crop&q=80'">
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl aspect-video bg-slate-800" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="images/img3.jpg" alt="Транспортировка межгород" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80'">
-                </div>
-            </div>
+    <section id="advantages">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <h2>Преимущества</h2>
+            <p>Логика сервиса — быстро связались, аккуратно забрали, довезли без лишних вопросов.</p>
+          </div>
         </div>
+
+        <div class="feature-grid">
+          <div class="feature" data-reveal data-delay="1">
+            <div class="head">
+              <strong>Максимально быстрая связь</strong>
+              <div class="bubble"><i class="fa-solid fa-bolt"></i></div>
+            </div>
+            <p>Звонок и WhatsApp доступны в один клик. Мгновенная заявка через форму — отправка в WhatsApp без лишних страниц.</p>
+          </div>
+
+          <div class="feature" data-reveal data-delay="2">
+            <div class="head">
+              <strong>Аккуратная погрузка</strong>
+              <div class="bubble"><i class="fa-solid fa-hand"></i></div>
+            </div>
+            <p>Сохранность кузова, дисков и подвески — внимательная работа на каждом этапе, особенно при низкой посадке и ДТП.</p>
+          </div>
+
+          <div class="feature" data-reveal data-delay="3">
+            <div class="head">
+              <strong>Под разные типы авто</strong>
+              <div class="bubble"><i class="fa-solid fa-car-side"></i></div>
+            </div>
+            <p>Легковые, кроссоверы, внедорожники, мотоциклы — разные сценарии, один понятный результат: безопасная доставка.</p>
+          </div>
+
+          <div class="feature" data-reveal data-delay="4">
+            <div class="head">
+              <strong>Город + область</strong>
+              <div class="bubble"><i class="fa-solid fa-map"></i></div>
+            </div>
+            <p>Работаем по Астане и по направлениям области. Удобно для выездов, трассы и межгорода.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="py-16 bg-brand-500 relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mt-16 -mr-16 text-brand-400 opacity-50">
-            <i class="fa-solid fa-truck-pickup text-[300px]"></i>
+    <section id="how">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <h2>Как работаем</h2>
+            <p>Простой процесс, чтобы вы не тратили нервы и время.</p>
+          </div>
         </div>
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Случилась беда на дороге? Мы уже выезжаем!</h2>
-            <p class="text-slate-800 text-lg mb-8 font-medium">Работаем по всей Астане. Сообщите марку авто и ваше местоположение.</p>
-            <a href="tel:+77758392666" class="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-slate-900 text-white font-bold text-xl hover:bg-slate-800 hover:-translate-y-1 transition-all shadow-xl">
-                <i class="fa-solid fa-phone fa-shake"></i>
-                +7 775 839 2666
-            </a>
+
+        <div class="steps">
+          <div class="step" data-reveal data-delay="1">
+            <div class="n">1</div>
+            <strong>Связь</strong>
+            <p>Звонок или WhatsApp. Коротко уточняем место и ситуацию.</p>
+          </div>
+          <div class="step" data-reveal data-delay="2">
+            <div class="n">2</div>
+            <strong>Подача</strong>
+            <p>Выезжаем и держим контакт, чтобы вам было спокойно.</p>
+          </div>
+          <div class="step" data-reveal data-delay="3">
+            <div class="n">3</div>
+            <strong>Погрузка</strong>
+            <p>Аккуратно грузим, фиксируем, проверяем надёжность креплений.</p>
+          </div>
+          <div class="step" data-reveal data-delay="4">
+            <div class="n">4</div>
+            <strong>Доставка</strong>
+            <p>Привозим до сервиса/дома/нужной точки, разгружаем безопасно.</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800 text-slate-400 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <div>
-                    <a href="#" class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 bg-brand-500 rounded flex items-center justify-center text-slate-900">
-                            <i class="fa-solid fa-truck-fast"></i>
-                        </div>
-                        <span class="font-bold text-xl text-white tracking-tight block">AutoSpas</span>
-                    </a>
-                    <p class="text-sm leading-relaxed mb-6">
-                        Профессиональные услуги эвакуатора в Астане и Акмолинской области. Быстро, надежно, недорого.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="text-white font-semibold mb-4 text-lg">Контакты</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1 text-brand-500"></i>
-                            <span>г. Астана, дежурим во всех районах</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-brand-500"></i>
-                            <a href="tel:+77758392666" class="hover:text-white transition-colors">+7 775 839 2666</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-regular fa-clock text-brand-500"></i>
-                            <span>Круглосуточно, 24/7</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold mb-4 text-lg">Социальные сети</h4>
-                    <div class="flex gap-4">
-                        <a href="https://wa.me/77758392666" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-all">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
-                <p>&copy; 2026 AutoSpas Астана. Все права защищены.</p>
-                <p class="mt-2 md:mt-0">Разработано с душой.</p>
-            </div>
+    <section id="area">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <h2>География</h2>
+            <p>Астана и выезды по направлениям. Если вы за городом — просто сообщите локацию.</p>
+          </div>
         </div>
-    </footer>
 
-    <button 
-        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
-        x-data="{ showScroll: false }"
-        @scroll.window="showScroll = (window.pageYOffset > 500)"
-        x-show="showScroll"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 translate-y-10"
-        x-transition:enter-end="opacity-100 translate-y-0"
-        x-transition:leave="transition ease-in duration-300"
-        x-transition:leave-start="opacity-100 translate-y-0"
-        x-transition:leave-end="opacity-0 translate-y-10"
-        class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-brand-500 hover:bg-brand-400 text-slate-900 shadow-lg flex items-center justify-center hover:-translate-y-1 transition-transform focus:outline-none"
-        aria-label="Подняться наверх"
-        x-cloak
-    >
-        <i class="fa-solid fa-arrow-up text-xl"></i>
+        <div class="cards">
+          <article class="card" data-reveal data-delay="1" style="grid-column: span 6;">
+            <div class="title"><strong>По городу</strong><i class="fa-solid fa-city"></i></div>
+            <p>Правый берег, левый берег, районы и пригород — работаем по всему городу.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-location-crosshairs"></i> Подача в любой район</div>
+              <div class="li"><i class="fa-solid fa-road-circle-check"></i> Въезды/дворы/парковки</div>
+              <div class="li"><i class="fa-solid fa-clock"></i> 24/7 без выходных</div>
+            </div>
+          </article>
+
+          <article class="card" data-reveal data-delay="2" style="grid-column: span 6;">
+            <div class="title"><strong>По области / трассе</strong><i class="fa-solid fa-route"></i></div>
+            <p>Выезды за город и межгород — по договорённости, с безопасной перевозкой.</p>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-map-location-dot"></i> По направлениям</div>
+              <div class="li"><i class="fa-solid fa-shield-halved"></i> Контроль и фиксация</div>
+              <div class="li"><i class="fa-solid fa-phone-volume"></i> Связь на маршруте</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <h2>Фото</h2>
+            <p>Подхватите свои снимки техники: <b>images/img1.jpg</b>, <b>images/img2.jpg</b> и т.д.</p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="shot" data-reveal data-delay="1">
+            <img src="images/img1.jpg" alt="Эвакуатор в Астане — фото 1" loading="lazy" />
+            <figcaption class="cap"><span><i class="fa-solid fa-truck"></i> Эвакуатор</span><span><i class="fa-solid fa-sparkles"></i></span></figcaption>
+          </figure>
+          <figure class="shot" data-reveal data-delay="2">
+            <img src="images/img2.jpg" alt="Эвакуатор в Астане — фото 2" loading="lazy" />
+            <figcaption class="cap"><span><i class="fa-solid fa-car"></i> Погрузка</span><span><i class="fa-solid fa-shield"></i></span></figcaption>
+          </figure>
+          <figure class="shot" data-reveal data-delay="3">
+            <img src="images/img3.jpg" alt="Эвакуатор в Астане — фото 3" loading="lazy" />
+            <figcaption class="cap"><span><i class="fa-solid fa-route"></i> Доставка</span><span><i class="fa-solid fa-location-dot"></i></span></figcaption>
+          </figure>
+          <figure class="shot" data-reveal data-delay="1">
+            <img src="images/img4.jpg" alt="Эвакуатор в Астане — фото 4" loading="lazy" />
+            <figcaption class="cap"><span><i class="fa-solid fa-wrench"></i> Техпомощь</span><span><i class="fa-solid fa-bolt"></i></span></figcaption>
+          </figure>
+          <figure class="shot" data-reveal data-delay="2">
+            <img src="images/img5.jpg" alt="Эвакуатор в Астане — фото 5" loading="lazy" />
+            <figcaption class="cap"><span><i class="fa-solid fa-triangle-exclamation"></i> ДТП</span><span><i class="fa-solid fa-hand"></i></span></figcaption>
+          </figure>
+          <figure class="shot" data-reveal data-delay="3">
+            <img src="images/img6.jpg" alt="Эвакуатор в Астане — фото 6" loading="lazy" />
+            <figcaption class="cap"><span><i class="fa-solid fa-road"></i> Низкая посадка</span><span><i class="fa-solid fa-circle-check"></i></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <h2>FAQ</h2>
+            <p>Коротко о частых ситуациях и что обычно уточняем при заявке.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details class="faq-item" data-reveal data-delay="1">
+            <summary>
+              <span><i class="fa-solid fa-circle-question" style="opacity:.9;margin-right:8px;"></i> Что нужно сказать при звонке?</span>
+              <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="faq-a">
+              Достаточно: адрес/ориентир, тип авто и что случилось (не заводится, ДТП, колёса заблокированы, низкая посадка).
+            </div>
+          </details>
+
+          <details class="faq-item" data-reveal data-delay="2">
+            <summary>
+              <span><i class="fa-solid fa-circle-question" style="opacity:.9;margin-right:8px;"></i> Можно оформить через WhatsApp?</span>
+              <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="faq-a">
+              Да. Нажмите кнопку WhatsApp — можно сразу отправить локацию и короткое описание. Это ускоряет подачу.
+            </div>
+          </details>
+
+          <details class="faq-item" data-reveal data-delay="3">
+            <summary>
+              <span><i class="fa-solid fa-circle-question" style="opacity:.9;margin-right:8px;"></i> Эвакуируете авто после ДТП?</span>
+              <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="faq-a">
+              Да, включая случаи, когда авто не катится или повреждены колёса. Выбираем максимально аккуратный способ погрузки.
+            </div>
+          </details>
+
+          <details class="faq-item" data-reveal data-delay="4">
+            <summary>
+              <span><i class="fa-solid fa-circle-question" style="opacity:.9;margin-right:8px;"></i> Можно выезд за город?</span>
+              <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
+            </summary>
+            <div class="faq-a">
+              Да. Сообщите направление/локацию — согласуем маршрут и условия доставки.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <h2>Контакты</h2>
+            <p>Самый быстрый способ — звонок или WhatsApp. Форма ниже отправит сообщение прямо в WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="panel-card" data-reveal data-delay="1">
+            <h3>Связаться прямо сейчас</h3>
+            <p>Астана • 24/7 • Эвакуация и техпомощь. Нажмите удобный способ связи.</p>
+
+            <div class="row" style="flex-wrap:wrap; gap:10px;">
+              <a class="btn btn-primary" href="tel:+77758392666"><i class="fa-solid fa-phone"></i> Позвонить</a>
+              <a class="btn btn-wapp" href="https://wa.me/77758392666" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              <a class="btn btn-ghost" href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+
+            <div class="kvs">
+              <div class="kv">
+                <div class="ico"><i class="fa-solid fa-phone-volume" style="color:#60A5FA;"></i></div>
+                <div>
+                  <strong>Телефон</strong>
+                  <span><a href="tel:+77758392666" style="font-weight:900; color:var(--text);">+7 775 839 2666</a></span>
+                </div>
+              </div>
+              <div class="kv">
+                <div class="ico"><i class="fa-brands fa-whatsapp" style="color:#34D399;"></i></div>
+                <div>
+                  <strong>WhatsApp</strong>
+                  <span><a href="https://wa.me/77758392666" target="_blank" rel="noopener" style="font-weight:900; color:var(--text);">Открыть чат</a></span>
+                </div>
+              </div>
+              <div class="kv">
+                <div class="ico"><i class="fa-solid fa-location-dot" style="color:#FBBF24;"></i></div>
+                <div>
+                  <strong>Город</strong>
+                  <span>Астана • выезды по направлениям области</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-card" data-reveal data-delay="2">
+            <h3>Быстрая заявка</h3>
+            <p>Заполните — откроется WhatsApp с готовым сообщением.</p>
+
+            <form class="lead" id="leadForm">
+              <div class="field">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="name" placeholder="Ваше имя" autocomplete="name" />
+              </div>
+              <div class="field">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="phone" placeholder="Ваш номер (необязательно)" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                <input type="text" id="place" placeholder="Где вы находитесь (адрес/ориентир)" autocomplete="off" />
+              </div>
+              <div class="field">
+                <i class="fa-solid fa-car-burst"></i>
+                <textarea id="msg" placeholder="Что случилось? (не заводится, ДТП, колёса, низкая посадка...)"></textarea>
+              </div>
+
+              <div class="row" style="gap:10px; flex-wrap:wrap;">
+                <button class="btn btn-wapp" type="submit">
+                  <i class="fa-brands fa-whatsapp"></i> Отправить в WhatsApp
+                </button>
+                <a class="btn btn-ghost" href="tel:+77758392666">
+                  <i class="fa-solid fa-phone"></i> Позвонить
+                </a>
+              </div>
+
+              <div class="pill" style="justify-content:center; margin-top:2px;">
+                <i class="fa-solid fa-lock" style="opacity:.92;"></i>
+                Ваши данные не сохраняются — сообщение формируется у вас и отправляется в WhatsApp
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <footer>
+          <div class="foot">
+            <div>© <span id="year"></span> TezEvakuator • Эвакуатор Астана 24/7 • +7 775 839 2666</div>
+            <div class="links">
+              <a href="#services"><i class="fa-solid fa-truck-fast"></i> Услуги</a>
+              <a href="tel:+77758392666"><i class="fa-solid fa-phone"></i> Звонок</a>
+              <a href="https://wa.me/77758392666" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating buttons -->
+  <div class="floatbar" aria-label="Быстрые действия">
+    <a class="fab w" href="https://wa.me/77758392666" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="fab c" href="tel:+77758392666" aria-label="Позвонить">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+    <button class="fab totop" id="toTop" aria-label="Наверх">
+      <i class="fa-solid fa-arrow-up"></i>
     </button>
+  </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true, // Анимация проигрывается только один раз при скролле
-            offset: 50, // Смещение в пикселях от оригинальной точки срабатывания
-            duration: 600, // Длительность анимации
-            easing: 'ease-out-cubic',
-        });
-    </script>
+  <script>
+    // Core constants
+    const PHONE_E164 = "77758392666";
+    const PHONE_DISPLAY = "+7 775 839 2666";
+
+    // Drawer
+    const hamburger = document.getElementById("hamburger");
+    const drawer = document.getElementById("drawer");
+    const backdrop = document.getElementById("backdrop");
+    const closeDrawerBtn = document.getElementById("closeDrawer");
+
+    function openDrawer(){
+      drawer.classList.add("open");
+      backdrop.classList.add("open");
+      hamburger.classList.add("active");
+      hamburger.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+    function closeDrawer(){
+      drawer.classList.remove("open");
+      backdrop.classList.remove("open");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    hamburger.addEventListener("click", () => {
+      if(drawer.classList.contains("open")) closeDrawer();
+      else openDrawer();
+    });
+    backdrop.addEventListener("click", closeDrawer);
+    closeDrawerBtn.addEventListener("click", closeDrawer);
+    drawer.addEventListener("click", (e) => {
+      const a = e.target.closest("[data-close]");
+      if(a) closeDrawer();
+    });
+
+    // Close on ESC
+    window.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
+    });
+
+    // Reveal on scroll (IntersectionObserver)
+    const revealEls = document.querySelectorAll("[data-reveal]");
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.14 });
+
+    revealEls.forEach(el => io.observe(el));
+
+    // Back to top button
+    const toTop = document.getElementById("toTop");
+    const onScroll = () => {
+      if (window.scrollY > 520) toTop.classList.add("show");
+      else toTop.classList.remove("show");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lead form -> WhatsApp
+    const form = document.getElementById("leadForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = (document.getElementById("name").value || "").trim();
+      const phone = (document.getElementById("phone").value || "").trim();
+      const place = (document.getElementById("place").value || "").trim();
+      const msg = (document.getElementById("msg").value || "").trim();
+
+      const lines = [];
+      lines.push("Заявка на эвакуатор (Астана)");
+      if (name)  lines.push("Имя: " + name);
+      if (phone) lines.push("Телефон: " + phone);
+      if (place) lines.push("Локация: " + place);
+      if (msg)   lines.push("Ситуация: " + msg);
+      lines.push("Контакт: " + PHONE_DISPLAY);
+
+      const text = encodeURIComponent(lines.join("\n"));
+      const url = "https://wa.me/" + PHONE_E164 + "?text=" + text;
+      window.open(url, "_blank", "noopener");
+    });
+  </script>
 </body>
 </html>
