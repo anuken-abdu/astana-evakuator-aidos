@@ -1,1338 +1,826 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0B0F1A" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Эвакуатор Астана и регионы | 24/7 | TezEvakuator</title>
+  <meta name="description" content="Эвакуатор 24/7 в Астане и регионах. Срочная подача от 20 минут. ДТП, заблокированные авто, безопасная погрузка и перевозка." />
+  <meta name="theme-color" content="#070A12" />
   <meta name="format-detection" content="telephone=no" />
 
-  <title>Эвакуатор Астана 24/7 — Быстро и аккуратно | +7 775 839 2666</title>
-  <meta name="description" content="Эвакуатор в Астане 24/7: город/трасса, ДТП, низкая посадка, джипы, мото, микроавтобусы. Звонок/WhatsApp: +7 775 839 2666" />
-
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="images/img1.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
+            display: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            base: '#070A12',
+            panel: 'rgba(255,255,255,.06)',
+            stroke: 'rgba(255,255,255,.12)',
+            text: 'rgba(255,255,255,.92)',
+            muted: 'rgba(255,255,255,.70)',
+            muted2: 'rgba(255,255,255,.55)',
+            evac: '#FF5A3C',
+            evac2: '#FF8A65',
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(0,0,0,.45)',
+            glowOrange: '0 18px 55px rgba(255,90,60,.22)',
+          },
+          borderRadius: {
+            xl2: '22px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
     :root{
-      --bg0:#070A12;
-      --bg1:#0B0F1A;
-      --bg2:#0B1428;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.09);
-      --stroke:rgba(255,255,255,.12);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.70);
-      --soft:rgba(255,255,255,.52);
-
-      --a:#60A5FA;     /* blue */
-      --b:#22C55E;     /* green */
-      --c:#FBBF24;     /* amber */
-      --d:#FB7185;     /* rose */
-
-      --r1:18px;
-      --r2:26px;
-      --max:1160px;
-
-      --shadow: 0 18px 70px rgba(0,0,0,.55);
-      --shadow2: 0 12px 36px rgba(0,0,0,.35);
-      --ease: cubic-bezier(.2,.8,.2,1);
+      --evac:#FF5A3C;
+      --evac2:#FF8A65;
+      --base:#070A12;
     }
 
-    *{ box-sizing:border-box; min-width:0; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1100px 520px at 16% -10%, rgba(96,165,250,.26), transparent 55%),
-        radial-gradient(900px 520px at 85% 6%, rgba(34,197,94,.18), transparent 60%),
-        radial-gradient(900px 700px at 50% 115%, rgba(251,191,36,.14), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1) 35%, var(--bg2));
-      overflow-x:hidden;
-    }
-    a{ color:inherit; text-decoration:none; }
-    img{ display:block; max-width:100%; }
-    button{ font:inherit; }
-
-    .container{ width:min(var(--max), calc(100% - 36px)); margin:0 auto; }
-    .section{ padding:72px 0; }
-    .section.tight{ padding:54px 0; }
-    .grid{ display:grid; gap:16px; }
-
-    /* --- SVG icon style (single consistent set) --- */
-    svg.i{ width:22px; height:22px; display:block; }
-    .stroke{
-      fill:none;
-      stroke:currentColor;
-      stroke-width:2;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-
-    /* --- Top bar --- */
-    .top{
-      position:sticky; top:0; z-index:80;
-      background: rgba(7,10,18,.62);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(12px);
-    }
-    .top-inner{
-      height:68px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px;
-    }
-
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      white-space:nowrap;
-    }
-    .mark{
-      width:42px; height:42px;
-      border-radius: 16px;
-      background:
-        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.35), transparent 70%),
-        linear-gradient(135deg, rgba(96,165,250,.35), rgba(34,197,94,.22), rgba(251,191,36,.18));
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: var(--shadow2);
-      display:grid; place-items:center;
-      position:relative;
-      overflow:hidden;
-    }
-    .mark:before{
+    /* Background: gradient orbs + subtle noise */
+    .bg-orbs::before,
+    .bg-orbs::after{
       content:"";
-      position:absolute; inset:-40%;
-      background: conic-gradient(from 200deg, transparent, rgba(255,255,255,.18), transparent 55%);
-      animation: spin 6.8s linear infinite;
-      opacity:.85;
-    }
-    @keyframes spin{ to{ transform: rotate(360deg); } }
-    .mark > span{
-      position:relative; z-index:1;
-      font-weight:900;
-      letter-spacing:.8px;
-      font-size:14px;
-      text-shadow: 0 12px 26px rgba(0,0,0,.45);
-    }
-    .brand-txt{ line-height:1.05; }
-    .brand-txt b{ display:block; font-size:15px; letter-spacing:.2px; }
-    .brand-txt small{ display:block; color:var(--soft); font-weight:700; font-size:12px; }
-
-    nav.desktop{
-      display:none;
-      gap:10px;
-      align-items:center;
-      color: var(--muted);
-      font-weight:800;
-    }
-    nav.desktop a{
-      padding:10px 10px;
-      border-radius: 14px;
-      transition: transform .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
-    }
-    nav.desktop a:hover{
-      background: rgba(255,255,255,.06);
-      transform: translateY(-1px);
-      color: var(--text);
-    }
-
-    .actions{
-      display:flex; align-items:center; gap:10px;
-    }
-    .sbtn{
-      width:42px; height:42px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      display:grid; place-items:center;
-      transition: transform .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
-    }
-    .sbtn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18); }
-    .sbtn:active{ transform: translateY(0) scale(.98); }
-    .sbtn.w{ color: rgba(34,197,94,.95); border-color: rgba(34,197,94,.25); }
-    .sbtn.p{ color: rgba(96,165,250,.95); border-color: rgba(96,165,250,.25); }
-    .sbtn.ig{ color: rgba(251,113,133,.95); border-color: rgba(251,113,133,.25); }
-
-    .burger{
-      width:46px; height:46px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.07);
-      display:grid; place-items:center;
-      cursor:pointer;
-      transition: transform .18s var(--ease), background .18s var(--ease);
-    }
-    .burger:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
-    .burger:active{ transform: translateY(0) scale(.98); }
-
-    /* --- Drawer --- */
-    .backdrop{
-      position:fixed; inset:0;
-      background: rgba(0,0,0,.55);
-      opacity:0; pointer-events:none;
-      transition: opacity .22s var(--ease);
-      z-index:90;
-    }
-    .drawer{
-      position:fixed; top:0; right:0;
-      width:min(92vw, 400px);
-      height:100%;
-      background: rgba(11,15,26,.92);
-      border-left: 1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(16px);
-      transform: translateX(110%);
-      transition: transform .26s var(--ease);
-      z-index:100;
-      padding:18px;
-      display:flex; flex-direction:column; gap:14px;
-    }
-    .drawer.open{ transform: translateX(0); }
-    .backdrop.open{ opacity:1; pointer-events:auto; }
-
-    .drawer-top{
-      display:flex; align-items:center; justify-content:space-between;
-      padding-bottom:10px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-    }
-    .xbtn{
-      width:44px; height:44px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      display:grid; place-items:center;
-      cursor:pointer;
-      transition: background .18s var(--ease), transform .18s var(--ease);
-    }
-    .xbtn:hover{ background: rgba(255,255,255,.09); transform: translateY(-1px); }
-
-    .drawer nav{
-      display:grid;
-      gap:10px;
-      padding-top:6px;
-    }
-    .drawer nav a{
-      padding:14px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      font-weight:900;
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-    }
-    .drawer nav a span{
-      display:flex; align-items:center; gap:10px;
-      color: rgba(255,255,255,.92);
-    }
-    .drawer nav a i{
-      opacity:.7;
-      transform: translateX(0);
-      transition: transform .18s var(--ease);
-    }
-    .drawer nav a:hover i{ transform: translateX(2px); }
-
-    .drawer-cta{
-      margin-top:auto;
-      padding-top:12px;
-      border-top: 1px solid rgba(255,255,255,.10);
-      display:grid; gap:10px;
-    }
-
-    /* --- Buttons --- */
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:14px 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight:900;
-      letter-spacing:.2px;
-      cursor:pointer;
-      transition: transform .18s var(--ease), background .18s var(--ease), box-shadow .18s var(--ease);
-      user-select:none;
-      white-space:nowrap;
-    }
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
-    .btn:active{ transform: translateY(0) scale(.99); }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(34,197,94,.28), rgba(96,165,250,.22));
-      box-shadow: 0 18px 50px rgba(34,197,94,.12);
-      border-color: rgba(255,255,255,.16);
-    }
-    .btn.primary:hover{ box-shadow: 0 20px 64px rgba(96,165,250,.14); }
-    .btn.whatsapp{ background: linear-gradient(135deg, rgba(34,197,94,.34), rgba(34,197,94,.18)); }
-    .btn.phone{ background: linear-gradient(135deg, rgba(96,165,250,.30), rgba(96,165,250,.18)); }
-
-    /* --- Hero --- */
-    .hero{ padding:44px 0 26px; }
-    .hero-wrap{
-      display:grid;
-      gap:18px;
-      grid-template-columns: 1fr;
-      align-items:stretch;
-    }
-    .hero-card{
-      border-radius: var(--r2);
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero-card:before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(900px 380px at 18% 18%, rgba(96,165,250,.22), transparent 58%),
-        radial-gradient(800px 380px at 82% 22%, rgba(34,197,94,.18), transparent 62%),
-        radial-gradient(700px 420px at 50% 120%, rgba(251,191,36,.14), transparent 60%);
-      pointer-events:none;
-      opacity:.95;
-    }
-    .hero-inner{
-      position:relative;
-      padding: 22px;
-      display:grid;
-      gap:14px;
-    }
-    .badges{
-      display:flex; flex-wrap:wrap; gap:10px;
-      color: var(--muted);
-      font-weight:850;
-    }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      backdrop-filter: blur(10px);
-      font-size: 13px;
-    }
-    .h1{
-      margin:0;
-      font-size: clamp(28px, 4.4vw, 50px);
-      line-height: 1.06;
-      letter-spacing: -0.7px;
-    }
-    .sub{
-      margin:0;
-      color: var(--muted);
-      font-weight:750;
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 62ch;
-    }
-    .hero-cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:4px; }
-
-    .hero-media{
-      border-radius: var(--r2);
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-      position:relative;
-      min-height: 320px;
-    }
-    .hero-media img{
-      width:100%; height:100%;
-      object-fit: cover;
-      transform: scale(1.02);
-      filter: saturate(1.05) contrast(1.02);
-    }
-    .hero-media:after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(7,10,18,.08), rgba(7,10,18,.75) 78%);
-      pointer-events:none;
-    }
-    .hero-facts{
       position:absolute;
-      left: 14px; right: 14px; bottom: 14px;
-      display:grid; gap:10px;
-      z-index:2;
+      inset:-120px;
+      pointer-events:none;
+      z-index:0;
+      filter: blur(42px);
+      opacity:.55;
+      transform: translateZ(0);
     }
-    .fact{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:12px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.30);
-      backdrop-filter: blur(12px);
-      color: rgba(255,255,255,.90);
-      font-weight:900;
+    .bg-orbs::before{
+      background:
+        radial-gradient(520px 520px at 20% 25%, rgba(255,90,60,.28), transparent 62%),
+        radial-gradient(580px 580px at 70% 70%, rgba(255,138,101,.22), transparent 65%),
+        radial-gradient(520px 520px at 85% 30%, rgba(255,90,60,.20), transparent 65%);
     }
-    .fact small{ display:block; color: rgba(255,255,255,.62); font-weight:800; }
-    .fact .l{ display:flex; align-items:center; gap:10px; }
-    .fact .dot{
-      width:10px; height:10px; border-radius:99px;
-      background: rgba(34,197,94,.95);
-      box-shadow: 0 0 0 6px rgba(34,197,94,.12);
+    .bg-orbs::after{
+      opacity:.22;
+      background:
+        radial-gradient(420px 420px at 15% 75%, rgba(255,138,101,.18), transparent 60%),
+        radial-gradient(420px 420px at 85% 75%, rgba(255,90,60,.16), transparent 62%);
     }
-
-    /* --- Section head --- */
-    .head{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
-      margin-bottom:16px;
-    }
-    .head h2{
-      margin:0;
-      font-size: clamp(22px, 3vw, 34px);
-      letter-spacing: -.4px;
-    }
-    .head p{
-      margin:0;
-      max-width: 62ch;
-      color: var(--muted);
-      font-weight:750;
-      line-height:1.6;
+    .noise{
+      position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.10;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
     }
 
-    /* --- Services (FIX: no overflow, perfect mobile) --- */
-    .services{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-    }
-    .svc{
-      grid-column: span 6;
-      border-radius: var(--r2);
+    /* Glass */
+    .glass{
+      background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      box-shadow: var(--shadow2);
-      padding: 16px;
-      position:relative;
-      overflow:hidden;
-      transition: transform .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
-    .svc:before{
+
+    /* Animated underline */
+    .link-underline{
+      background-image: linear-gradient(currentColor,currentColor);
+      background-size: 0% 2px;
+      background-repeat:no-repeat;
+      background-position: 0 100%;
+      transition: background-size .25s ease;
+    }
+    .link-underline:hover{ background-size: 100% 2px; }
+
+    /* Gradient text helpers */
+    .grad-evac{
+      background: linear-gradient(90deg, var(--evac), var(--evac2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Buttons with sheen */
+    .btn{
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+    }
+    .btn::after{
       content:"";
-      position:absolute; inset:-60px;
-      background: radial-gradient(circle at 25% 20%, rgba(96,165,250,.18), transparent 60%);
-      opacity:0;
-      transition: opacity .18s var(--ease);
+      position:absolute;
+      inset:-120% -40%;
+      background: linear-gradient(110deg, transparent 45%, rgba(255,255,255,.25) 50%, transparent 55%);
+      transform: translateX(-60%) rotate(10deg);
+      transition: transform .7s ease;
       pointer-events:none;
     }
-    .svc:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.18); background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.045)); }
-    .svc:hover:before{ opacity:1; }
-    .svc-top{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-      position:relative;
-    }
-    .bubble{
-      width:46px; height:46px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      display:grid; place-items:center;
-      color: rgba(255,255,255,.90);
-      flex: 0 0 auto;
-    }
-    .svc h3{
-      margin:0;
-      font-size: 15.5px;
-      letter-spacing: -.2px;
-      line-height: 1.2;
-      overflow-wrap:anywhere;
-      word-break: break-word;
-      hyphens:auto;
-    }
-    .svc p{
-      margin:10px 0 0;
-      color: var(--muted);
-      font-weight:750;
-      font-size: 13.5px;
-      line-height: 1.55;
-      overflow-wrap:anywhere;
-      word-break: break-word;
-      hyphens:auto;
-    }
-    .svc ul{
-      margin:12px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid; gap:8px;
-      color: rgba(255,255,255,.78);
-      font-weight:800;
-      font-size: 13px;
-    }
-    .svc li{ display:flex; gap:10px; align-items:flex-start; }
-    .svc li .tick{
-      width:18px; height:18px; border-radius:8px;
-      background: rgba(34,197,94,.16);
-      border: 1px solid rgba(34,197,94,.22);
-      display:grid; place-items:center;
-      color: rgba(34,197,94,.95);
-      flex: 0 0 auto;
-      margin-top:1px;
-    }
-    .svc .go{
-      margin-top:14px;
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      padding-top:12px;
-      border-top: 1px solid rgba(255,255,255,.10);
-      color: rgba(255,255,255,.86);
-      font-weight:900;
-    }
-    .go .arr{
-      width:40px; height:40px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      display:grid; place-items:center;
-      transition: transform .18s var(--ease);
-      flex: 0 0 auto;
-    }
-    .svc:hover .go .arr{ transform: translateX(2px); }
+    .btn:hover::after{ transform: translateX(60%) rotate(10deg); }
 
-    /* --- Gallery --- */
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(12,1fr);
-      gap:14px;
+    /* Reveal on scroll */
+    .reveal{
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .7s ease, transform .7s ease;
     }
-    .shot{
-      grid-column: span 6;
-      border-radius: var(--r2);
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-      position:relative;
-      min-height: 210px;
-      transform: translateZ(0);
-      transition: transform .18s var(--ease), border-color .18s var(--ease);
-    }
-    .shot:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.18); }
-    .shot img{ width:100%; height:100%; object-fit:cover; transform: scale(1.02); transition: transform .35s var(--ease); }
-    .shot:hover img{ transform: scale(1.06); }
-    .cap{
-      position:absolute; left:12px; right:12px; bottom:12px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.32);
-      backdrop-filter: blur(12px);
-      padding:10px 12px;
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      font-weight:900;
-      color: rgba(255,255,255,.90);
-    }
-
-    /* --- Contact --- */
-    .contact{
-      display:grid; gap:14px;
-      grid-template-columns: 1fr;
-      align-items:start;
-    }
-    .card{
-      border-radius: var(--r2);
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      box-shadow: var(--shadow2);
-      padding: 16px;
-    }
-    .kv{
-      display:flex; gap:12px; align-items:flex-start;
-      padding:12px 12px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      margin-top:10px;
-      color: rgba(255,255,255,.86);
-      font-weight:850;
-    }
-    .kv small{ display:block; color: var(--muted); font-weight:750; margin-top:4px; }
-    .kico{
-      width:44px; height:44px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      display:grid; place-items:center;
-      flex: 0 0 auto;
-    }
-
-    .form{ display:grid; gap:10px; margin-top:12px; }
-    .field{
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.22);
-      padding:12px 12px;
-      display:flex; align-items:center; gap:10px;
-      transition: border-color .18s var(--ease), background .18s var(--ease);
-    }
-    .field:focus-within{ border-color: rgba(96,165,250,.30); background: rgba(0,0,0,.26); }
-    .field input, .field textarea{
-      width:100%;
-      border:none; outline:none;
-      background: transparent;
-      color: rgba(255,255,255,.92);
-      font-weight:850;
-      font-size: 14px;
-    }
-    .field textarea{ min-height: 96px; resize: vertical; font-weight:800; line-height:1.5; }
-    .field input::placeholder, .field textarea::placeholder{ color: rgba(255,255,255,.42); font-weight:800; }
-
-    /* --- Footer --- */
-    footer{
-      padding: 26px 0 46px;
-      color: rgba(255,255,255,.62);
-      font-weight:750;
-      border-top: 1px solid rgba(255,255,255,.08);
-      background: rgba(0,0,0,.14);
-    }
-    .foot{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; flex-wrap:wrap;
-    }
-
-    /* --- Floating buttons --- */
-    .float{
-      position:fixed;
-      right: 14px;
-      bottom: 14px;
-      display:grid;
-      gap:10px;
-      z-index:70;
-    }
-    .fab{
-      width:52px; height:52px;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(11,15,26,.70);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow2);
-      display:grid; place-items:center;
-      cursor:pointer;
-      transition: transform .18s var(--ease), background .18s var(--ease);
-      color: rgba(255,255,255,.90);
-    }
-    .fab:hover{ transform: translateY(-2px); background: rgba(255,255,255,.09); }
-    .fab.w{ color: rgba(34,197,94,.95); }
-    .fab.p{ color: rgba(96,165,250,.95); }
-    .fab.top{ display:none; }
-    .fab.top.show{ display:grid; }
-
-    /* --- Reveal --- */
-    [data-reveal]{
-      opacity:0;
-      transform: translateY(12px);
-      transition: opacity .55s var(--ease), transform .55s var(--ease);
-    }
-    [data-reveal].in{
-      opacity:1;
+    .reveal.is-in{
+      opacity: 1;
       transform: translateY(0);
     }
-    [data-delay="1"]{ transition-delay: .06s; }
-    [data-delay="2"]{ transition-delay: .12s; }
-    [data-delay="3"]{ transition-delay: .18s; }
 
-    /* --- Responsive --- */
-    @media (min-width: 980px){
-      nav.desktop{ display:flex; }
-      .hero-wrap{ grid-template-columns: 1.15fr .85fr; }
-      .services .svc{ grid-column: span 4; }
-      .gallery .shot{ grid-column: span 3; min-height: 220px; }
-      .contact{ grid-template-columns: 1.05fr .95fr; }
+    /* Image zoom on hover */
+    .img-zoom{
+      transition: transform .7s cubic-bezier(.2,.8,.2,1);
+      will-change: transform;
     }
-    @media (max-width: 520px){
-      .container{ width: calc(100% - 28px); }
-      .top-inner{ height:66px; }
-      .sbtn{ width:40px; height:40px; border-radius: 15px; }
-      .burger{ width:46px; height:46px; }
-      .hero-inner{ padding: 18px; }
-      .svc{ grid-column: span 12; }
-      .shot{ grid-column: span 12; min-height: 200px; }
+    .card:hover .img-zoom{ transform: scale(1.08); }
+
+    /* Scroll progress */
+    #scrollbar{
+      position: fixed;
+      top:0; left:0;
+      height: 3px;
+      width: 0%;
+      z-index: 9999;
+      background: linear-gradient(90deg, var(--evac), var(--evac2));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-      *{ transition:none !important; animation:none !important; }
-      [data-reveal]{ opacity:1; transform:none; }
+    /* Lightbox */
+    .lightbox{
+      position: fixed; inset:0;
+      display:none;
+      z-index: 9998;
+      background: rgba(0,0,0,.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .lightbox.open{ display:flex; }
+    .lightbox img{
+      max-width: min(92vw, 1100px);
+      max-height: 82vh;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 30px 90px rgba(0,0,0,.65);
+    }
+    .lightbox .x{
+      position:absolute;
+      top: 16px; right: 16px;
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.92);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .lightbox .x:hover{ transform: scale(1.04); background: rgba(255,255,255,.12); }
+
+    /* Mobile drawer */
+    #menuBackdrop{
+      position: fixed; inset:0;
+      background: rgba(0,0,0,.62);
+      z-index: 9997;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+    }
+    #menuDrawer{
+      position: fixed; top: 0; right: 0;
+      height: 100%;
+      width: min(92vw, 420px);
+      z-index: 9997;
+      transform: translateX(110%);
+      transition: transform .25s cubic-bezier(.2,.8,.2,1);
+    }
+    #menuBackdrop.open{ opacity: 1; pointer-events: auto; }
+    #menuDrawer.open{ transform: translateX(0); }
+
+    /* Back to top floating */
+    #toTopBtn{
+      position: fixed;
+      right: 14px;
+      bottom: 92px; /* над мобильным CTA */
+      z-index: 9996;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    #toTopBtn.show{
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    @media (min-width: 768px){
+      #toTopBtn{ bottom: 18px; }
     }
   </style>
 </head>
 
-<body>
-  <!-- SVG sprite (consistent icons) -->
-  <svg width="0" height="0" style="position:absolute; left:-9999px; top:-9999px" aria-hidden="true" focusable="false">
-    <symbol id="i-wa" viewBox="0 0 24 24">
-      <path d="M12 2a10 10 0 0 0-8.7 15l-1.2 4.2 4.4-1.1A10 10 0 1 0 12 2Z" fill="currentColor" opacity=".18"/>
-      <path d="M9.2 7.9c-.3-.7-.6-.7-.9-.7h-.7c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.2s.9 2.6 1 2.8c.1.2 1.7 2.7 4.2 3.7 2 .8 2.5.6 2.9.6.4 0 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.7-.4l-1.6-.8c-.2-.1-.5-.1-.7.2l-.6.7c-.2.2-.4.2-.6.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.1-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-.7-1.6Z" fill="currentColor"/>
-    </symbol>
+<body class="bg-base text-text font-sans antialiased">
+  <div id="scrollbar"></div>
 
-    <symbol id="i-phone" viewBox="0 0 24 24">
-      <path class="stroke" d="M8 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/>
-      <path class="stroke" d="M10 6h4"/>
-      <path class="stroke" d="M12 18h0"/>
-    </symbol>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox items-center justify-center p-6">
+    <button class="x" type="button" aria-label="Закрыть">
+      <i data-lucide="x"></i>
+    </button>
+    <img id="lightboxImg" src="" alt="Просмотр изображения">
+  </div>
 
-    <symbol id="i-ig" viewBox="0 0 24 24">
-      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" fill="currentColor" opacity=".18"/>
-      <path class="stroke" d="M7.5 7.5h9A2.5 2.5 0 0 1 19 10v6.5A2.5 2.5 0 0 1 16.5 19h-9A2.5 2.5 0 0 1 5 16.5V10A2.5 2.5 0 0 1 7.5 7.5Z"/>
-      <path class="stroke" d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/>
-      <path class="stroke" d="M17.3 6.7h0"/>
-    </symbol>
-
-    <symbol id="i-arrow" viewBox="0 0 24 24">
-      <path class="stroke" d="M10 7l5 5-5 5"/>
-    </symbol>
-
-    <symbol id="i-up" viewBox="0 0 24 24">
-      <path class="stroke" d="M12 19V6"/>
-      <path class="stroke" d="M7 11l5-5 5 5"/>
-    </symbol>
-
-    <symbol id="i-truck" viewBox="0 0 24 24">
-      <path class="stroke" d="M3 7h11v10H3z"/>
-      <path class="stroke" d="M14 10h4l3 3v4h-7"/>
-      <path class="stroke" d="M6.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
-      <path class="stroke" d="M17.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
-    </symbol>
-
-    <symbol id="i-car" viewBox="0 0 24 24">
-      <path class="stroke" d="M5 16l1-5a3 3 0 0 1 3-2h6a3 3 0 0 1 3 2l1 5"/>
-      <path class="stroke" d="M6 16h12"/>
-      <path class="stroke" d="M7 16v2"/>
-      <path class="stroke" d="M17 16v2"/>
-      <path class="stroke" d="M7.5 18.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
-      <path class="stroke" d="M16.5 18.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
-    </symbol>
-
-    <symbol id="i-suv" viewBox="0 0 24 24">
-      <path class="stroke" d="M4 16l1-6a3 3 0 0 1 3-2h7a3 3 0 0 1 3 2l1 6"/>
-      <path class="stroke" d="M6 11h12"/>
-      <path class="stroke" d="M6.5 18.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
-      <path class="stroke" d="M17.5 18.5a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/>
-    </symbol>
-
-    <symbol id="i-moto" viewBox="0 0 24 24">
-      <path class="stroke" d="M5.5 18.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-      <path class="stroke" d="M18.5 18.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-      <path class="stroke" d="M8 17h6l2-5h-4l-2-3H7"/>
-      <path class="stroke" d="M7 9h3"/>
-    </symbol>
-
-    <symbol id="i-van" viewBox="0 0 24 24">
-      <path class="stroke" d="M3 16V8a2 2 0 0 1 2-2h9a3 3 0 0 1 3 3v7H3Z"/>
-      <path class="stroke" d="M17 10h2l2 2v4h-4"/>
-      <path class="stroke" d="M6.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
-      <path class="stroke" d="M17.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
-    </symbol>
-
-    <symbol id="i-crash" viewBox="0 0 24 24">
-      <path class="stroke" d="M7 14l-2 2"/>
-      <path class="stroke" d="M9 12l-4 4"/>
-      <path class="stroke" d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z"/>
-    </symbol>
-
-    <symbol id="i-winch" viewBox="0 0 24 24">
-      <path class="stroke" d="M4 18h16"/>
-      <path class="stroke" d="M6 18l2-10h8l2 10"/>
-      <path class="stroke" d="M12 8v6"/>
-      <path class="stroke" d="M10 12h4"/>
-    </symbol>
-
-    <symbol id="i-tow" viewBox="0 0 24 24">
-      <path class="stroke" d="M4 15h10a3 3 0 0 0 3-3V7"/>
-      <path class="stroke" d="M7.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
-      <path class="stroke" d="M18.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>
-    </symbol>
-
-    <symbol id="i-batt" viewBox="0 0 24 24">
-      <path class="stroke" d="M7 7h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/>
-      <path class="stroke" d="M21 10v4"/>
-      <path class="stroke" d="M10 10v4"/>
-      <path class="stroke" d="M8 12h4"/>
-      <path class="stroke" d="M14.5 12h2.5"/>
-    </symbol>
-
-    <symbol id="i-parking" viewBox="0 0 24 24">
-      <path class="stroke" d="M7 4h7a4 4 0 0 1 0 8H7V4Z"/>
-      <path class="stroke" d="M7 12v8"/>
-    </symbol>
-
-    <symbol id="i-route" viewBox="0 0 24 24">
-      <path class="stroke" d="M6 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-      <path class="stroke" d="M18 22a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-      <path class="stroke" d="M6 4c0 6 10 0 10 8s-10 2-10 8"/>
-    </symbol>
-
-    <symbol id="i-check" viewBox="0 0 24 24">
-      <path class="stroke" d="M20 6L9 17l-5-5"/>
-    </symbol>
-  </svg>
-
-  <header class="top">
-    <div class="container">
-      <div class="top-inner">
-        <a class="brand" href="#top" aria-label="На главную">
-          <div class="mark"><span>TEZ</span></div>
-          <div class="brand-txt">
-            <b>TezEvakuator</b>
-            <small>Астана • 24/7 • +7 775 839 2666</small>
+  <!-- Mobile Menu Backdrop + Drawer -->
+  <div id="menuBackdrop" aria-hidden="true"></div>
+  <aside id="menuDrawer" class="p-4">
+    <div class="glass rounded-xl2 border border-stroke h-full p-5 flex flex-col">
+      <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 rounded-xl2 grid place-items-center border border-stroke bg-white/5">
+            <i data-lucide="truck" class="text-white/85"></i>
           </div>
+          <div class="leading-tight">
+            <div class="font-display text-lg font-extrabold tracking-wide text-white">Tez<span class="text-white/70">Evakuator</span></div>
+            <div class="text-[10px] tracking-[.22em] text-muted2 uppercase -mt-1">астана • регионы</div>
+          </div>
+        </div>
+        <button id="closeMenu" class="btn inline-flex items-center justify-center h-11 w-11 rounded-xl2 border border-stroke bg-white/5 hover:bg-white/10 transition" aria-label="Закрыть меню">
+          <i data-lucide="x" class="text-white/85"></i>
+        </button>
+      </div>
+
+      <div class="mt-5 grid gap-2 text-sm font-semibold text-white/80">
+        <a href="#evac-section" class="btn glass rounded-xl2 border border-stroke px-4 py-3 hover:bg-white/10 transition flex items-center justify-between">
+          <span class="flex items-center gap-2"><i data-lucide="layers" class="h-5 w-5 text-evac"></i> Услуги</span>
+          <i data-lucide="chevron-right" class="h-5 w-5 opacity-70"></i>
         </a>
+        <a href="#contacts" class="btn glass rounded-xl2 border border-stroke px-4 py-3 hover:bg-white/10 transition flex items-center justify-between">
+          <span class="flex items-center gap-2"><i data-lucide="phone" class="h-5 w-5 text-evac"></i> Контакты</span>
+          <i data-lucide="chevron-right" class="h-5 w-5 opacity-70"></i>
+        </a>
+        <a href="#top" class="btn glass rounded-xl2 border border-stroke px-4 py-3 hover:bg-white/10 transition flex items-center justify-between">
+          <span class="flex items-center gap-2"><i data-lucide="arrow-up" class="h-5 w-5 text-evac"></i> Наверх</span>
+          <i data-lucide="chevron-right" class="h-5 w-5 opacity-70"></i>
+        </a>
+      </div>
 
-        <nav class="desktop" aria-label="Навигация">
-          <a href="#services">Услуги</a>
-          <a href="#gallery">Фото</a>
-          <a href="#contact">Контакты</a>
-        </nav>
+      <div class="mt-auto pt-4 border-t border-white/10">
+        <div class="grid gap-2">
+          <a id="waLinkMenu" href="https://wa.me/77758392666" target="_blank" rel="noopener"
+             class="btn inline-flex items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                    border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
+            <i data-lucide="message-circle" class="text-white/85"></i>
+            WhatsApp
+          </a>
+          <a id="telLinkMenu" href="tel:+77758392666"
+             class="btn inline-flex items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                    bg-gradient-to-r from-evac/95 to-evac2/95 border border-stroke text-white hover:brightness-110 transition shadow-glowOrange">
+            <i data-lucide="phone-call" class="h-5 w-5"></i>
+            Позвонить
+          </a>
+          <a id="igLinkMenu" href="https://instagram.com/" target="_blank" rel="noopener"
+             class="btn inline-flex items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                    border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
+            <i data-lucide="instagram" class="text-white/85"></i>
+            Instagram
+          </a>
+          <p class="text-xs text-muted mt-2 leading-relaxed">
+            Подставь свой Instagram в коде: <span class="text-white/70">https://instagram.com/...</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </aside>
 
-        <!-- ИКОНКИ СЛЕВА ОТ ГАМБУРГЕРА (как ты просил) -->
-        <div class="actions">
-          <a class="sbtn w" id="waTop" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg class="i"><use href="#i-wa"></use></svg>
+  <!-- Header -->
+  <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 transition-all">
+    <div class="glass">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex items-center justify-between py-3">
+          <!-- Brand -->
+          <a href="#top" class="group flex items-center gap-3">
+            <div class="h-10 w-10 rounded-xl2 grid place-items-center border border-stroke bg-white/5">
+              <i data-lucide="truck" class="text-white/85"></i>
+            </div>
+            <div class="leading-tight">
+              <div class="font-display text-lg md:text-xl font-extrabold tracking-wide">
+                Tez<span class="text-white/70 group-hover:text-white transition">Evakuator</span>
+              </div>
+              <div class="text-[10px] tracking-[.26em] text-muted2 uppercase -mt-1">эвакуатор</div>
+            </div>
           </a>
-          <a class="sbtn p" id="telTop" href="#" aria-label="Позвонить">
-            <svg class="i"><use href="#i-phone"></use></svg>
-          </a>
-          <a class="sbtn ig" id="igTop" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg class="i"><use href="#i-ig"></use></svg>
-          </a>
-          <button class="burger" id="openDrawer" aria-label="Открыть меню">
-            <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-              <path class="stroke" d="M5 7h14M5 12h14M5 17h14"></path>
-            </svg>
-          </button>
+
+          <!-- Nav (desktop) -->
+          <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-white/80">
+            <a href="#evac-section" class="link-underline hover:text-white flex items-center gap-2">
+              <span class="inline-flex h-2 w-2 rounded-full bg-evac shadow-[0_0_16px_rgba(255,90,60,.55)]"></span>
+              Услуги
+            </a>
+            <a href="#contacts" class="link-underline hover:text-white">Контакты</a>
+          </nav>
+
+          <!-- Right actions -->
+          <div class="flex items-center gap-2">
+            <!-- Desktop phone -->
+            <a href="tel:+77758392666"
+               class="hidden md:inline-flex rounded-xl2 px-4 py-2 border border-stroke bg-white/5 hover:bg-white/10 transition text-white font-display font-extrabold tracking-wide">
+              +7 775 839 2666
+            </a>
+
+            <!-- Mobile: icons (left) + hamburger (right) -->
+            <div class="md:hidden flex items-center gap-2">
+              <a href="https://wa.me/77758392666" target="_blank" rel="noopener"
+                 class="btn inline-flex h-11 w-11 items-center justify-center rounded-xl2 border border-stroke bg-white/5 hover:bg-white/10 transition"
+                 aria-label="WhatsApp">
+                <i data-lucide="message-circle" class="h-5 w-5 text-white/85"></i>
+              </a>
+              <a href="tel:+77758392666"
+                 class="btn inline-flex h-11 w-11 items-center justify-center rounded-xl2 border border-stroke bg-white/5 hover:bg-white/10 transition"
+                 aria-label="Звонок">
+                <i data-lucide="phone-call" class="h-5 w-5 text-white/85"></i>
+              </a>
+              <a href="https://instagram.com/" target="_blank" rel="noopener"
+                 class="btn inline-flex h-11 w-11 items-center justify-center rounded-xl2 border border-stroke bg-white/5 hover:bg-white/10 transition"
+                 aria-label="Instagram">
+                <i data-lucide="instagram" class="h-5 w-5 text-white/85"></i>
+              </a>
+
+              <button id="openMenu"
+                class="btn inline-flex h-11 w-11 items-center justify-center rounded-xl2 border border-stroke bg-white/5 hover:bg-white/10 transition"
+                aria-label="Открыть меню">
+                <i data-lucide="menu" class="h-5 w-5 text-white/85"></i>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Drawer -->
-  <div class="backdrop" id="backdrop" aria-hidden="true"></div>
-  <aside class="drawer" id="drawer" aria-label="Мобильное меню">
-    <div class="drawer-top">
-      <div class="brand" style="gap:10px">
-        <div class="mark" style="width:40px;height:40px;border-radius:16px"><span style="font-size:13px">TEZ</span></div>
-        <div class="brand-txt">
-          <b>TezEvakuator</b>
-          <small>Эвакуатор Астана 24/7</small>
-        </div>
+  <!-- Back to top floating -->
+  <button id="toTopBtn"
+    class="btn glass rounded-xl2 border border-stroke h-12 w-12 grid place-items-center hover:bg-white/10 transition"
+    type="button" aria-label="Наверх">
+    <i data-lucide="arrow-up" class="h-5 w-5 text-white/85"></i>
+  </button>
+
+  <!-- Hero -->
+  <main id="top" class="relative min-h-[92vh] pt-24">
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-orbs">
+        <div class="noise"></div>
       </div>
-      <button class="xbtn" id="closeDrawer" aria-label="Закрыть меню">
-        <svg class="i" viewBox="0 0 24 24" aria-hidden="true">
-          <path class="stroke" d="M6 6l12 12M18 6L6 18"></path>
-        </svg>
-      </button>
-    </div>
 
-    <nav>
-      <a href="#services" data-close>
-        <span><svg class="i"><use href="#i-truck"></use></svg> Услуги</span>
-        <i>›</i>
-      </a>
-      <a href="#gallery" data-close>
-        <span><svg class="i"><use href="#i-route"></use></svg> Фото</span>
-        <i>›</i>
-      </a>
-      <a href="#contact" data-close>
-        <span><svg class="i"><use href="#i-phone"></use></svg> Контакты</span>
-        <i>›</i>
-      </a>
-    </nav>
+      <!-- hero image -->
+      <div class="absolute inset-0 z-0">
+        <img src="images/hero-bg.jpg" alt="Эвакуатор Астана" class="h-full w-full object-cover opacity-[.42]" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-base"></div>
+      </div>
 
-    <div class="drawer-cta">
-      <a class="btn whatsapp" id="waDrawer" href="#" target="_blank" rel="noopener">
-        <svg class="i"><use href="#i-wa"></use></svg> WhatsApp
-      </a>
-      <a class="btn phone" id="telDrawer" href="#">
-        <svg class="i"><use href="#i-phone"></use></svg> Позвонить
-      </a>
-      <a class="btn" id="igDrawer" href="#" target="_blank" rel="noopener">
-        <svg class="i"><use href="#i-ig"></use></svg> Instagram
-      </a>
-    </div>
-  </aside>
+      <div class="relative z-10 mx-auto max-w-6xl px-4 pb-16 pt-10 md:pt-16">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full border border-stroke bg-white/5 px-4 py-2 text-xs font-semibold text-white/80">
+            <span class="h-2 w-2 rounded-full bg-evac"></span>
+            24/7 • Подача по Астане от 20 минут • Работаем быстро и аккуратно
+          </div>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-wrap">
-          <div class="hero-card" data-reveal>
-            <div class="hero-inner">
-              <div class="badges">
-                <span class="pill"><span style="color:var(--b)"><svg class="i"><use href="#i-check"></use></svg></span> Быстрый выезд</span>
-                <span class="pill"><span style="color:var(--a)"><svg class="i"><use href="#i-route"></use></svg></span> Город / трасса</span>
-                <span class="pill"><span style="color:var(--c)"><svg class="i"><use href="#i-truck"></use></svg></span> Любые типы авто</span>
+          <h1 class="mt-6 font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.02] tracking-tight text-white">
+            <span class="grad-evac">Эвакуатор</span> 24/7<br class="hidden md:block">
+            Астана и регионы
+          </h1>
+
+          <p class="mt-5 max-w-2xl text-white/80 text-base md:text-lg leading-relaxed">
+            ДТП • Заблокированные авто • Низкая посадка • Бережная погрузка и аккуратная перевозка.
+            <span class="text-white font-semibold">Цена — сразу до выезда.</span>
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="tel:+77758392666"
+               class="btn inline-flex items-center justify-center gap-3 rounded-xl2 px-7 py-4 font-extrabold font-display text-base
+                      border border-stroke bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition shadow-glowOrange">
+              <i data-lucide="phone-call"></i>
+              Вызвать эвакуатор
+            </a>
+
+            <a href="https://wa.me/77758392666"
+               target="_blank" rel="noopener"
+               class="btn inline-flex items-center justify-center gap-3 rounded-xl2 px-7 py-4 font-extrabold font-display text-base
+                      border border-stroke bg-white/5 hover:bg-white/10 transition text-white">
+              <i data-lucide="message-circle"></i>
+              Написать в WhatsApp
+            </a>
+          </div>
+
+          <!-- Features strip -->
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div class="glass rounded-xl2 p-4 border border-stroke">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl2 grid place-items-center bg-white/5 border border-stroke">
+                  <i data-lucide="clock-3" class="text-white/85"></i>
+                </div>
+                <div>
+                  <div class="font-display font-extrabold text-white">24/7</div>
+                  <div class="text-xs text-muted">На связи постоянно</div>
+                </div>
               </div>
-
-              <h1 class="h1">Эвакуатор в Астане 24/7 — без нервов, быстро и аккуратно</h1>
-              <p class="sub">
-                ДТП, поломка, низкая посадка, заблокированные колёса, джипы, мото, микроавтобусы.
-                Уточни адрес — скажем цену до выезда.
-              </p>
-
-              <div class="hero-cta">
-                <a class="btn primary" id="callHero" href="#">
-                  <svg class="i"><use href="#i-phone"></use></svg> Позвонить
-                </a>
-                <button class="btn whatsapp" id="waHero" type="button">
-                  <svg class="i"><use href="#i-wa"></use></svg> Написать в WhatsApp
-                </button>
-                <a class="btn" href="#services">
-                  <svg class="i"><use href="#i-arrow"></use></svg> Услуги
-                </a>
+            </div>
+            <div class="glass rounded-xl2 p-4 border border-stroke">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl2 grid place-items-center bg-white/5 border border-stroke">
+                  <i data-lucide="zap" class="text-white/85"></i>
+                </div>
+                <div>
+                  <div class="font-display font-extrabold text-white">Быстро</div>
+                  <div class="text-xs text-muted">Подача от 20 минут</div>
+                </div>
+              </div>
+            </div>
+            <div class="glass rounded-xl2 p-4 border border-stroke">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl2 grid place-items-center bg-white/5 border border-stroke">
+                  <i data-lucide="shield-check" class="text-white/85"></i>
+                </div>
+                <div>
+                  <div class="font-display font-extrabold text-white">Безопасно</div>
+                  <div class="text-xs text-muted">Аккуратная погрузка</div>
+                </div>
+              </div>
+            </div>
+            <div class="glass rounded-xl2 p-4 border border-stroke">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl2 grid place-items-center bg-white/5 border border-stroke">
+                  <i data-lucide="map-pin" class="text-white/85"></i>
+                </div>
+                <div>
+                  <div class="font-display font-extrabold text-white">Астана</div>
+                  <div class="text-xs text-muted">и регионы</div>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="hero-media" data-reveal data-delay="1">
-            <img src="images/img1.jpg" alt="Эвакуатор Астана" fetchpriority="high" />
-            <div class="hero-facts">
-              <div class="fact">
-                <div class="l"><span class="dot"></span><div>На связи 24/7<small>звонок / WhatsApp</small></div></div>
-                <div style="opacity:.9">✓</div>
-              </div>
-              <div class="fact">
-                <div class="l"><span style="color:var(--c)"><svg class="i"><use href="#i-crash"></use></svg></span><div>После ДТП<small>аккуратная погрузка</small></div></div>
-                <div style="opacity:.9">✓</div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <div class="mt-14 h-px w-full bg-gradient-to-r from-transparent via-white/12 to-transparent"></div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section tight" id="services">
-      <div class="container">
-        <div class="head" data-reveal>
-          <div>
-            <h2>Услуги эвакуатора</h2>
-            <p>Карточки теперь НЕ “плывут”: правильные переносы, один стиль иконок, нормальная высота и воздух на мобильном.</p>
+    <!-- Evac -->
+    <section id="evac-section" class="relative py-16 md:py-20">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="h-px w-full bg-gradient-to-r from-transparent via-evac/25 to-transparent"></div>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full border border-stroke bg-white/5 px-4 py-2 text-xs font-semibold text-white/80">
+            <span class="h-2 w-2 rounded-full bg-evac"></span> Срочно • ДТП • Заблокированные авто
           </div>
+          <h2 class="mt-4 font-display text-3xl md:text-4xl font-extrabold text-white">
+            Наши <span class="grad-evac">эвакуаторы</span>
+          </h2>
+          <p class="mt-3 text-muted max-w-2xl">
+            Подача ближайшей машины по Астане и регионам, безопасная погрузка и аккуратная перевозка.
+          </p>
         </div>
 
-        <div class="services">
-          <a class="svc" href="#contact" data-service="Эвакуация легковых" data-reveal data-delay="1">
-            <div class="svc-top">
-              <div>
-                <h3>Эвакуация легковых</h3>
-                <p>Город/трасса, аккуратная фиксация и безопасная доставка.</p>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Evac 1 -->
+          <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft">
+            <button class="w-full text-left" type="button" data-lightbox="images/evac-1.jpg">
+              <div class="relative h-56 overflow-hidden">
+                <img src="images/evac-1.jpg" alt="Сдвижная платформа" class="img-zoom h-full w-full object-cover" loading="lazy">
+                <div class="absolute top-3 right-3 rounded-full px-3 py-1 text-xs font-extrabold text-white
+                            bg-evac/25 border border-evac/40 backdrop-blur">
+                  СРОЧНО
+                </div>
               </div>
-              <div class="bubble"><svg class="i"><use href="#i-car"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Быстрый выезд по городу</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Бережная погрузка</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
+            </button>
 
-          <a class="svc" href="#contact" data-service="Джип / кроссовер" data-reveal data-delay="2">
-            <div class="svc-top">
-              <div>
-                <h3>Джип / кроссовер</h3>
-                <p>Полный привод, вес и габариты — всё учтём заранее.</p>
-              </div>
-              <div class="bubble"><svg class="i"><use href="#i-suv"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Надёжная фиксация</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Сложные заезды</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
+            <div class="p-5">
+              <h3 class="font-display font-extrabold text-lg text-white">Сдвижная платформа</h3>
 
-          <a class="svc" href="#contact" data-service="Мотоэвакуация" data-reveal data-delay="3">
-            <div class="svc-top">
-              <div>
-                <h3>Мотоэвакуация</h3>
-                <p>Ремни, защита пластика, мягкая фиксация.</p>
+              <div class="mt-4 space-y-2 text-sm">
+                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="weight" class="h-4 w-4 text-evac"></i> Груз</span>
+                  <span class="font-bold text-white">до 3.5 т</span>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="car" class="h-4 w-4 text-evac"></i> Тип</span>
+                  <span class="font-bold text-white">Легк., Джипы</span>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="cog" class="h-4 w-4 text-evac"></i> Особ.</span>
+                  <span class="font-bold text-white">Безопасно</span>
+                </div>
               </div>
-              <div class="bubble"><svg class="i"><use href="#i-moto"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Безопасно для техники</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Быстро по городу</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
 
-          <a class="svc" href="#contact" data-service="Микроавтобусы / минивэны" data-reveal data-delay="1">
-            <div class="svc-top">
-              <div>
-                <h3>Микроавтобусы / минивэны</h3>
-                <p>Согласуем формат погрузки по фото/описанию.</p>
-              </div>
-              <div class="bubble"><svg class="i"><use href="#i-van"></use></svg></div>
+              <a href="tel:+77758392666"
+                 class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                        bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition border border-stroke text-white">
+                <i data-lucide="phone-call" class="h-5 w-5"></i> Вызвать
+              </a>
             </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> СТО / стоянка / адрес</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Аккуратно и спокойно</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
+          </article>
 
-          <a class="svc" href="#contact" data-service="После ДТП" data-reveal data-delay="2">
-            <div class="svc-top">
-              <div>
-                <h3>После ДТП</h3>
-                <p>Даже если авто не катится — подберём безопасный способ.</p>
+          <!-- Evac 2 -->
+          <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft" style="transition-delay:.05s">
+            <button class="w-full text-left" type="button" data-lightbox="images/evac-2.jpg">
+              <div class="relative h-56 overflow-hidden">
+                <img src="images/evac-2.jpg" alt="Частичная погрузка" class="img-zoom h-full w-full object-cover" loading="lazy">
               </div>
-              <div class="bubble"><svg class="i"><use href="#i-crash"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Низкая посадка / повреждения</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Доставка на СТО</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
+            </button>
 
-          <a class="svc" href="#contact" data-service="Вытягивание / лебёдка" data-reveal data-delay="3">
-            <div class="svc-top">
-              <div>
-                <h3>Вытягивание / лебёдка</h3>
-                <p>Снег/грязь/кювет — оценим ситуацию по локации и фото.</p>
-              </div>
-              <div class="bubble"><svg class="i"><use href="#i-winch"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Работаем аккуратно</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Быстрый выезд</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
+            <div class="p-5">
+              <h3 class="font-display font-extrabold text-lg text-white">Частичная погрузка</h3>
 
-          <a class="svc" href="#contact" data-service="Буксировка" data-reveal data-delay="1">
-            <div class="svc-top">
-              <div>
-                <h3>Буксировка</h3>
-                <p>Короткая дистанция — когда это безопасно и оправдано.</p>
+              <div class="mt-4 space-y-2 text-sm">
+                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="weight" class="h-4 w-4 text-evac"></i> Груз</span>
+                  <span class="font-bold text-white">до 5 т</span>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="truck" class="h-4 w-4 text-evac"></i> Тип</span>
+                  <span class="font-bold text-white">Газели, микро</span>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="move-up" class="h-4 w-4 text-evac"></i> Особ.</span>
+                  <span class="font-bold text-white">Клиренс</span>
+                </div>
               </div>
-              <div class="bubble"><svg class="i"><use href="#i-tow"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Быстро по месту</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Согласуем заранее</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
 
-          <a class="svc" href="#contact" data-service="Прикурить АКБ" data-reveal data-delay="2">
-            <div class="svc-top">
-              <div>
-                <h3>Прикурить АКБ</h3>
-                <p>Быстрый запуск, если проблема только в аккумуляторе.</p>
-              </div>
-              <div class="bubble"><svg class="i"><use href="#i-batt"></use></svg></div>
+              <a href="tel:+77758392666"
+                 class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                        bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition border border-stroke text-white">
+                <i data-lucide="phone-call" class="h-5 w-5"></i> Вызвать
+              </a>
             </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> 24/7 по городу</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Быстрая связь</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
+          </article>
 
-          <a class="svc" href="#contact" data-service="Паркинг / двор / сложный заезд" data-reveal data-delay="3">
-            <div class="svc-top">
-              <div>
-                <h3>Паркинг / двор / сложный заезд</h3>
-                <p>Узкие места, подъёмы — сделаем аккуратно.</p>
+          <!-- Evac 3 -->
+          <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft" style="transition-delay:.1s">
+            <button class="w-full text-left" type="button" data-lightbox="images/evac-3.jpg">
+              <div class="relative h-56 overflow-hidden">
+                <img src="images/evac-3.jpg" alt="Сложная эвакуация" class="img-zoom h-full w-full object-cover" loading="lazy">
+                <div class="absolute top-3 right-3 rounded-full px-3 py-1 text-xs font-extrabold text-white
+                            bg-red-500/25 border border-red-400/35 backdrop-blur">
+                  ДТП
+                </div>
               </div>
-              <div class="bubble"><svg class="i"><use href="#i-parking"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Без лишних рисков</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> По ситуации</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
+            </button>
 
-          <a class="svc" href="#contact" data-service="Межгород / трасса" data-reveal data-delay="1">
-            <div class="svc-top">
-              <div>
-                <h3>Межгород / трасса</h3>
-                <p>Выезды за город — согласуем маршрут и стоимость заранее.</p>
-              </div>
-              <div class="bubble"><svg class="i"><use href="#i-route"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Надёжно и безопасно</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Связь по пути</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
+            <div class="p-5">
+              <h3 class="font-display font-extrabold text-lg text-white">Сложная эвакуация</h3>
 
-          <a class="svc" href="#contact" data-service="Эвакуация на СТО" data-reveal data-delay="2">
-            <div class="svc-top">
-              <div>
-                <h3>Эвакуация на СТО</h3>
-                <p>Доставим на сервис, стоянку или по адресу.</p>
+              <div class="mt-4 space-y-2 text-sm">
+                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="wrench" class="h-4 w-4 text-evac"></i> Оборуд.</span>
+                  <span class="font-bold text-white">Лебёдка</span>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="alert-triangle" class="h-4 w-4 text-evac"></i> Ситуац.</span>
+                  <span class="font-bold text-white">Кювет/без колёс</span>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="lock" class="h-4 w-4 text-evac"></i> Блок.</span>
+                  <span class="font-bold text-white">Руль/АКПП</span>
+                </div>
               </div>
-              <div class="bubble"><svg class="i"><use href="#i-truck"></use></svg></div>
-            </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Быстро по городу</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Аккуратно</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
-          </a>
 
-          <a class="svc" href="#contact" data-service="Сложные случаи (не катится/блок/низкая)" data-reveal data-delay="3">
-            <div class="svc-top">
-              <div>
-                <h3>Сложные случаи</h3>
-                <p>Не катится, блокировка, низкий клиренс — разберёмся.</p>
-              </div>
-              <div class="bubble"><svg class="i"><use href="#i-winch"></use></svg></div>
+              <a href="tel:+77758392666"
+                 class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                        bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition border border-stroke text-white">
+                <i data-lucide="phone-call" class="h-5 w-5"></i> Вызвать
+              </a>
             </div>
-            <ul>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Оценка по фото/описанию</li>
-              <li><span class="tick"><svg class="i" style="width:14px;height:14px"><use href="#i-check"></use></svg></span> Аккуратная погрузка</li>
-            </ul>
-            <div class="go"><span>Быстрый заказ</span><span class="arr"><svg class="i"><use href="#i-arrow"></use></svg></span></div>
+          </article>
+
+          <!-- Evac 4 -->
+          <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft" style="transition-delay:.15s">
+            <button class="w-full text-left" type="button" data-lightbox="images/evac-4.jpg">
+              <div class="relative h-56 overflow-hidden">
+                <img src="images/evac-4.jpg" alt="Погрузка сверху" class="img-zoom h-full w-full object-cover" loading="lazy">
+              </div>
+            </button>
+
+            <div class="p-5">
+              <h3 class="font-display font-extrabold text-lg text-white">Погрузка сверху</h3>
+
+              <div class="mt-4 space-y-2 text-sm">
+                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="arrow-up-right" class="h-4 w-4 text-evac"></i> Подъём</span>
+                  <span class="font-bold text-white">до 3 т</span>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="car-front" class="h-4 w-4 text-evac"></i> Для</span>
+                  <span class="font-bold text-white">Заблок. авто</span>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-muted flex items-center gap-2"><i data-lucide="move-up-right" class="h-4 w-4 text-evac"></i> Особ.</span>
+                  <span class="font-bold text-white">Аккуратно</span>
+                </div>
+              </div>
+
+              <a href="tel:+77758392666"
+                 class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                        bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition border border-stroke text-white">
+                <i data-lucide="phone-call" class="h-5 w-5"></i> Вызвать
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="reveal mt-8">
+          <a href="tel:+77758392666"
+             class="btn inline-flex w-full md:w-auto items-center justify-center gap-2 rounded-xl2 px-7 py-4 font-display font-extrabold
+                    border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
+            <i data-lucide="navigation" class="text-evac"></i>
+            Вызвать ближайший эвакуатор
           </a>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="section tight" id="gallery">
-      <div class="container">
-        <div class="head" data-reveal>
-          <div>
-            <h2>Фото</h2>
-            <p>Подставь свои фото: <b>images/img1.jpg</b> … <b>images/img4.jpg</b>.</p>
-          </div>
-        </div>
+    <!-- Footer -->
+    <footer id="contacts" class="relative pb-24 md:pb-10 pt-12">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="glass rounded-xl2 border border-stroke p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <div class="font-display text-2xl font-extrabold text-white">
+                Tez<span class="text-white/70">Evakuator</span>
+              </div>
+              <div class="mt-1 text-sm text-muted">
+                Эвакуатор 24/7 • Астана и регионы.
+              </div>
+            </div>
 
-        <div class="gallery">
-          <figure class="shot" data-reveal data-delay="1">
-            <img src="images/img2.jpg" alt="Эвакуатор — фото 1" loading="lazy">
-            <figcaption class="cap"><span>Выезд 24/7</span><span style="color:var(--b)">●</span></figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-delay="2">
-            <img src="images/img3.jpg" alt="Эвакуатор — фото 2" loading="lazy">
-            <figcaption class="cap"><span>Аккуратно</span><span style="color:var(--a)">●</span></figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-delay="3">
-            <img src="images/img4.jpg" alt="Эвакуатор — фото 3" loading="lazy">
-            <figcaption class="cap"><span>ДТП / сложные случаи</span><span style="color:var(--c)">●</span></figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-delay="1">
-            <img src="images/img1.jpg" alt="Эвакуатор — фото 4" loading="lazy">
-            <figcaption class="cap"><span>Город / трасса</span><span style="color:var(--d)">●</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="head" data-reveal>
-          <div>
-            <h2>Контакты</h2>
-            <p>Форма ниже откроет WhatsApp с готовым текстом — останется нажать “Отправить”.</p>
-          </div>
-        </div>
-
-        <div class="contact">
-          <div class="card" data-reveal data-delay="1">
-            <h3 style="margin:0 0 10px; letter-spacing:-.2px">Связаться прямо сейчас</h3>
-            <div class="kv">
-              <div class="kico" style="color:rgba(34,197,94,.95)"><svg class="i"><use href="#i-wa"></use></svg></div>
-              <div>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="https://wa.me/77758392666" target="_blank" rel="noopener"
+                 class="btn inline-flex items-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                        border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
+                <i data-lucide="message-circle" class="text-white/85"></i>
                 WhatsApp
-                <small>самый быстрый способ</small>
-              </div>
-            </div>
-            <div class="kv">
-              <div class="kico" style="color:rgba(96,165,250,.95)"><svg class="i"><use href="#i-phone"></use></svg></div>
-              <div>
-                Телефон: <span id="phoneText"></span>
-                <small>звоните в любое время</small>
-              </div>
-            </div>
+              </a>
 
-            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:12px">
-              <a class="btn phone" id="callBtn" href="#"><svg class="i"><use href="#i-phone"></use></svg> Позвонить</a>
-              <button class="btn whatsapp" id="waBtn" type="button"><svg class="i"><use href="#i-wa"></use></svg> WhatsApp</button>
-              <a class="btn" id="igBtn" href="#" target="_blank" rel="noopener"><svg class="i"><use href="#i-ig"></use></svg> Instagram</a>
+              <a href="tel:+77758392666"
+                 class="btn inline-flex items-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                        border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
+                <i data-lucide="phone-call" class="text-white/85"></i>
+                Позвонить
+              </a>
+
+              <a href="https://instagram.com/" target="_blank" rel="noopener"
+                 class="btn inline-flex items-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                        border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
+                <i data-lucide="instagram" class="text-white/85"></i>
+                Instagram
+              </a>
             </div>
           </div>
 
-          <div class="card" data-reveal data-delay="2">
-            <h3 style="margin:0 0 10px; letter-spacing:-.2px">Быстрая заявка</h3>
-
-            <form class="form" id="leadForm">
-              <div class="field">
-                <svg class="i" style="opacity:.85"><use href="#i-check"></use></svg>
-                <input id="name" type="text" placeholder="Имя" autocomplete="name" required>
-              </div>
-              <div class="field">
-                <svg class="i" style="opacity:.85"><use href="#i-phone"></use></svg>
-                <input id="clientPhone" type="tel" placeholder="Ваш телефон" autocomplete="tel" required>
-              </div>
-              <div class="field">
-                <svg class="i" style="opacity:.85"><use href="#i-route"></use></svg>
-                <input id="place" type="text" placeholder="Адрес / ориентир" required>
-              </div>
-              <div class="field">
-                <svg class="i" style="opacity:.85"><use href="#i-truck"></use></svg>
-                <textarea id="note" placeholder="Что случилось? (ДТП / поломка / низкая посадка и т.д.)"></textarea>
-              </div>
-
-              <button class="btn primary" type="submit">
-                <svg class="i"><use href="#i-wa"></use></svg> Отправить в WhatsApp
-              </button>
-
-              <div style="color:var(--soft); font-weight:750; line-height:1.5;">
-                Данные не сохраняются — сообщение формируется у вас и отправляется в WhatsApp.
-              </div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div class="foot">
-          <div>© <span id="year"></span> TezEvakuator • Астана • 24/7</div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a href="#services" style="padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);font-weight:850">Услуги</a>
-            <a id="telFooter" href="#" style="padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);font-weight:850">Звонок</a>
-            <a id="waFooter" href="#" target="_blank" rel="noopener" style="padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);font-weight:850">WhatsApp</a>
+          <div class="mt-6 text-[10px] text-white/50">
+            Контакты: +7 775 839 2666 • Фото: <span class="text-white/70">images/hero-bg.jpg</span>, <span class="text-white/70">images/evac-1.jpg ... evac-4.jpg</span>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Mobile sticky CTA -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+      <div class="glass border-t border-stroke px-3 py-3">
+        <div class="flex gap-2">
+          <a href="tel:+77758392666"
+             class="btn flex-1 inline-flex items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                    bg-gradient-to-r from-evac/95 to-evac2/95 border border-stroke text-white active:scale-[.98] transition">
+            <i data-lucide="phone-call" class="h-5 w-5"></i>
+            ВЫЗВАТЬ
+          </a>
+          <a href="https://wa.me/77758392666" target="_blank" rel="noopener"
+             class="btn flex-1 inline-flex items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                    border border-stroke bg-white/5 hover:bg-white/10 text-white active:scale-[.98] transition">
+            <i data-lucide="message-circle" class="h-5 w-5"></i>
+            WHATSAPP
+          </a>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <!-- Floating -->
-  <div class="float" aria-label="Быстрые действия">
-    <button class="fab top" id="toTop" aria-label="Наверх"><svg class="i"><use href="#i-up"></use></svg></button>
-    <a class="fab w" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="i"><use href="#i-wa"></use></svg></a>
-    <a class="fab p" id="telFloat" href="#" aria-label="Позвонить"><svg class="i"><use href="#i-phone"></use></svg></a>
-  </div>
-
   <script>
-    // ===== CONFIG =====
-    const PHONE_E164 = "77758392666";
-    const PHONE_DISPLAY = "+7 775 839 2666";
-    const INSTAGRAM_URL = "https://instagram.com/"; // <-- замени на свой Instagram
+    // Icons
+    lucide.createIcons();
 
-    const WA_BASE = `https://wa.me/${PHONE_E164}`;
-    const TEL_URL = `tel:${PHONE_DISPLAY.replace(/\s+/g,"")}`;
-
-    // ===== LINKS =====
-    const setHref = (id, href) => { const el = document.getElementById(id); if(el) el.href = href; };
-    setHref("waTop", WA_BASE);
-    setHref("waDrawer", WA_BASE);
-    setHref("waFooter", WA_BASE);
-    setHref("waFloat", WA_BASE);
-
-    setHref("telTop", TEL_URL);
-    setHref("telDrawer", TEL_URL);
-    setHref("telFooter", TEL_URL);
-    setHref("telFloat", TEL_URL);
-    setHref("callHero", TEL_URL);
-    setHref("callBtn", TEL_URL);
-
-    setHref("igTop", INSTAGRAM_URL);
-    setHref("igDrawer", INSTAGRAM_URL);
-    setHref("igBtn", INSTAGRAM_URL);
-
-    const phoneText = document.getElementById("phoneText");
-    if(phoneText) phoneText.textContent = PHONE_DISPLAY;
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // ===== Drawer =====
-    const drawer = document.getElementById("drawer");
-    const backdrop = document.getElementById("backdrop");
-    const openDrawer = () => {
-      drawer.classList.add("open");
-      backdrop.classList.add("open");
-      document.body.style.overflow = "hidden";
+    // Scroll progress
+    const bar = document.getElementById('scrollbar');
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      const p = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+      bar.style.width = p.toFixed(2) + '%';
     };
-    const closeDrawer = () => {
-      drawer.classList.remove("open");
-      backdrop.classList.remove("open");
-      document.body.style.overflow = "";
-    };
-    document.getElementById("openDrawer").addEventListener("click", openDrawer);
-    document.getElementById("closeDrawer").addEventListener("click", closeDrawer);
-    backdrop.addEventListener("click", closeDrawer);
-    drawer.addEventListener("click", (e) => {
-      if(e.target.closest("[data-close]")) closeDrawer();
-    });
-    window.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
-    });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-    // ===== Reveal =====
-    const revealEls = document.querySelectorAll("[data-reveal]");
+    // Header blur on scroll
+    const header = document.getElementById('siteHeader');
+    const setHeader = () => {
+      const y = window.scrollY || 0;
+      header.style.backdropFilter = y > 12 ? 'blur(18px)' : 'blur(14px)';
+    };
+    window.addEventListener('scroll', setHeader, { passive: true });
+    setHeader();
+
+    // Reveal elements on view
+    const revealEls = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
-      for(const ent of entries){
-        if(ent.isIntersecting){
-          ent.target.classList.add("in");
-          io.unobserve(ent.target);
-        }
-      }
-    }, { threshold: 0.14 });
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('is-in');
+      });
+    }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
 
-    // ===== Back to top =====
-    const toTop = document.getElementById("toTop");
-    const onScroll = () => {
-      if(window.scrollY > 520) toTop.classList.add("show");
-      else toTop.classList.remove("show");
-    };
-    window.addEventListener("scroll", onScroll, { passive:true });
-    onScroll();
-    toTop.addEventListener("click", () => window.scrollTo({ top:0, behavior:"smooth" }));
+    // Lightbox (open images by click)
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const closeBtn = lb.querySelector('.x');
 
-    // ===== WhatsApp helpers =====
-    const openWA = (text) => {
-      const url = `${WA_BASE}?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank", "noopener");
-    };
+    function openLightbox(src){
+      lbImg.src = src;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+    function closeLightbox(){
+      lb.classList.remove('open');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
 
-    document.getElementById("waHero").addEventListener("click", () => {
-      openWA(`Здравствуйте! Нужен эвакуатор в Астане.\nАдрес/ориентир:\nМарка/модель:\nЧто случилось:`);
-    });
-    document.getElementById("waBtn").addEventListener("click", () => {
-      openWA(`Здравствуйте! Нужен эвакуатор.\nГород: Астана\nАдрес/ориентир:\nЧто случилось:`);
+    document.querySelectorAll('[data-lightbox]').forEach(btn => {
+      btn.addEventListener('click', () => openLightbox(btn.getAttribute('data-lightbox')));
     });
 
-    // Service cards -> prefills
-    document.querySelectorAll("[data-service]").forEach(card => {
-      card.addEventListener("click", () => {
-        const svc = card.getAttribute("data-service");
-        const msg = `Здравствуйте! Нужен эвакуатор.\nГород: Астана\nУслуга: ${svc}\nАдрес/ориентир:\nМарка/модель:\nЧто случилось:`;
-        // не мешаем переходу на #contact, просто открываем WhatsApp дополнительно
-        openWA(msg);
+    closeBtn.addEventListener('click', closeLightbox);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    // Smooth scroll for in-page anchors + close menu
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        closeMenu();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
-    // Form -> WhatsApp
-    document.getElementById("leadForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = (document.getElementById("name").value || "").trim();
-      const phone = (document.getElementById("clientPhone").value || "").trim();
-      const place = (document.getElementById("place").value || "").trim();
-      const note = (document.getElementById("note").value || "").trim();
+    // Mobile menu
+    const backdrop = document.getElementById('menuBackdrop');
+    const drawer = document.getElementById('menuDrawer');
+    const openBtn = document.getElementById('openMenu');
+    const closeBtnMenu = document.getElementById('closeMenu');
 
-      const lines = [
-        "Заявка на эвакуатор (Астана)",
-        `Имя: ${name}`,
-        `Телефон: ${phone}`,
-        `Адрес: ${place}`,
-      ];
-      if(note) lines.push(`Ситуация: ${note}`);
-      lines.push(`Контакт сервиса: ${PHONE_DISPLAY}`);
+    function openMenu(){
+      backdrop.classList.add('open');
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu(){
+      backdrop.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
 
-      openWA(lines.join("\n"));
-    });
+    if(openBtn) openBtn.addEventListener('click', openMenu);
+    if(closeBtnMenu) closeBtnMenu.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+    // Back to top (show on scroll)
+    const toTopBtn = document.getElementById('toTopBtn');
+    const toggleTop = () => {
+      if((window.scrollY || 0) > 520) toTopBtn.classList.add('show');
+      else toTopBtn.classList.remove('show');
+    };
+    window.addEventListener('scroll', toggleTop, { passive:true });
+    toggleTop();
+    toTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
