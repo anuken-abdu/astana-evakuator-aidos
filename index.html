@@ -2,1557 +2,1500 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0B1220" />
-  <meta name="color-scheme" content="dark light" />
-
-  <title>TezEvakuator — Эвакуатор Астана 24/7 | +7 775 839 2666</title>
-  <meta name="description" content="Эвакуатор в Астане 24/7. Быстрый выезд по городу и области. Аккуратная погрузка, помощь при ДТП и поломках. Звоните: +7 775 839 2666" />
-  <meta name="robots" content="index, follow" />
-
-  <meta property="og:title" content="TezEvakuator — Эвакуатор Астана 24/7" />
-  <meta property="og:description" content="Быстрый эвакуатор по Астане. 24/7. +7 775 839 2666" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ru_RU" />
-
+  <title>Эвакуатор Астана 24/7 — быстрый выезд | +7 775 839 2666</title>
+  <meta name="description" content="Эвакуатор в Астане 24/7. Быстрый выезд, аккуратная погрузка, помощь при ДТП, перевозка авто/мото/джип/микроавтобус. Звонок/WhatsApp: +7 775 839 2666" />
+  <meta name="format-detection" content="telephone=no" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/img1.jpg">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdftzHttn6nRVmV0nQKxVbZpY8pKQb4o0Wm2yX4QkWm9b2qG0o0B3i2m1rYwUQeWmQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
 
   <style>
     :root{
-      --bg0:#070B14;
+      --bg0:#070A12;
       --bg1:#0B1220;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
-      --stroke:rgba(255,255,255,.12);
-      --text:#EAF0FF;
-      --muted:rgba(234,240,255,.72);
-      --muted2:rgba(234,240,255,.55);
-
-      --a:#4F8BFF;      /* blue */
-      --b:#22D3EE;      /* cyan */
-      --c:#FBBF24;      /* amber */
-      --d:#34D399;      /* green */
-      --danger:#FB7185; /* rose */
-
-      --radius:22px;
-      --radius2:28px;
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --shadow2: 0 10px 30px rgba(0,0,0,.25);
-      --max: 1160px;
-
-      --ease: cubic-bezier(.2,.8,.2,1);
+      --bg2:#0E1B2E;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.085);
+      --stroke: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --soft: rgba(255,255,255,.52);
+      --accent:#22C55E;     /* WhatsApp-ish */
+      --accent2:#60A5FA;    /* Blue */
+      --warn:#FBBF24;       /* Yellow */
+      --danger:#FB7185;     /* Rose */
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --shadow2: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1180px;
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 15% 10%, rgba(79,139,255,.20), transparent 60%),
-        radial-gradient(900px 500px at 90% 15%, rgba(34,211,238,.16), transparent 55%),
-        radial-gradient(900px 700px at 50% 95%, rgba(251,191,36,.12), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1) 60%, var(--bg0));
+        radial-gradient(1200px 600px at 15% -10%, rgba(96,165,250,.28), transparent 55%),
+        radial-gradient(900px 520px at 85% 5%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(900px 700px at 50% 115%, rgba(251,191,36,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 30%, var(--bg2) 100%);
       overflow-x:hidden;
     }
 
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
+    a{color:inherit; text-decoration:none}
+    button{font:inherit}
+    img{max-width:100%; display:block}
 
-    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
-    .row{ display:flex; gap:16px; align-items:center; }
-    .grid{ display:grid; gap:16px; }
-    .pill{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.04);
-      border-radius:999px;
-      color:var(--muted);
-      backdrop-filter: blur(10px);
+    /* Layout */
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .section{padding:78px 0}
+    .section.tight{padding:54px 0}
+    .grid{display:grid; gap:18px}
+
+    /* Subtle animated blobs (lightweight) */
+    .bg-blobs{
+      position:fixed; inset:-200px; pointer-events:none; z-index:-1;
+      filter: blur(40px);
+      opacity:.55;
+    }
+    .blob{
+      position:absolute; width:520px; height:520px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(34,197,94,.30), transparent 60%);
+      animation: floaty 16s ease-in-out infinite;
+    }
+    .blob.b2{
+      width:640px; height:640px;
+      left:auto; right:-120px; top:-60px;
+      background: radial-gradient(circle at 35% 35%, rgba(96,165,250,.28), transparent 62%);
+      animation-duration: 19s;
+    }
+    .blob.b3{
+      width:520px; height:520px;
+      left: -140px; top: 55%;
+      background: radial-gradient(circle at 35% 35%, rgba(251,191,36,.20), transparent 62%);
+      animation-duration: 22s;
+    }
+    @keyframes floaty{
+      0%,100%{transform:translate3d(0,0,0) scale(1)}
+      50%{transform:translate3d(30px,-22px,0) scale(1.04)}
     }
 
-    .btn{
-      position:relative;
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px;
-      border-radius:16px;
-      border:1px solid transparent;
-      cursor:pointer;
-      user-select:none;
-      transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
-      font-weight:800;
-      letter-spacing:.2px;
+    /* Header */
+    .header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(10,14,25,.62);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .header-inner{
+      height:68px; display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
       white-space:nowrap;
     }
-    .btn:active{ transform: translateY(1px) scale(.99); }
-    .btn-primary{
-      background: linear-gradient(135deg, rgba(79,139,255,.95), rgba(34,211,238,.85));
-      box-shadow: 0 16px 40px rgba(79,139,255,.20);
-    }
-    .btn-primary:hover{ box-shadow: 0 18px 55px rgba(79,139,255,.26); transform: translateY(-1px); }
-    .btn-ghost{
-      background: rgba(255,255,255,.05);
-      border-color: rgba(255,255,255,.12);
-      color: var(--text);
-    }
-    .btn-ghost:hover{ background: rgba(255,255,255,.08); transform: translateY(-1px); }
-    .btn-wapp{
-      background: linear-gradient(135deg, rgba(52,211,153,.92), rgba(34,211,238,.85));
-      box-shadow: 0 16px 40px rgba(52,211,153,.18);
-    }
-    .btn-wapp:hover{ box-shadow: 0 18px 55px rgba(52,211,153,.24); transform: translateY(-1px); }
-    .btn-danger{
-      background: linear-gradient(135deg, rgba(251,113,133,.95), rgba(251,191,36,.70));
-      box-shadow: 0 16px 40px rgba(251,113,133,.16);
-    }
-    .btn-danger:hover{ box-shadow: 0 18px 55px rgba(251,113,133,.22); transform: translateY(-1px); }
-
-    .iconbtn{
-      width:44px; height:44px;
-      display:inline-flex; align-items:center; justify-content:center;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
-      position:relative;
-    }
-    .iconbtn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); }
-    .iconbtn:active{ transform: translateY(0px) scale(.98); }
-    .iconbtn i{ font-size:18px; opacity:.92; }
-    .iconbtn.whats i{ color: #34D399; }
-    .iconbtn.call i{ color: #60A5FA; }
-    .iconbtn.ig i{ color: #F472B6; }
-
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      background: rgba(7,11,20,.55);
-      backdrop-filter: blur(14px);
-    }
-    .topbar-inner{
-      height:64px;
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-    }
-
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width: 180px;
-    }
-    .logo{
-      width:42px; height:42px; border-radius:14px;
-      background:
-        radial-gradient(16px 16px at 30% 30%, rgba(255,255,255,.35), transparent 70%),
-        linear-gradient(135deg, rgba(79,139,255,.95), rgba(34,211,238,.75), rgba(251,191,36,.55));
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    .brand-badge{
+      width:38px; height:38px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(96,165,250,.35), rgba(34,197,94,.22));
+      border: 1px solid rgba(255,255,255,.14);
       display:grid; place-items:center;
-      border:1px solid rgba(255,255,255,.14);
-      position:relative;
-      overflow:hidden;
+      box-shadow: var(--shadow2);
     }
-    .logo:before{
-      content:"";
-      position:absolute; inset:-40%;
-      background: conic-gradient(from 210deg, transparent, rgba(255,255,255,.22), transparent 55%);
-      animation: spin 5.5s linear infinite;
-      opacity:.9;
+    .brand-badge i{color:rgba(255,255,255,.92)}
+    .brand small{display:block; font-weight:700; color:var(--soft); letter-spacing:0}
+    .nav{
+      display:flex; align-items:center; gap:14px;
     }
-    .logo span{
-      position:relative; z-index:1;
-      font-weight:900; font-size:16px; letter-spacing:.6px;
-      text-shadow: 0 10px 25px rgba(0,0,0,.35);
-    }
-    @keyframes spin{ to{ transform: rotate(360deg); } }
-
-    .brand-title{
-      display:flex; flex-direction:column; line-height:1.06;
-    }
-    .brand-title strong{ font-size:14.5px; letter-spacing:.2px; }
-    .brand-title small{ color: var(--muted2); font-size:12px; }
-
-    nav.desktop-nav{
-      display:none;
-      align-items:center;
-      gap:18px;
+    .nav a{
+      padding:10px 10px;
+      border-radius: 12px;
       color: var(--muted);
       font-weight:700;
+      transition: .18s ease;
     }
-    nav.desktop-nav a{
-      padding:10px 10px;
-      border-radius:12px;
-      transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
-    }
-    nav.desktop-nav a:hover{
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      transform: translateY(-1px);
-    }
-
+    .nav a:hover{background: rgba(255,255,255,.06); color: var(--text)}
+    .nav a.active{color: var(--text); background: rgba(255,255,255,.08)}
     .header-actions{
       display:flex; align-items:center; gap:10px;
     }
-
+    .icon-pill{
+      width:40px; height:40px; border-radius:14px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: .18s ease;
+    }
+    .icon-pill:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .icon-pill.whatsapp{border-color: rgba(34,197,94,.28)}
+    .icon-pill.phone{border-color: rgba(96,165,250,.28)}
+    .icon-pill.insta{border-color: rgba(251,113,133,.28)}
     .hamburger{
-      width:46px; height:46px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      display:inline-flex;
-      align-items:center; justify-content:center;
+      width:44px; height:44px; border-radius:16px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
       cursor:pointer;
-      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+      transition:.18s ease;
     }
-    .hamburger:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); }
-    .hamburger:active{ transform: translateY(0px) scale(.98); }
-    .hamburger .bars{
-      width:18px; height:12px; position:relative;
-    }
-    .hamburger .bars span{
-      position:absolute; left:0;
-      width:100%; height:2px;
-      background: rgba(234,240,255,.92);
-      border-radius:999px;
-      transition: transform .25s var(--ease), top .25s var(--ease), opacity .25s var(--ease);
-    }
-    .hamburger .bars span:nth-child(1){ top:0; }
-    .hamburger .bars span:nth-child(2){ top:5px; opacity:.9; }
-    .hamburger .bars span:nth-child(3){ top:10px; opacity:.85; }
+    .hamburger:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .hamburger i{font-size:18px}
+    .desktop-only{display:none}
+    .mobile-only{display:flex}
 
-    .hamburger.active .bars span:nth-child(1){ top:5px; transform: rotate(45deg); }
-    .hamburger.active .bars span:nth-child(2){ opacity:0; }
-    .hamburger.active .bars span:nth-child(3){ top:5px; transform: rotate(-45deg); }
-
-    /* Mobile menu drawer */
+    /* Mobile Drawer */
     .drawer-backdrop{
-      position:fixed; inset:0;
+      position:fixed; inset:0; z-index:60;
       background: rgba(0,0,0,.55);
       opacity:0; pointer-events:none;
-      transition: opacity .25s var(--ease);
-      z-index:80;
+      transition: .22s ease;
     }
     .drawer{
-      position:fixed; top:0; right:0;
-      width:min(420px, 92vw);
-      height:100%;
-      background: rgba(11,18,32,.92);
-      backdrop-filter: blur(18px);
-      border-left:1px solid rgba(255,255,255,.10);
-      transform: translateX(110%);
-      transition: transform .3s var(--ease);
-      z-index:90;
-      display:flex;
-      flex-direction:column;
+      position:fixed; top:0; right:0; z-index:61;
+      width:min(92vw, 380px); height:100%;
+      background: rgba(12,18,32,.92);
+      backdrop-filter: blur(14px);
+      border-left: 1px solid rgba(255,255,255,.10);
+      transform: translateX(105%);
+      transition: .24s cubic-bezier(.2,.9,.2,1);
       padding:18px;
-      gap:14px;
+      display:flex; flex-direction:column; gap:16px;
     }
-    .drawer.open{ transform: translateX(0); }
-    .drawer-backdrop.open{ opacity:1; pointer-events:auto; }
-    .drawer .drawer-top{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding-bottom:12px;
-      border-bottom:1px solid rgba(255,255,255,.10);
+    .drawer.open{transform: translateX(0)}
+    .drawer-backdrop.open{opacity:1; pointer-events:auto}
+    .drawer-top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding-bottom:10px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
     }
-    .drawer nav{
-      display:flex; flex-direction:column; gap:10px;
-      padding:10px 0;
-    }
-    .drawer nav a{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 14px;
-      border-radius:16px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      color: var(--text);
+    .drawer-nav{display:grid; gap:10px; padding-top:6px}
+    .drawer-nav a{
+      padding:12px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
       font-weight:800;
-      transition: transform .2s var(--ease), background .2s var(--ease);
+      color: rgba(255,255,255,.90);
     }
-    .drawer nav a:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); }
-    .drawer .drawer-cta{
+    .drawer-nav a i{margin-right:10px; color: rgba(255,255,255,.80)}
+    .drawer-cta{
       margin-top:auto;
       display:grid; gap:10px;
-      padding-top:12px;
-      border-top:1px solid rgba(255,255,255,.10);
+    }
+    .btn{
+      padding:14px 14px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      font-weight:800;
+      cursor:pointer;
+      transition:.18s ease;
+      display:flex; align-items:center; justify-content:center; gap:10px;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(34,197,94,.26), rgba(96,165,250,.22));
+      border-color: rgba(255,255,255,.18);
     }
 
     /* Hero */
     .hero{
       position:relative;
-      padding: 34px 0 18px;
+      padding: 44px 0 32px;
     }
     .hero-wrap{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:18px;
-      align-items:stretch;
+      gap:20px;
+      grid-template-columns: 1fr;
+      align-items:center;
     }
     .hero-card{
       border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
-        radial-gradient(900px 420px at 10% 20%, rgba(79,139,255,.18), transparent 62%),
-        radial-gradient(650px 350px at 95% 20%, rgba(34,211,238,.14), transparent 58%);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
-      min-height: 460px;
     }
-    .hero-card:after{
+    .hero-card::before{
       content:"";
       position:absolute; inset:0;
       background:
-        linear-gradient(120deg, rgba(255,255,255,.08), transparent 35%),
-        radial-gradient(400px 200px at 30% 10%, rgba(251,191,36,.12), transparent 60%);
+        radial-gradient(900px 380px at 20% 10%, rgba(96,165,250,.22), transparent 55%),
+        radial-gradient(700px 380px at 80% 20%, rgba(34,197,94,.18), transparent 60%);
       pointer-events:none;
-      mix-blend-mode: screen;
-      opacity:.8;
     }
     .hero-inner{
       position:relative;
-      padding: 24px;
-      z-index:1;
-      display:flex;
-      flex-direction:column;
-      height:100%;
+      padding: 22px;
+      display:grid;
+      gap:18px;
     }
-
-    .hero h1{
-      font-size: clamp(28px, 4.2vw, 48px);
-      line-height: 1.05;
-      letter-spacing: -0.8px;
-      margin: 14px 0 10px;
-    }
-    .hero p{
-      margin: 0 0 16px;
+    .hero-topline{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
       color: var(--muted);
-      font-size: 15.5px;
-      line-height: 1.55;
-      max-width: 62ch;
+      font-weight:700;
     }
-    .hero-badges{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 6px;
-    }
-    .hero-cta{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 14px;
-    }
-
-    .hero-mini{
-      margin-top:auto;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:10px;
-      padding-top: 18px;
-    }
-    .mini{
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding:12px;
-      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
-    }
-    .mini:hover{ transform: translateY(-2px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); }
-    .mini .top{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      margin-bottom:8px;
-    }
-    .mini .top i{ font-size:18px; opacity:.95; }
-    .mini strong{ font-size:13px; }
-    .mini small{ display:block; margin-top:4px; font-size:12px; color: var(--muted2); line-height:1.3; }
-
-    .hero-media{
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-      position:relative;
-      min-height: 460px;
-      isolation:isolate;
-    }
-    .hero-media .bg{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(180deg, rgba(7,11,20,.0), rgba(7,11,20,.80) 78%),
-        url("images/img1.jpg") center/cover no-repeat;
-      filter: saturate(1.06) contrast(1.06);
-      transform: scale(1.02);
-    }
-    .hero-media .glow{
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle at 30% 30%, rgba(34,211,238,.18), transparent 55%),
-                  radial-gradient(circle at 70% 40%, rgba(79,139,255,.18), transparent 55%),
-                  radial-gradient(circle at 45% 75%, rgba(251,191,36,.16), transparent 55%);
-      animation: floatGlow 9s var(--ease) infinite alternate;
-      pointer-events:none;
-      mix-blend-mode: screen;
-      opacity:.9;
-      z-index:1;
-    }
-    @keyframes floatGlow{
-      0%{ transform: translate3d(-1.5%, -1%, 0) scale(1.02); }
-      100%{ transform: translate3d(1.5%, 1%, 0) scale(1.06); }
-    }
-    .hero-media .panel{
-      position:absolute; inset:auto 14px 14px 14px;
-      z-index:2;
-      border-radius: 22px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(11,18,32,.70);
-      backdrop-filter: blur(14px);
-      padding: 14px;
-      display:grid;
-      gap:10px;
-    }
-    .panel .line{
-      display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
-    }
-    .panel .line .left{ display:flex; align-items:center; gap:10px; }
-    .panel .chip{
+    .chip{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 10px;
       border-radius: 999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .panel .chip i{ opacity:.92; }
-    .panel .phone{
-      font-weight: 900;
-      letter-spacing:.3px;
-      font-size: 16px;
-    }
-
-    /* Sections */
-    section{
-      padding: 22px 0;
-    }
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom: 14px;
-    }
-    .section-head h2{
-      margin:0;
-      font-size: clamp(20px, 2.5vw, 30px);
-      letter-spacing:-.4px;
-      line-height:1.1;
-    }
-    .section-head p{
-      margin:0;
-      color: var(--muted);
-      max-width: 62ch;
-      font-size: 14.5px;
-      line-height: 1.55;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .card{
-      grid-column: span 4;
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.045);
-      box-shadow: 0 14px 45px rgba(0,0,0,.22);
-      padding: 16px;
-      position:relative;
-      overflow:hidden;
-      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
-    }
-    .card:hover{ transform: translateY(-2px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); }
-    .card .title{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      margin-bottom:10px;
-    }
-    .card .title strong{
-      font-size: 15px;
-      letter-spacing: -.2px;
-    }
-    .card .title i{
-      font-size: 18px;
-      opacity:.95;
-      padding: 10px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-    }
-    .card p{
-      margin:0;
-      color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.55;
-    }
-    .card .list{
-      margin-top: 12px;
-      display:grid;
-      gap:8px;
-    }
-    .li{
-      display:flex; align-items:flex-start; gap:10px;
-      color: var(--muted);
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.11);
       font-size: 13px;
-      line-height:1.45;
     }
-    .li i{
-      margin-top:2px;
+    .chip i{color: rgba(255,255,255,.86)}
+    .hero h1{
+      margin:0;
+      font-size: clamp(28px, 4.2vw, 48px);
+      line-height:1.08;
+      letter-spacing: -0.6px;
+    }
+    .hero p{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.55;
+      max-width: 56ch;
+    }
+    .hero-cta{
+      display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+      margin-top: 2px;
+    }
+
+    /* Kodeset morph button (adapted) */
+    .morph-btn {
+      position: relative;
+      padding: 16px 22px;
       font-size: 14px;
-      opacity:.95;
-      color: rgba(234,240,255,.82);
-    }
-
-    .feature-grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .feature{
-      grid-column: span 6;
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));
-      padding: 16px;
-      box-shadow: 0 14px 45px rgba(0,0,0,.22);
-      overflow:hidden;
-      position:relative;
-      transition: transform .2s var(--ease), border-color .2s var(--ease);
-    }
-    .feature:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.16); }
-    .feature .head{
-      display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px;
-    }
-    .feature .head strong{ font-size: 15px; letter-spacing: -.2px; }
-    .feature .head .bubble{
-      width:44px; height:44px;
-      border-radius:16px;
-      display:grid; place-items:center;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-    }
-    .feature .head .bubble i{ font-size:18px; opacity:.95; }
-    .feature p{ margin:0; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
-
-    .steps{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .step{
-      grid-column: span 3;
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.045);
-      padding: 16px;
-      box-shadow: 0 14px 45px rgba(0,0,0,.22);
-      position:relative;
-      overflow:hidden;
-      transition: transform .2s var(--ease), border-color .2s var(--ease);
-    }
-    .step:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.16); }
-    .step .n{
-      width:44px; height:44px;
-      border-radius:16px;
-      display:grid; place-items:center;
       font-weight: 900;
-      background: linear-gradient(135deg, rgba(79,139,255,.30), rgba(34,211,238,.18));
-      border:1px solid rgba(255,255,255,.12);
-      margin-bottom:10px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      overflow: visible;
+      isolation: isolate;
+      border-radius: 18px;
     }
-    .step strong{ display:block; font-size: 14.5px; letter-spacing:-.2px; margin-bottom:6px; }
-    .step p{ margin:0; color: var(--muted); font-size: 13.3px; line-height:1.55; }
+    .morph-btn .btn-fill {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 13, 13, 0.35);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 18px;
+      transition: border-radius 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1;
+      backdrop-filter: blur(8px);
+    }
+    .morph-btn:hover .btn-fill { border-radius: 999px; animation: jelly 0.5s ease; }
+    @keyframes jelly {
+      0% { transform: scale(1, 1); }
+      30% { transform: scale(1.10, 0.90); }
+      50% { transform: scale(0.92, 1.08); }
+      70% { transform: scale(1.04, 0.96); }
+      100% { transform: scale(1, 1); }
+    }
+    .morph-btn .btn-text{
+      position: relative;
+      z-index: 2;
+      display:inline-flex;
+      gap: 1px;
+      align-items:center;
+      padding: 0 2px;
+      text-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    .morph-btn .btn-text span{
+      display:inline-block;
+      transform: translateY(0);
+      transition: transform .25s ease;
+      transition-delay: calc(var(--i) * 30ms);
+    }
+    .morph-btn:hover .btn-text span{ transform: translateY(-2px); }
+    .morph-btn .orbit-dots{
+      position:absolute; inset:-22px; pointer-events:none; z-index: 0;
+    }
+    .morph-btn .orbit-dots span{
+      position:absolute; width:7px; height:7px;
+      background: rgba(255,255,255,.18);
+      border-radius: 50%;
+      opacity: .95;
+    }
+    .morph-btn .orbit-dots span:nth-child(1){ top:0; left:50%; animation: orbit1 3s linear infinite;}
+    .morph-btn .orbit-dots span:nth-child(2){ bottom:0; left:50%; animation: orbit2 3s linear infinite;}
+    .morph-btn .orbit-dots span:nth-child(3){ top:50%; left:0; animation: orbit3 4s linear infinite;}
+    .morph-btn .orbit-dots span:nth-child(4){ top:50%; right:0; animation: orbit4 4s linear infinite;}
+    @keyframes orbit1{ 0%{transform:translateX(-50%) translateY(0) scale(1)} 100%{transform:translateX(-50%) translateY(0) rotate(360deg)} }
+    @keyframes orbit2{ 0%{transform:translateX(-50%) translateY(0) scale(1)} 100%{transform:translateX(-50%) translateY(0) rotate(-360deg)} }
+    @keyframes orbit3{ 0%{transform:translateY(-50%) translateX(0) scale(1)} 100%{transform:translateY(-50%) translateX(0) rotate(360deg)} }
+    @keyframes orbit4{ 0%{transform:translateY(-50%) translateX(0) scale(1)} 100%{transform:translateY(-50%) translateX(0) rotate(-360deg)} }
+    .morph-btn .corners{
+      position:absolute; inset:0; pointer-events:none; z-index:2;
+    }
+    .morph-btn .corners span{
+      position:absolute; width:16px; height:16px;
+      border: 2px solid rgba(255,255,255,.24);
+      opacity: 0;
+      transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .morph-btn .corners span:nth-child(1){ top:-10px; left:-10px; border-right:none; border-bottom:none; }
+    .morph-btn .corners span:nth-child(2){ top:-10px; right:-10px; border-left:none; border-bottom:none; }
+    .morph-btn .corners span:nth-child(3){ bottom:-10px; left:-10px; border-right:none; border-top:none; }
+    .morph-btn .corners span:nth-child(4){ bottom:-10px; right:-10px; border-left:none; border-top:none; }
+    .morph-btn:hover .corners span{opacity:1}
+    .morph-btn:hover .corners span:nth-child(1){transform:translate(-4px,-4px) rotate(-4deg)}
+    .morph-btn:hover .corners span:nth-child(2){transform:translate(4px,-4px) rotate(4deg)}
+    .morph-btn:hover .corners span:nth-child(3){transform:translate(-4px,4px) rotate(4deg)}
+    .morph-btn:hover .corners span:nth-child(4){transform:translate(4px,4px) rotate(-4deg)}
+    .morph-btn .shadow{
+      position:absolute; inset:6px;
+      background: rgba(0,0,0,.25);
+      border-radius: 18px;
+      filter: blur(16px);
+      z-index:0;
+      transform: translateY(8px);
+      transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .morph-btn:hover .shadow{
+      border-radius: 999px;
+      transform: translateY(12px) scale(1.06);
+      filter: blur(20px);
+    }
 
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
+    .ghost-btn{
+      padding:14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      color: var(--text);
+      font-weight:900;
+      cursor:pointer;
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      transition: .18s ease;
     }
-    .shot{
-      grid-column: span 4;
+    .ghost-btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09)}
+    .ghost-btn .fa-phone{color: rgba(96,165,250,.9)}
+    .hero-media{
       border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow2);
       overflow:hidden;
-      box-shadow: 0 14px 45px rgba(0,0,0,.22);
       position:relative;
-      transform: translateZ(0);
-      transition: transform .25s var(--ease), border-color .25s var(--ease);
-      min-height: 220px;
+      min-height: 340px;
     }
-    .shot:hover{ transform: translateY(-3px); border-color: rgba(255,255,255,.18); }
-    .shot img{
+    .hero-media img{
       width:100%;
       height:100%;
-      object-fit:cover;
+      object-fit: cover;
       transform: scale(1.02);
-      filter: saturate(1.04) contrast(1.02);
-      transition: transform .35s var(--ease);
     }
-    .shot:hover img{ transform: scale(1.06); }
-    .shot .cap{
-      position:absolute; left:12px; right:12px; bottom:12px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(11,18,32,.65);
-      backdrop-filter: blur(14px);
-      padding: 10px 12px;
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      color: var(--text);
-      font-weight: 800;
-      font-size: 12.5px;
+    .hero-media::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,10,18,.05), rgba(7,10,18,.75));
+      pointer-events:none;
     }
-    .shot .cap i{ opacity:.92; }
-
-    .faq{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
+    .hero-badges{
+      position:absolute;
+      left: 16px;
+      bottom: 16px;
+      display:flex; flex-wrap:wrap; gap:10px;
+      z-index:2;
     }
-    details.faq-item{
-      grid-column: span 6;
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.045);
-      box-shadow: 0 14px 45px rgba(0,0,0,.22);
-      overflow:hidden;
-      transition: border-color .2s var(--ease), background .2s var(--ease), transform .2s var(--ease);
-    }
-    details.faq-item:hover{
-      border-color: rgba(255,255,255,.16);
-      background: rgba(255,255,255,.055);
-      transform: translateY(-1px);
-    }
-    details.faq-item summary{
-      list-style:none;
-      cursor:pointer;
-      padding: 16px 16px;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      font-weight: 900;
-    }
-    details.faq-item summary::-webkit-details-marker{ display:none; }
-    .faq-a{
-      padding: 0 16px 16px;
-      color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.6;
-    }
-    .chev{
-      width:40px; height:40px;
+    .stat{
+      padding:10px 12px;
       border-radius: 16px;
-      display:grid; place-items:center;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      transition: transform .25s var(--ease);
-      flex: 0 0 auto;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(10px);
+      display:flex; align-items:center; gap:10px;
+      font-weight:800;
     }
-    details[open] .chev{ transform: rotate(180deg); }
+    .stat i{color: rgba(255,255,255,.85)}
+    .stat small{display:block; color: var(--soft); font-weight:700}
 
-    .contact{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 14px;
-      align-items:stretch;
+    /* Cards / blocks */
+    .title-row{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:18px;
     }
-    .panel-card{
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.045);
+    .title-row h2{
+      margin:0;
+      font-size: clamp(22px, 3.2vw, 34px);
+      letter-spacing:-.4px;
+    }
+    .title-row p{margin:0; color:var(--muted); max-width:60ch}
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
       box-shadow: var(--shadow2);
-      padding: 16px;
       overflow:hidden;
-      position:relative;
     }
-    .panel-card h3{
-      margin:0 0 8px;
-      font-size: 18px;
-      letter-spacing:-.3px;
+    .card.pad{padding:18px}
+    .mini-grid{
+      display:grid; gap:12px;
+      grid-template-columns: repeat(2, minmax(0,1fr));
     }
-    .panel-card p{
-      margin:0 0 12px;
-      color: var(--muted);
-      font-size: 13.8px;
-      line-height: 1.6;
+    .mini{
+      padding:12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      display:flex; gap:10px; align-items:flex-start;
     }
-    .kvs{
-      display:grid;
-      gap:10px;
-      margin-top: 10px;
+    .mini i{margin-top:2px; color: rgba(255,255,255,.85)}
+    .mini b{display:block}
+    .mini span{display:block; color: var(--muted); font-weight:650; font-size: 13px; margin-top:2px}
+
+    /* Services */
+    .services{
+      grid-template-columns: repeat(2, minmax(0,1fr));
     }
-    .kv{
-      display:flex; align-items:flex-start; gap:12px;
-      padding: 12px;
+    .service{
+      padding:16px;
       border-radius: 18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      display:flex; gap:12px;
+      transition:.18s ease;
+      position:relative;
+      overflow:hidden;
     }
-    .kv .ico{
+    .service::before{
+      content:"";
+      position:absolute; inset:-80px;
+      background: radial-gradient(circle at 30% 30%, rgba(96,165,250,.18), transparent 60%);
+      opacity:0;
+      transition:.18s ease;
+    }
+    .service:hover{transform: translateY(-2px); background: rgba(255,255,255,.08)}
+    .service:hover::before{opacity:1}
+    .svc-ico{
       width:44px; height:44px;
       border-radius: 16px;
       display:grid; place-items:center;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
       flex: 0 0 auto;
+      position:relative; z-index:1;
     }
-    .kv .ico i{ font-size:18px; opacity:.95; }
-    .kv strong{ display:block; font-size: 13.5px; }
-    .kv span{ display:block; margin-top:4px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .svc-ico i{font-size:18px}
+    .service h3{margin:0; font-size: 15px; position:relative; z-index:1}
+    .service p{margin:6px 0 0; color: var(--muted); font-size: 13.5px; line-height:1.4; position:relative; z-index:1}
 
-    form.lead{
+    /* Pricing */
+    .pricing{
+      grid-template-columns: 1fr;
+    }
+    .price{
+      padding:18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      position:relative;
+      overflow:hidden;
+    }
+    .price::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(420px 240px at 20% 10%, rgba(34,197,94,.16), transparent 65%),
+        radial-gradient(420px 240px at 80% 10%, rgba(96,165,250,.16), transparent 65%);
+      opacity:.7;
+      pointer-events:none;
+    }
+    .price > *{position:relative; z-index:1}
+    .price h3{margin:0; font-size: 18px}
+    .price .tag{margin-top:8px; color: var(--muted); font-weight:700}
+    .price .sum{
+      margin-top:12px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing:-.6px;
+    }
+    .price ul{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid; gap:8px;
+      color: var(--muted);
+      font-weight:650;
+    }
+    .price li{
+      display:flex; gap:10px; align-items:flex-start;
+    }
+    .price li i{margin-top:2px; color: rgba(34,197,94,.85)}
+    .price .line{
+      height:1px; background: rgba(255,255,255,.12);
+      margin:14px 0;
+    }
+
+    /* Coverage */
+    .coverage{
+      grid-template-columns: 1fr;
+      align-items: stretch;
+    }
+    .list{
       display:grid; gap:10px;
-      margin-top: 10px;
+      margin-top:12px;
     }
-    .field{
-      display:flex; align-items:center; gap:10px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding: 12px 12px;
-      transition: border-color .2s var(--ease), background .2s var(--ease);
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-weight:650;
     }
-    .field:focus-within{ border-color: rgba(34,211,238,.35); background: rgba(255,255,255,.055); }
-    .field i{ opacity:.9; }
-    input, textarea{
-      width:100%;
-      border:none;
-      outline:none;
-      background: transparent;
-      color: var(--text);
-      font: inherit;
-      font-weight: 700;
-    }
-    input::placeholder, textarea::placeholder{ color: rgba(234,240,255,.45); font-weight: 700; }
-    textarea{ resize:none; min-height: 96px; font-weight: 650; }
+    .li i{margin-top:2px; color: rgba(251,191,36,.90)}
 
-    footer{
-      padding: 18px 0 36px;
-      color: var(--muted2);
-      font-size: 12.5px;
+    /* Gallery (Kodeset expanding cards style, adapted to your images) */
+    .gallery-wrap{
+      padding: 0;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
     }
-    .foot{
-      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      border-top: 1px solid rgba(255,255,255,.10);
-      padding-top: 14px;
+    .gallery-stage{
+      padding: 18px;
+      background: rgba(255,255,255,.02);
     }
-    .foot .links{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-    }
-    .foot .links a{
-      padding:8px 10px;
-      border-radius: 12px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      color: rgba(234,240,255,.72);
-      font-weight: 800;
-      transition: transform .2s var(--ease), background .2s var(--ease);
-    }
-    .foot .links a:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); }
-
-    /* Floating actions */
-    .floatbar{
-      position:fixed;
-      right: 14px;
-      bottom: 14px;
+    .gallery-cards{
+      width: 100%;
+      height: 420px;
       display:flex;
-      flex-direction:column;
-      gap:10px;
-      z-index: 120;
+      justify-content:center;
+      align-items: stretch;
+      gap: 14px;
+      transition: all 400ms;
     }
-    .fab{
-      width:52px; height:52px;
+    .gcard{
+      flex: 1;
+      height: 100%;
+      transition: all 400ms;
+      cursor: pointer;
       border-radius: 18px;
-      display:grid; place-items:center;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(11,18,32,.70);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 18px 60px rgba(0,0,0,.35);
-      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), opacity .2s var(--ease);
-      opacity: .98;
+      overflow:hidden;
+      position:relative;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
     }
-    .fab:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.18); background: rgba(11,18,32,.82); }
-    .fab i{ font-size: 18px; }
-    .fab.w{ background: rgba(16,185,129,.22); }
-    .fab.w i{ color: #34D399; }
-    .fab.c{ background: rgba(59,130,246,.22); }
-    .fab.c i{ color: #60A5FA; }
-    .fab.totop{ display:none; }
-    .fab.totop.show{ display:grid; }
+    .gcard img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform .4s ease, filter .4s ease;
+    }
+    .gcard::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.55));
+      pointer-events:none;
+      opacity:.85;
+      transition: opacity .4s ease;
+    }
+    .gcard:nth-child(odd){ transform: translateY(-18px); }
+    .gcard:nth-child(even){ transform: translateY(18px); }
+    .gallery-wrap:hover .gcard:not(:hover){
+      filter: grayscale(100%);
+      opacity: .86;
+    }
+    .gcard:hover{ flex: 3; transform: translateY(0); }
+    .gcard:hover img{ transform: scale(1.06); filter: saturate(1.12); }
+    .gcard:hover::after{ opacity:.72; }
 
-    /* Reveal animation (lightweight) */
-    [data-reveal]{
-      opacity: 0;
-      transform: translateY(14px) scale(.99);
-      transition: opacity .55s var(--ease), transform .55s var(--ease);
-      will-change: opacity, transform;
+    /* Contact form (glow input inspired by Kodeset input component, class-based) */
+    .form{
+      display:grid; gap:14px;
     }
-    [data-reveal].in{
-      opacity: 1;
-      transform: translateY(0) scale(1);
+    .field{display:grid; gap:8px}
+    .label{
+      font-weight:800;
+      color: rgba(255,255,255,.86);
+      display:flex; align-items:center; gap:10px;
     }
-    [data-reveal][data-delay="1"]{ transition-delay: .05s; }
-    [data-reveal][data-delay="2"]{ transition-delay: .10s; }
-    [data-reveal][data-delay="3"]{ transition-delay: .15s; }
-    [data-reveal][data-delay="4"]{ transition-delay: .20s; }
+    .label i{color: rgba(255,255,255,.70)}
+    .ks-wrap{
+      position:relative;
+      width:100%;
+      max-width: 100%;
+    }
+    .ks-grid{
+      position:absolute; inset:-200px; z-index:-2;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 1.2rem 1.2rem;
+      background-position: center center;
+      filter: blur(1px);
+      opacity:.35;
+      pointer-events:none;
+    }
+    .ks-glow, .ks-darkBorderBg, .ks-white, .ks-border{
+      position:absolute;
+      inset:0;
+      border-radius: 16px;
+      overflow:hidden;
+      z-index:-1;
+      filter: blur(2px);
+    }
+    .ks-white{filter: blur(1.5px)}
+    .ks-border{filter: blur(.6px)}
+    .ks-white::before,
+    .ks-border::before{
+      content:"";
+      position:absolute;
+      top:50%; left:50%;
+      width: 680px; height: 680px;
+      transform: translate(-50%,-50%) rotate(82deg);
+      background-repeat:no-repeat;
+      background-position: 0 0;
+      filter: brightness(1.25);
+      transition: all 2s;
+      background-image: conic-gradient(
+        rgba(0,0,0,0) 0%,
+        rgba(96,165,250,.55),
+        rgba(0,0,0,0) 10%,
+        rgba(0,0,0,0) 50%,
+        rgba(34,197,94,.55),
+        rgba(0,0,0,0) 60%
+      );
+      animation: ks-rotate 4s linear infinite;
+    }
+    @keyframes ks-rotate{
+      100%{ transform: translate(-50%,-50%) rotate(450deg); }
+    }
+
+    .ks-input{
+      width:100%;
+      padding: 16px 46px 16px 44px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      color: rgba(255,255,255,.92);
+      outline:none;
+      font-weight:750;
+      letter-spacing:.1px;
+    }
+    .ks-input::placeholder{color: rgba(255,255,255,.45)}
+    .ks-icon-left{
+      position:absolute; left:14px; top:50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,.65);
+      z-index:2;
+    }
+    .ks-icon-right{
+      position:absolute; right:10px; top:50%;
+      transform: translateY(-50%);
+      width: 38px; height: 38px;
+      display:grid; place-items:center;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(22,19,41,.8), rgba(0,0,0,.7), rgba(29,27,75,.75));
+      border: 1px solid rgba(255,255,255,.12);
+      z-index:2;
+      color: rgba(255,255,255,.80);
+    }
+    textarea.ks-input{min-height: 110px; resize: vertical; padding-top: 14px}
+
+    .contact-grid{
+      display:grid; gap:18px;
+      grid-template-columns: 1fr;
+      align-items:start;
+    }
+
+    /* FAQ */
+    details{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 14px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      list-style:none;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{
+      margin:10px 0 0;
+      color: var(--muted);
+      line-height:1.55;
+      font-weight:650;
+    }
+
+    /* Footer */
+    footer{
+      padding: 40px 0 50px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.18);
+    }
+    .footer-grid{
+      display:grid; gap:14px;
+      grid-template-columns: 1fr;
+      align-items:center;
+    }
+    .fine{color: var(--soft); font-weight:650; font-size: 13px; line-height:1.5}
+    .footer-actions{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-start}
+
+    /* Reveal animations (lightweight) */
+    .reveal{
+      opacity:0;
+      transform: translateY(12px);
+      transition: .55s ease;
+    }
+    .reveal.is-visible{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* Floating buttons */
+    .fab{
+      position:fixed;
+      right: 16px;
+      bottom: 16px;
+      display:grid;
+      gap:10px;
+      z-index:70;
+    }
+    .fab .top{
+      width:46px; height:46px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(15,20,35,.70);
+      backdrop-filter: blur(10px);
+      color: rgba(255,255,255,.92);
+      cursor:pointer;
+      box-shadow: var(--shadow2);
+      opacity:0;
+      pointer-events:none;
+      transform: translateY(8px);
+      transition: .18s ease;
+    }
+    .fab .top.show{
+      opacity:1;
+      pointer-events:auto;
+      transform: translateY(0);
+    }
+    .fab .top:hover{background: rgba(255,255,255,.10)}
 
     /* Responsive */
-    @media (min-width: 980px){
-      nav.desktop-nav{ display:flex; }
-    }
-    @media (max-width: 980px){
-      .hero-wrap{ grid-template-columns: 1fr; }
-      .hero-card, .hero-media{ min-height: auto; }
-      .hero-media{ min-height: 360px; }
-      .hero-mini{ grid-template-columns: repeat(3, minmax(0,1fr)); }
-    }
-    @media (max-width: 860px){
-      .card{ grid-column: span 6; }
-      .feature{ grid-column: span 12; }
-      .step{ grid-column: span 6; }
-      .shot{ grid-column: span 6; }
-      details.faq-item{ grid-column: span 12; }
-      .contact{ grid-template-columns: 1fr; }
+    @media (min-width: 860px){
+      .desktop-only{display:flex}
+      .mobile-only{display:none}
+      .hero-wrap{grid-template-columns: 1.1fr .9fr}
+      .hero-inner{padding: 26px}
+      .services{grid-template-columns: repeat(3, minmax(0,1fr))}
+      .pricing{grid-template-columns: repeat(3, minmax(0,1fr))}
+      .coverage{grid-template-columns: 1.2fr .8fr}
+      .contact-grid{grid-template-columns: 1fr 1fr}
+      .footer-grid{grid-template-columns: 1.2fr .8fr}
+      .footer-actions{justify-content:flex-end}
     }
     @media (max-width: 520px){
-      .container{ width: calc(100% - 28px); }
-      .brand-title strong{ font-size: 13.5px; }
-      .brand-title small{ font-size: 11.5px; }
-      .hero-inner{ padding: 18px; }
-      .hero-mini{ grid-template-columns: 1fr; }
-      .card{ grid-column: span 12; }
-      .step{ grid-column: span 12; }
-      .shot{ grid-column: span 12; min-height: 200px; }
-      .topbar-inner{ height: 66px; }
-      .iconbtn{ width:42px; height:42px; border-radius: 14px; }
-      .hamburger{ width:46px; height:46px; }
+      .header-inner{height:64px}
+      .icon-pill{width:38px; height:38px; border-radius: 14px}
+      .hamburger{width:42px; height:42px}
+      .gallery-cards{height: 360px; gap: 10px}
     }
-
+    @media (max-width: 720px){
+      /* Make gallery usable on touch: reduce hover reliance */
+      .gallery-wrap:hover .gcard:not(:hover){filter:none; opacity:1}
+      .gcard{cursor: default}
+      .gcard:nth-child(odd),
+      .gcard:nth-child(even){ transform: none; }
+      .gallery-cards{overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom: 10px}
+      .gcard{min-width: 220px; flex: 0 0 75%; scroll-snap-align:center}
+      .gcard:hover{flex: 0 0 75%}
+    }
     @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-      .logo:before, .hero-media .glow{ animation:none; }
-      *{ transition:none !important; }
-      [data-reveal]{ opacity:1; transform:none; }
+      html{scroll-behavior:auto}
+      .blob, .morph-btn .orbit-dots span, .ks-white::before, .ks-border::before{animation:none !important}
+      .reveal, .service, .morph-btn, .gcard, .fab .top{transition:none !important}
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar">
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob" style="left:-140px; top:-140px;"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <header class="header">
     <div class="container">
-      <div class="topbar-inner">
+      <div class="header-inner">
         <a class="brand" href="#top" aria-label="На главную">
-          <div class="logo" aria-hidden="true"><span>TEZ</span></div>
-          <div class="brand-title">
-            <strong>TezEvakuator</strong>
-            <small>Астана • 24/7 • Выезд по городу и области</small>
+          <div class="brand-badge"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <div>
+            <div style="font-size:15px; line-height:1;">TezEvakuator</div>
+            <small>Астана • 24/7</small>
           </div>
         </a>
 
-        <nav class="desktop-nav" aria-label="Навигация">
+        <nav class="nav desktop-only" aria-label="Навигация">
           <a href="#services">Услуги</a>
-          <a href="#advantages">Преимущества</a>
-          <a href="#how">Как работаем</a>
-          <a href="#area">География</a>
+          <a href="#pricing">Цены</a>
+          <a href="#coverage">География</a>
           <a href="#gallery">Фото</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Контакты</a>
         </nav>
 
+        <!-- IMPORTANT: icons left of hamburger (as requested) -->
         <div class="header-actions">
-          <!-- Иконки слева от гамбургера (особенно видно на мобильном) -->
-          <a class="iconbtn whats" id="waTop" aria-label="WhatsApp" href="https://wa.me/77758392666" target="_blank" rel="noopener">
+          <a class="icon-pill whatsapp" id="waTop" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
-          <a class="iconbtn call" aria-label="Позвонить" href="tel:+77758392666">
+          <a class="icon-pill phone" id="telTop" href="#" aria-label="Позвонить">
             <i class="fa-solid fa-phone"></i>
           </a>
-          <a class="iconbtn ig" aria-label="Instagram" href="https://instagram.com" target="_blank" rel="noopener">
+          <a class="icon-pill insta" id="igTop" href="#" target="_blank" rel="noopener" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
-
-          <button class="hamburger" id="hamburger" aria-label="Меню" aria-controls="drawer" aria-expanded="false">
-            <div class="bars" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
+          <button class="hamburger mobile-only" id="openDrawer" aria-label="Открыть меню">
+            <i class="fa-solid fa-bars-staggered"></i>
           </button>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <!-- Mobile Drawer -->
-  <div class="drawer-backdrop" id="backdrop" aria-hidden="true"></div>
+  <!-- Mobile drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
   <aside class="drawer" id="drawer" aria-label="Мобильное меню">
     <div class="drawer-top">
-      <div class="row" style="gap:12px;">
-        <div class="logo" aria-hidden="true" style="width:40px;height:40px;border-radius:14px;"><span style="font-size:15px;">TEZ</span></div>
-        <div style="line-height:1.1;">
-          <div style="font-weight:900; letter-spacing:.2px;">TezEvakuator</div>
-          <div style="color:rgba(234,240,255,.62); font-size:12px; font-weight:800;">Эвакуатор Астана 24/7</div>
+      <div class="brand" style="gap:10px">
+        <div class="brand-badge"><i class="fa-solid fa-truck-ramp-box"></i></div>
+        <div>
+          <div style="font-size:15px; line-height:1;">TezEvakuator</div>
+          <small>Астана • 24/7</small>
         </div>
       </div>
-      <button class="iconbtn" id="closeDrawer" aria-label="Закрыть меню">
+      <button class="hamburger" id="closeDrawer" aria-label="Закрыть меню">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 
-    <nav aria-label="Разделы">
-      <a href="#services" data-close>
-        <span>Услуги</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
-      </a>
-      <a href="#advantages" data-close>
-        <span>Преимущества</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
-      </a>
-      <a href="#how" data-close>
-        <span>Как работаем</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
-      </a>
-      <a href="#area" data-close>
-        <span>География</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
-      </a>
-      <a href="#gallery" data-close>
-        <span>Фото</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
-      </a>
-      <a href="#faq" data-close>
-        <span>FAQ</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
-      </a>
-      <a href="#contact" data-close>
-        <span>Контакты</span><i class="fa-solid fa-arrow-right" style="opacity:.8;"></i>
-      </a>
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <a class="btn primary" id="waDrawer" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a class="btn" id="telDrawer" href="#"><i class="fa-solid fa-phone"></i> Позвонить</a>
+      <a class="btn" id="igDrawer" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Разделы сайта">
+      <a href="#services"><i class="fa-solid fa-screwdriver-wrench"></i> Услуги</a>
+      <a href="#pricing"><i class="fa-solid fa-tags"></i> Цены</a>
+      <a href="#coverage"><i class="fa-solid fa-location-dot"></i> География</a>
+      <a href="#gallery"><i class="fa-solid fa-images"></i> Фото</a>
+      <a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+      <a href="#contact"><i class="fa-solid fa-envelope"></i> Контакты</a>
     </nav>
 
     <div class="drawer-cta">
-      <a class="btn btn-primary" href="tel:+77758392666" style="width:100%;">
-        <i class="fa-solid fa-phone"></i> Позвонить
-      </a>
-      <a class="btn btn-wapp" href="https://wa.me/77758392666" target="_blank" rel="noopener" style="width:100%;">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-      <a class="btn btn-ghost" href="https://instagram.com" target="_blank" rel="noopener" style="width:100%;">
-        <i class="fa-brands fa-instagram"></i> Instagram
-      </a>
+      <button class="btn primary" id="quickOrder"><i class="fa-solid fa-bolt"></i> Быстрый заказ</button>
+      <div class="fine">
+        Телефон: <b id="phoneText"></b><br>
+        Работаем без выходных • аккуратная погрузка • оплата по договорённости
+      </div>
     </div>
   </aside>
 
   <main id="top">
-    <header class="hero">
+    <section class="hero">
       <div class="container">
         <div class="hero-wrap">
-          <div class="hero-card" data-reveal>
+          <div class="hero-card reveal">
             <div class="hero-inner">
-              <div class="hero-badges">
-                <span class="pill"><i class="fa-solid fa-location-dot" style="opacity:.92;"></i> г. Астана</span>
-                <span class="pill"><i class="fa-solid fa-clock" style="opacity:.92;"></i> 24/7</span>
-                <span class="pill"><i class="fa-solid fa-truck-fast" style="opacity:.92;"></i> Эвакуация • Техпомощь</span>
-                <span class="pill"><i class="fa-solid fa-shield-halved" style="opacity:.92;"></i> Аккуратно и безопасно</span>
+              <div class="hero-topline">
+                <span class="chip"><i class="fa-solid fa-bolt"></i> Быстрый выезд</span>
+                <span class="chip"><i class="fa-solid fa-shield-heart"></i> Аккуратно и безопасно</span>
+                <span class="chip"><i class="fa-solid fa-clock"></i> 24/7</span>
+                <span class="chip"><i class="fa-solid fa-location-dot"></i> г. Астана</span>
               </div>
 
-              <h1>Эвакуатор в Астане<br>быстро • аккуратно • 24/7</h1>
+              <h1>Эвакуатор в Астане 24/7 — <span style="color:rgba(34,197,94,.92)">выехали сразу</span>, довезли бережно</h1>
               <p>
-                Выезд по городу и области. Эвакуация легковых, кроссоверов, внедорожников, мотоциклов.
-                Помощь при ДТП, поломках, блокировке колёс, низкой посадке и сложных заездах.
+                Перевозка авто/мото/джип/микроавтобус. Помощь при ДТП, вытягивание, буксировка, запуск аккумулятора.
+                Звони или пиши в WhatsApp — ответим моментально.
               </p>
 
               <div class="hero-cta">
-                <a class="btn btn-primary" href="tel:+77758392666">
-                  <i class="fa-solid fa-phone"></i> +7 775 839 2666
-                </a>
-                <a class="btn btn-wapp" href="https://wa.me/77758392666" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp
-                </a>
-                <a class="btn btn-ghost" href="#contact">
-                  <i class="fa-solid fa-pen-to-square"></i> Оставить заявку
-                </a>
-                <a class="btn btn-danger" href="#services">
-                  <i class="fa-solid fa-bolt"></i> Услуги
-                </a>
+                <button class="morph-btn" id="morphCta" data-morph-text="WhatsApp">
+                  <span class="btn-fill"></span>
+                  <span class="shadow"></span>
+                  <span class="btn-text" aria-hidden="true"></span>
+                  <span class="orbit-dots" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                  <span class="corners" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                </button>
+
+                <a class="ghost-btn" id="callCta" href="#"><i class="fa-solid fa-phone"></i> Позвонить</a>
+                <a class="ghost-btn" href="#pricing"><i class="fa-solid fa-tags" style="color:rgba(251,191,36,.95)"></i> Посмотреть цены</a>
               </div>
 
-              <div class="hero-mini" data-reveal data-delay="2">
+              <div class="mini-grid">
                 <div class="mini">
-                  <div class="top">
-                    <strong>Выезд 24/7</strong>
-                    <i class="fa-solid fa-moon"></i>
-                  </div>
-                  <small>Работаем ночью, в выходные и праздники.</small>
+                  <i class="fa-solid fa-truck-fast"></i>
+                  <div><b>Оперативно</b><span>Средний выезд по городу — по ситуации, без обещаний “за 5 минут”, но выезжаем сразу.</span></div>
                 </div>
                 <div class="mini">
-                  <div class="top">
-                    <strong>Сложные случаи</strong>
-                    <i class="fa-solid fa-wrench"></i>
-                  </div>
-                  <small>ДТП, низкая посадка, заблокированные колёса.</small>
-                </div>
-                <div class="mini">
-                  <div class="top">
-                    <strong>Аккуратно</strong>
-                    <i class="fa-solid fa-shield-heart"></i>
-                  </div>
-                  <small>Берём машину бережно, без лишних рисков.</small>
+                  <i class="fa-solid fa-handshake-angle"></i>
+                  <div><b>Честно</b><span>Озвучиваем стоимость до выезда. Без “сюрпризов” на месте.</span></div>
                 </div>
               </div>
+
             </div>
           </div>
 
-          <div class="hero-media" data-reveal data-delay="1">
-            <div class="bg" aria-hidden="true"></div>
-            <div class="glow" aria-hidden="true"></div>
-
-            <div class="panel">
-              <div class="line">
-                <div class="left">
-                  <span class="chip"><i class="fa-solid fa-headset"></i> Быстрый контакт</span>
-                  <span class="chip"><i class="fa-solid fa-route"></i> Город + область</span>
-                </div>
-                <span class="chip"><i class="fa-solid fa-star"></i> 24/7</span>
-              </div>
-
-              <div class="line">
-                <div class="left">
-                  <span class="chip"><i class="fa-solid fa-car"></i> Легковые</span>
-                  <span class="chip"><i class="fa-solid fa-truck-pickup"></i> Кроссоверы</span>
-                  <span class="chip"><i class="fa-solid fa-motorcycle"></i> Мото</span>
-                </div>
-              </div>
-
-              <div class="line">
-                <div class="left">
-                  <i class="fa-solid fa-phone" style="color:#60A5FA;"></i>
-                  <a class="phone" href="tel:+77758392666">+7 775 839 2666</a>
-                </div>
-                <div class="row" style="gap:8px;">
-                  <a class="btn btn-ghost" href="tel:+77758392666" style="padding:10px 12px;border-radius:14px;">
-                    <i class="fa-solid fa-phone"></i>
-                  </a>
-                  <a class="btn btn-wapp" href="https://wa.me/77758392666" target="_blank" rel="noopener" style="padding:10px 12px;border-radius:14px;">
-                    <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
+          <div class="hero-media reveal" style="position:relative">
+            <img src="images/img1.jpg" alt="Эвакуатор в Астане" loading="eager">
+            <div class="hero-badges">
+              <div class="stat"><i class="fa-solid fa-phone-volume"></i> <div><div>+7 775 839 2666</div><small>Звонок / WhatsApp</small></div></div>
+              <div class="stat"><i class="fa-solid fa-car-burst"></i> <div><div>Помощь при ДТП</div><small>Погрузка • эвакуация</small></div></div>
+              <div class="stat"><i class="fa-solid fa-wrench"></i> <div><div>Лёгкая помощь</div><small>АКБ • колесо • буксир</small></div></div>
             </div>
-
           </div>
+
         </div>
       </div>
-    </header>
+    </section>
 
-    <section id="services">
+    <section class="section tight" id="services">
       <div class="container">
-        <div class="section-head" data-reveal>
+        <div class="title-row reveal">
           <div>
             <h2>Услуги эвакуатора</h2>
-            <p>Под разные ситуации — от стандартной эвакуации до сложных погрузок. Много удобных вариантов связи и быстрые действия.</p>
+            <p>Максимум нужного: от стандартной перевозки до помощи на месте. Все карточки кликабельные — ведут на быстрый заказ.</p>
           </div>
         </div>
 
-        <div class="cards">
-          <article class="card" data-reveal data-delay="1">
-            <div class="title"><strong>Эвакуация легковых</strong><i class="fa-solid fa-car"></i></div>
-            <p>Городские авто, седаны, хэтчбеки. Аккуратная погрузка и фиксация.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Безопасные крепления</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Быстрая подача</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Бережная перевозка</div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-delay="2">
-            <div class="title"><strong>Кроссоверы и внедорожники</strong><i class="fa-solid fa-truck-pickup"></i></div>
-            <p>Тяжелее и выше — используем правильную технику погрузки.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Надёжная фиксация</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Удобный заезд</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Контроль на маршруте</div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-delay="3">
-            <div class="title"><strong>Мотоциклы</strong><i class="fa-solid fa-motorcycle"></i></div>
-            <p>Перевозка мото и скутеров с фиксацией по точкам крепления.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Стропы и ремни</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Защита пластика</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Аккуратная разгрузка</div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-delay="1">
-            <div class="title"><strong>После ДТП</strong><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <p>Аккуратная эвакуация повреждённого авто, включая проблемные колёса.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Сложные случаи</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Осторожная погрузка</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Доставка до сервиса</div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-delay="2">
-            <div class="title"><strong>Заблокированные колёса</strong><i class="fa-solid fa-lock"></i></div>
-            <p>Когда авто не катится — подбираем корректный способ перемещения.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Без лишних рисков</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Контроль углов заезда</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Плавная погрузка</div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-delay="3">
-            <div class="title"><strong>Низкая посадка</strong><i class="fa-solid fa-road"></i></div>
-            <p>Авто с низким клиренсом — заезд с вниманием к бамперу и порогам.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Аккуратный угол</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Бережная фиксация</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Без повреждений</div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-delay="1">
-            <div class="title"><strong>Межгород / область</strong><i class="fa-solid fa-route"></i></div>
-            <p>Перевозка за пределы города по договорённости — надёжно и безопасно.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Маршрут заранее</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Контроль по пути</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Доставка до точки</div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-delay="2">
-            <div class="title"><strong>Техпомощь на дороге</strong><i class="fa-solid fa-screwdriver-wrench"></i></div>
-            <p>Помощь в ситуациях, когда нужно быстро решить проблему на месте.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Быстрый выезд</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Поддержка в пути</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Удобная связь 24/7</div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal data-delay="3">
-            <div class="title"><strong>Погрузка со сложного места</strong><i class="fa-solid fa-mountain-city"></i></div>
-            <p>Дворы, узкие въезды, парковки, подземки — работаем аккуратно.</p>
-            <div class="list">
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Манёвренность</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Спокойно и точно</div>
-              <div class="li"><i class="fa-solid fa-circle-check"></i> Минимум времени</div>
-            </div>
-          </article>
+        <div class="grid services">
+          <!-- lots of relevant icons -->
+          <a class="service reveal" href="#contact" data-service="Эвакуация легкового авто">
+            <div class="svc-ico"><i class="fa-solid fa-car"></i></div>
+            <div><h3>Эвакуация легковых</h3><p>Город/трасса • аккуратная фиксация • безопасная доставка.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Эвакуация внедорожника / кроссовера">
+            <div class="svc-ico"><i class="fa-solid fa-truck-pickup"></i></div>
+            <div><h3>Джип / кроссовер</h3><p>Низкая посадка? Полный привод? Заберём и довезём.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Эвакуация мотоцикла">
+            <div class="svc-ico"><i class="fa-solid fa-motorcycle"></i></div>
+            <div><h3>Мотоэвакуация</h3><p>Крепёж ремнями • без царапин • бережно.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Эвакуация микроавтобуса">
+            <div class="svc-ico"><i class="fa-solid fa-van-shuttle"></i></div>
+            <div><h3>Микроавтобусы</h3><p>Газель/минивэн • согласуем формат погрузки заранее.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Помощь при ДТП">
+            <div class="svc-ico"><i class="fa-solid fa-car-burst"></i></div>
+            <div><h3>После ДТП</h3><p>Погрузим даже при повреждениях • безопасная транспортировка.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Вытягивание / лебёдка">
+            <div class="svc-ico"><i class="fa-solid fa-helmet-safety"></i></div>
+            <div><h3>Вытягивание</h3><p>Кювет/снег/грязь • лебёдка • помощь на месте.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Буксировка">
+            <div class="svc-ico"><i class="fa-solid fa-link"></i></div>
+            <div><h3>Буксировка</h3><p>Короткие дистанции • быстро, если это безопасно.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Прикурить аккумулятор">
+            <div class="svc-ico"><i class="fa-solid fa-battery-half"></i></div>
+            <div><h3>Прикурить АКБ</h3><p>Запуск аккумулятора • помощь при разряде.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Помощь с колесом">
+            <div class="svc-ico"><i class="fa-solid fa-circle-dot"></i></div>
+            <div><h3>Колесо / запаска</h3><p>Прокол • запаска • довезём до шиномонтажа.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Перевозка авто на сервис">
+            <div class="svc-ico"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <div><h3>На СТО</h3><p>Доставим на сервис или стоянку по адресу.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Забрать авто из двора/паркинга">
+            <div class="svc-ico"><i class="fa-solid fa-square-parking"></i></div>
+            <div><h3>Двор / паркинг</h3><p>Сложный выезд? Согласуем вариант погрузки.</p></div>
+          </a>
+          <a class="service reveal" href="#contact" data-service="Эвакуатор межгород">
+            <div class="svc-ico"><i class="fa-solid fa-route"></i></div>
+            <div><h3>Межгород</h3><p>Астана и область • трасса • договоримся по времени.</p></div>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="advantages">
+    <section class="section" id="pricing">
       <div class="container">
-        <div class="section-head" data-reveal>
+        <div class="title-row reveal">
           <div>
-            <h2>Преимущества</h2>
-            <p>Логика сервиса — быстро связались, аккуратно забрали, довезли без лишних вопросов.</p>
+            <h2>Цены (ориентир)</h2>
+            <p>Финальная стоимость зависит от точки, сложности погрузки и расстояния. Пишешь адрес — отвечаем сразу.</p>
           </div>
         </div>
 
-        <div class="feature-grid">
-          <div class="feature" data-reveal data-delay="1">
-            <div class="head">
-              <strong>Максимально быстрая связь</strong>
-              <div class="bubble"><i class="fa-solid fa-bolt"></i></div>
-            </div>
-            <p>Звонок и WhatsApp доступны в один клик. Мгновенная заявка через форму — отправка в WhatsApp без лишних страниц.</p>
+        <div class="grid pricing">
+          <div class="price reveal">
+            <h3>По городу</h3>
+            <div class="tag"><i class="fa-solid fa-city"></i> Астана</div>
+            <div class="sum">от 8 000 ₸</div>
+            <div class="line"></div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Легковое авто</li>
+              <li><i class="fa-solid fa-check"></i> Быстрая подача</li>
+              <li><i class="fa-solid fa-check"></i> Фотофиксация по запросу</li>
+            </ul>
+            <div class="line"></div>
+            <button class="btn primary" data-order="По городу (ориентир)"><i class="fa-brands fa-whatsapp"></i> Узнать точную цену</button>
           </div>
 
-          <div class="feature" data-reveal data-delay="2">
-            <div class="head">
-              <strong>Аккуратная погрузка</strong>
-              <div class="bubble"><i class="fa-solid fa-hand"></i></div>
-            </div>
-            <p>Сохранность кузова, дисков и подвески — внимательная работа на каждом этапе, особенно при низкой посадке и ДТП.</p>
+          <div class="price reveal">
+            <h3>Сложная погрузка</h3>
+            <div class="tag"><i class="fa-solid fa-triangle-exclamation"></i> ДТП / заблокировано</div>
+            <div class="sum">от 12 000 ₸</div>
+            <div class="line"></div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> После ДТП</li>
+              <li><i class="fa-solid fa-check"></i> Лебёдка / вытягивание</li>
+              <li><i class="fa-solid fa-check"></i> Аккуратная фиксация</li>
+            </ul>
+            <div class="line"></div>
+            <button class="btn primary" data-order="Сложная погрузка (ориентир)"><i class="fa-brands fa-whatsapp"></i> Узнать точную цену</button>
           </div>
 
-          <div class="feature" data-reveal data-delay="3">
-            <div class="head">
-              <strong>Под разные типы авто</strong>
-              <div class="bubble"><i class="fa-solid fa-car-side"></i></div>
-            </div>
-            <p>Легковые, кроссоверы, внедорожники, мотоциклы — разные сценарии, один понятный результат: безопасная доставка.</p>
-          </div>
-
-          <div class="feature" data-reveal data-delay="4">
-            <div class="head">
-              <strong>Город + область</strong>
-              <div class="bubble"><i class="fa-solid fa-map"></i></div>
-            </div>
-            <p>Работаем по Астане и по направлениям области. Удобно для выездов, трассы и межгорода.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="how">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <div>
-            <h2>Как работаем</h2>
-            <p>Простой процесс, чтобы вы не тратили нервы и время.</p>
-          </div>
-        </div>
-
-        <div class="steps">
-          <div class="step" data-reveal data-delay="1">
-            <div class="n">1</div>
-            <strong>Связь</strong>
-            <p>Звонок или WhatsApp. Коротко уточняем место и ситуацию.</p>
-          </div>
-          <div class="step" data-reveal data-delay="2">
-            <div class="n">2</div>
-            <strong>Подача</strong>
-            <p>Выезжаем и держим контакт, чтобы вам было спокойно.</p>
-          </div>
-          <div class="step" data-reveal data-delay="3">
-            <div class="n">3</div>
-            <strong>Погрузка</strong>
-            <p>Аккуратно грузим, фиксируем, проверяем надёжность креплений.</p>
-          </div>
-          <div class="step" data-reveal data-delay="4">
-            <div class="n">4</div>
-            <strong>Доставка</strong>
-            <p>Привозим до сервиса/дома/нужной точки, разгружаем безопасно.</p>
+          <div class="price reveal">
+            <h3>Межгород</h3>
+            <div class="tag"><i class="fa-solid fa-route"></i> Трасса / область</div>
+            <div class="sum">договорная</div>
+            <div class="line"></div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Любые направления</li>
+              <li><i class="fa-solid fa-check"></i> По времени — как удобно</li>
+              <li><i class="fa-solid fa-check"></i> Чек-лист крепления</li>
+            </ul>
+            <div class="line"></div>
+            <button class="btn primary" data-order="Межгород (ориентир)"><i class="fa-brands fa-whatsapp"></i> Рассчитать</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="area">
+    <section class="section tight" id="coverage">
       <div class="container">
-        <div class="section-head" data-reveal>
+        <div class="title-row reveal">
           <div>
-            <h2>География</h2>
-            <p>Астана и выезды по направлениям. Если вы за городом — просто сообщите локацию.</p>
+            <h2>Где работаем</h2>
+            <p>По Астане и выезд по области/трассе по договорённости.</p>
           </div>
         </div>
 
-        <div class="cards">
-          <article class="card" data-reveal data-delay="1" style="grid-column: span 6;">
-            <div class="title"><strong>По городу</strong><i class="fa-solid fa-city"></i></div>
-            <p>Правый берег, левый берег, районы и пригород — работаем по всему городу.</p>
+        <div class="grid coverage">
+          <div class="card pad reveal">
+            <b style="font-size:16px">Астана и ближайшие районы</b>
             <div class="list">
-              <div class="li"><i class="fa-solid fa-location-crosshairs"></i> Подача в любой район</div>
-              <div class="li"><i class="fa-solid fa-road-circle-check"></i> Въезды/дворы/парковки</div>
-              <div class="li"><i class="fa-solid fa-clock"></i> 24/7 без выходных</div>
+              <div class="li"><i class="fa-solid fa-location-dot"></i> Левый берег • Правый берег • центр</div>
+              <div class="li"><i class="fa-solid fa-location-dot"></i> Нурлы жол • аэропорт • вокзал</div>
+              <div class="li"><i class="fa-solid fa-location-dot"></i> Ильинка / Косшы / Коянды (по ситуации)</div>
+              <div class="li"><i class="fa-solid fa-location-dot"></i> Трассы и выезды из города — по договорённости</div>
             </div>
-          </article>
+          </div>
 
-          <article class="card" data-reveal data-delay="2" style="grid-column: span 6;">
-            <div class="title"><strong>По области / трассе</strong><i class="fa-solid fa-route"></i></div>
-            <p>Выезды за город и межгород — по договорённости, с безопасной перевозкой.</p>
+          <div class="card pad reveal">
+            <b style="font-size:16px">Как быстро оформить заявку</b>
             <div class="list">
-              <div class="li"><i class="fa-solid fa-map-location-dot"></i> По направлениям</div>
-              <div class="li"><i class="fa-solid fa-shield-halved"></i> Контроль и фиксация</div>
-              <div class="li"><i class="fa-solid fa-phone-volume"></i> Связь на маршруте</div>
+              <div class="li"><i class="fa-solid fa-comment-dots"></i> Отправь в WhatsApp: адрес + что случилось</div>
+              <div class="li"><i class="fa-solid fa-camera"></i> Если ДТП — фото (по возможности)</div>
+              <div class="li"><i class="fa-solid fa-car"></i> Марка/модель/вес (если знаешь)</div>
+              <div class="li"><i class="fa-solid fa-stopwatch"></i> Скажи “срочно” — выезжаем сразу</div>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="gallery">
+    <section class="section" id="gallery">
       <div class="container">
-        <div class="section-head" data-reveal>
+        <div class="title-row reveal">
           <div>
-            <h2>Фото</h2>
-            <p>Подхватите свои снимки техники: <b>images/img1.jpg</b>, <b>images/img2.jpg</b> и т.д.</p>
+            <h2>Фото / автопарк</h2>
+            <p>Красивый “живой” блок с анимацией: карточки расширяются при наведении (на телефоне — удобно листается).</p>
           </div>
         </div>
 
-        <div class="gallery">
-          <figure class="shot" data-reveal data-delay="1">
-            <img src="images/img1.jpg" alt="Эвакуатор в Астане — фото 1" loading="lazy" />
-            <figcaption class="cap"><span><i class="fa-solid fa-truck"></i> Эвакуатор</span><span><i class="fa-solid fa-sparkles"></i></span></figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-delay="2">
-            <img src="images/img2.jpg" alt="Эвакуатор в Астане — фото 2" loading="lazy" />
-            <figcaption class="cap"><span><i class="fa-solid fa-car"></i> Погрузка</span><span><i class="fa-solid fa-shield"></i></span></figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-delay="3">
-            <img src="images/img3.jpg" alt="Эвакуатор в Астане — фото 3" loading="lazy" />
-            <figcaption class="cap"><span><i class="fa-solid fa-route"></i> Доставка</span><span><i class="fa-solid fa-location-dot"></i></span></figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-delay="1">
-            <img src="images/img4.jpg" alt="Эвакуатор в Астане — фото 4" loading="lazy" />
-            <figcaption class="cap"><span><i class="fa-solid fa-wrench"></i> Техпомощь</span><span><i class="fa-solid fa-bolt"></i></span></figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-delay="2">
-            <img src="images/img5.jpg" alt="Эвакуатор в Астане — фото 5" loading="lazy" />
-            <figcaption class="cap"><span><i class="fa-solid fa-triangle-exclamation"></i> ДТП</span><span><i class="fa-solid fa-hand"></i></span></figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-delay="3">
-            <img src="images/img6.jpg" alt="Эвакуатор в Астане — фото 6" loading="lazy" />
-            <figcaption class="cap"><span><i class="fa-solid fa-road"></i> Низкая посадка</span><span><i class="fa-solid fa-circle-check"></i></span></figcaption>
-          </figure>
+        <div class="gallery-wrap reveal">
+          <div class="gallery-stage">
+            <div class="gallery-cards" aria-label="Галерея эвакуатора">
+              <div class="gcard"><img src="images/img1.jpg" alt="Эвакуатор фото 1" loading="lazy"></div>
+              <div class="gcard"><img src="images/img2.jpg" alt="Эвакуатор фото 2" loading="lazy"></div>
+              <div class="gcard"><img src="images/img3.jpg" alt="Эвакуатор фото 3" loading="lazy"></div>
+              <div class="gcard"><img src="images/img4.jpg" alt="Эвакуатор фото 4" loading="lazy"></div>
+              <div class="gcard"><img src="images/img5.jpg" alt="Эвакуатор фото 5" loading="lazy"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="faq">
+    <section class="section tight" id="faq">
       <div class="container">
-        <div class="section-head" data-reveal>
+        <div class="title-row reveal">
           <div>
             <h2>FAQ</h2>
-            <p>Коротко о частых ситуациях и что обычно уточняем при заявке.</p>
+            <p>Коротко и по делу — чтобы клиенту было легко принять решение.</p>
           </div>
         </div>
 
-        <div class="faq">
-          <details class="faq-item" data-reveal data-delay="1">
-            <summary>
-              <span><i class="fa-solid fa-circle-question" style="opacity:.9;margin-right:8px;"></i> Что нужно сказать при звонке?</span>
-              <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
-            </summary>
-            <div class="faq-a">
-              Достаточно: адрес/ориентир, тип авто и что случилось (не заводится, ДТП, колёса заблокированы, низкая посадка).
-            </div>
+        <div class="grid" style="gap:12px">
+          <details class="reveal">
+            <summary>Сколько стоит эвакуатор по Астане? <i class="fa-solid fa-chevron-down"></i></summary>
+            <p>Зависит от адреса, типа авто и сложности погрузки. Напиши точку в WhatsApp — скажем цену до выезда.</p>
           </details>
-
-          <details class="faq-item" data-reveal data-delay="2">
-            <summary>
-              <span><i class="fa-solid fa-circle-question" style="opacity:.9;margin-right:8px;"></i> Можно оформить через WhatsApp?</span>
-              <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
-            </summary>
-            <div class="faq-a">
-              Да. Нажмите кнопку WhatsApp — можно сразу отправить локацию и короткое описание. Это ускоряет подачу.
-            </div>
+          <details class="reveal">
+            <summary>Работаете ночью и в выходные? <i class="fa-solid fa-chevron-down"></i></summary>
+            <p>Да, работаем 24/7. Если срочно — лучше звонок или WhatsApp.</p>
           </details>
-
-          <details class="faq-item" data-reveal data-delay="3">
-            <summary>
-              <span><i class="fa-solid fa-circle-question" style="opacity:.9;margin-right:8px;"></i> Эвакуируете авто после ДТП?</span>
-              <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
-            </summary>
-            <div class="faq-a">
-              Да, включая случаи, когда авто не катится или повреждены колёса. Выбираем максимально аккуратный способ погрузки.
-            </div>
+          <details class="reveal">
+            <summary>Можно вытащить из снега/кювета? <i class="fa-solid fa-chevron-down"></i></summary>
+            <p>В большинстве случаев — да. Скажи, где застряли, и что вокруг (снег/грязь/уклон).</p>
           </details>
-
-          <details class="faq-item" data-reveal data-delay="4">
-            <summary>
-              <span><i class="fa-solid fa-circle-question" style="opacity:.9;margin-right:8px;"></i> Можно выезд за город?</span>
-              <span class="chev"><i class="fa-solid fa-chevron-down"></i></span>
-            </summary>
-            <div class="faq-a">
-              Да. Сообщите направление/локацию — согласуем маршрут и условия доставки.
-            </div>
+          <details class="reveal">
+            <summary>Нужно ли быть рядом с авто? <i class="fa-solid fa-chevron-down"></i></summary>
+            <p>Желательно. Если нет возможности — обсудим вариант (передача ключей/контакт на месте).</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="section" id="contact">
       <div class="container">
-        <div class="section-head" data-reveal>
+        <div class="title-row reveal">
           <div>
-            <h2>Контакты</h2>
-            <p>Самый быстрый способ — звонок или WhatsApp. Форма ниже отправит сообщение прямо в WhatsApp.</p>
+            <h2>Контакты и быстрый заказ</h2>
+            <p>Заполни 3 поля — и откроется WhatsApp с готовым сообщением. Можно просто позвонить.</p>
           </div>
         </div>
 
-        <div class="contact">
-          <div class="panel-card" data-reveal data-delay="1">
-            <h3>Связаться прямо сейчас</h3>
-            <p>Астана • 24/7 • Эвакуация и техпомощь. Нажмите удобный способ связи.</p>
-
-            <div class="row" style="flex-wrap:wrap; gap:10px;">
-              <a class="btn btn-primary" href="tel:+77758392666"><i class="fa-solid fa-phone"></i> Позвонить</a>
-              <a class="btn btn-wapp" href="https://wa.me/77758392666" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-              <a class="btn btn-ghost" href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <div class="contact-grid">
+          <div class="card pad reveal">
+            <b style="font-size:16px">Связаться прямо сейчас</b>
+            <div class="list">
+              <div class="li"><i class="fa-solid fa-phone-volume"></i> Телефон: <b id="phoneInline" style="color:rgba(255,255,255,.92)"></b></div>
+              <div class="li"><i class="fa-brands fa-whatsapp"></i> WhatsApp: ответим быстро</div>
+              <div class="li"><i class="fa-solid fa-location-dot"></i> Город: Астана</div>
+              <div class="li"><i class="fa-solid fa-clock"></i> Режим: 24/7</div>
             </div>
 
-            <div class="kvs">
-              <div class="kv">
-                <div class="ico"><i class="fa-solid fa-phone-volume" style="color:#60A5FA;"></i></div>
-                <div>
-                  <strong>Телефон</strong>
-                  <span><a href="tel:+77758392666" style="font-weight:900; color:var(--text);">+7 775 839 2666</a></span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="ico"><i class="fa-brands fa-whatsapp" style="color:#34D399;"></i></div>
-                <div>
-                  <strong>WhatsApp</strong>
-                  <span><a href="https://wa.me/77758392666" target="_blank" rel="noopener" style="font-weight:900; color:var(--text);">Открыть чат</a></span>
-                </div>
-              </div>
-              <div class="kv">
-                <div class="ico"><i class="fa-solid fa-location-dot" style="color:#FBBF24;"></i></div>
-                <div>
-                  <strong>Город</strong>
-                  <span>Астана • выезды по направлениям области</span>
-                </div>
-              </div>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px">
+              <a class="btn primary" id="waBig" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Написать в WhatsApp</a>
+              <a class="btn" id="telBig" href="#"><i class="fa-solid fa-phone"></i> Позвонить</a>
+              <a class="btn" id="igBig" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
             </div>
           </div>
 
-          <div class="panel-card" data-reveal data-delay="2">
-            <h3>Быстрая заявка</h3>
-            <p>Заполните — откроется WhatsApp с готовым сообщением.</p>
+          <div class="card pad reveal">
+            <b style="font-size:16px">Форма заявки</b>
 
-            <form class="lead" id="leadForm">
+            <form class="form" id="orderForm">
               <div class="field">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" id="name" placeholder="Ваше имя" autocomplete="name" />
-              </div>
-              <div class="field">
-                <i class="fa-solid fa-phone"></i>
-                <input type="tel" id="phone" placeholder="Ваш номер (необязательно)" autocomplete="tel" />
-              </div>
-              <div class="field">
-                <i class="fa-solid fa-location-crosshairs"></i>
-                <input type="text" id="place" placeholder="Где вы находитесь (адрес/ориентир)" autocomplete="off" />
-              </div>
-              <div class="field">
-                <i class="fa-solid fa-car-burst"></i>
-                <textarea id="msg" placeholder="Что случилось? (не заводится, ДТП, колёса, низкая посадка...)"></textarea>
+                <div class="label"><i class="fa-solid fa-user"></i> Имя</div>
+                <div class="ks-wrap">
+                  <div class="ks-grid" aria-hidden="true"></div>
+                  <div class="ks-white" aria-hidden="true"></div>
+                  <div class="ks-border" aria-hidden="true"></div>
+                  <input class="ks-input" name="name" type="text" autocomplete="name" placeholder="Например: Айбек" required>
+                  <i class="fa-solid fa-user ks-icon-left" aria-hidden="true"></i>
+                  <span class="ks-icon-right" aria-hidden="true"><i class="fa-solid fa-pen"></i></span>
+                </div>
               </div>
 
-              <div class="row" style="gap:10px; flex-wrap:wrap;">
-                <button class="btn btn-wapp" type="submit">
-                  <i class="fa-brands fa-whatsapp"></i> Отправить в WhatsApp
-                </button>
-                <a class="btn btn-ghost" href="tel:+77758392666">
-                  <i class="fa-solid fa-phone"></i> Позвонить
-                </a>
+              <div class="field">
+                <div class="label"><i class="fa-solid fa-phone"></i> Телефон</div>
+                <div class="ks-wrap">
+                  <div class="ks-grid" aria-hidden="true"></div>
+                  <div class="ks-white" aria-hidden="true"></div>
+                  <div class="ks-border" aria-hidden="true"></div>
+                  <input class="ks-input" name="phone" type="tel" autocomplete="tel" placeholder="+7 ___ ___ __ __" required>
+                  <i class="fa-solid fa-phone ks-icon-left" aria-hidden="true"></i>
+                  <span class="ks-icon-right" aria-hidden="true"><i class="fa-solid fa-signal"></i></span>
+                </div>
               </div>
 
-              <div class="pill" style="justify-content:center; margin-top:2px;">
-                <i class="fa-solid fa-lock" style="opacity:.92;"></i>
-                Ваши данные не сохраняются — сообщение формируется у вас и отправляется в WhatsApp
+              <div class="field">
+                <div class="label"><i class="fa-solid fa-location-dot"></i> Где вы находитесь?</div>
+                <div class="ks-wrap">
+                  <div class="ks-grid" aria-hidden="true"></div>
+                  <div class="ks-white" aria-hidden="true"></div>
+                  <div class="ks-border" aria-hidden="true"></div>
+                  <input class="ks-input" name="location" type="text" placeholder="Адрес / ориентир" required>
+                  <i class="fa-solid fa-location-dot ks-icon-left" aria-hidden="true"></i>
+                  <span class="ks-icon-right" aria-hidden="true"><i class="fa-solid fa-map"></i></span>
+                </div>
               </div>
+
+              <div class="field">
+                <div class="label"><i class="fa-solid fa-message"></i> Что случилось? (необязательно)</div>
+                <div class="ks-wrap">
+                  <div class="ks-grid" aria-hidden="true"></div>
+                  <div class="ks-white" aria-hidden="true"></div>
+                  <div class="ks-border" aria-hidden="true"></div>
+                  <textarea class="ks-input" name="details" placeholder="Например: не заводится / ДТП / пробило колесо"></textarea>
+                  <i class="fa-solid fa-message ks-icon-left" aria-hidden="true"></i>
+                  <span class="ks-icon-right" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+                </div>
+              </div>
+
+              <button class="btn primary" type="submit"><i class="fa-brands fa-whatsapp"></i> Отправить в WhatsApp</button>
+              <div class="fine">Нажимая “Отправить”, вы откроете WhatsApp с готовым текстом — останется нажать “Отправить”.</div>
             </form>
           </div>
         </div>
-
-        <footer>
-          <div class="foot">
-            <div>© <span id="year"></span> TezEvakuator • Эвакуатор Астана 24/7 • +7 775 839 2666</div>
-            <div class="links">
-              <a href="#services"><i class="fa-solid fa-truck-fast"></i> Услуги</a>
-              <a href="tel:+77758392666"><i class="fa-solid fa-phone"></i> Звонок</a>
-              <a href="https://wa.me/77758392666" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            </div>
-          </div>
-        </footer>
       </div>
     </section>
   </main>
 
-  <!-- Floating buttons -->
-  <div class="floatbar" aria-label="Быстрые действия">
-    <a class="fab w" href="https://wa.me/77758392666" target="_blank" rel="noopener" aria-label="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-    <a class="fab c" href="tel:+77758392666" aria-label="Позвонить">
-      <i class="fa-solid fa-phone"></i>
-    </a>
-    <button class="fab totop" id="toTop" aria-label="Наверх">
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom:10px">
+            <div class="brand-badge"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div>
+              <div style="font-size:15px; line-height:1;">TezEvakuator</div>
+              <small>Эвакуатор Астана 24/7</small>
+            </div>
+          </div>
+          <div class="fine">
+            © <span id="year"></span> • Эвакуатор в Астане • Быстрый выезд • Безопасная перевозка<br>
+            Тел.: <b id="phoneFooter"></b>
+          </div>
+        </div>
+
+        <div class="footer-actions">
+          <a class="btn primary" id="waFooter" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a class="btn" id="telFooter" href="#"><i class="fa-solid fa-phone"></i> Звонок</a>
+          <a class="btn" id="igFooter" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="fab" aria-hidden="false">
+    <button class="top" id="toTop" aria-label="Наверх"><i class="fa-solid fa-arrow-up"></i></button>
   </div>
 
+  <!-- LocalBusiness microdata -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TezEvakuator",
+    "telephone": "+7 775 839 2666",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Астана",
+      "addressCountry": "KZ"
+    },
+    "areaServed": "Астана",
+    "url": ""
+  }
+  </script>
+
   <script>
-    // Core constants
-    const PHONE_E164 = "77758392666";
+    // ====== Config ======
+    const PHONE_RAW = "77758392666";
     const PHONE_DISPLAY = "+7 775 839 2666";
+    const WHATSAPP_URL = "https://wa.me/" + PHONE_RAW;
+    const TEL_URL = "tel:" + PHONE_DISPLAY.replace(/\s+/g,"");
+    const INSTAGRAM_URL = "https://instagram.com/"; // <-- замени на свой аккаунт
 
-    // Drawer
-    const hamburger = document.getElementById("hamburger");
-    const drawer = document.getElementById("drawer");
-    const backdrop = document.getElementById("backdrop");
-    const closeDrawerBtn = document.getElementById("closeDrawer");
+    // ====== Helpers ======
+    const qs = (s, r=document) => r.querySelector(s);
+    const qsa = (s, r=document) => Array.from(r.querySelectorAll(s));
 
+    function setLinks(){
+      const waIds = ["#waTop","#waDrawer","#waBig","#waFooter"];
+      const telIds = ["#telTop","#telDrawer","#telBig","#telFooter","#callCta"];
+      const igIds = ["#igTop","#igDrawer","#igBig","#igFooter"];
+
+      waIds.forEach(id => { const a=qs(id); if(a) a.href = WHATSAPP_URL; });
+      telIds.forEach(id => { const a=qs(id); if(a) a.href = TEL_URL; });
+      igIds.forEach(id => { const a=qs(id); if(a) a.href = INSTAGRAM_URL; });
+
+      ["#phoneText","#phoneInline","#phoneFooter"].forEach(id => {
+        const el = qs(id); if(el) el.textContent = PHONE_DISPLAY;
+      });
+    }
+
+    function openWhatsAppWithMessage(message){
+      const url = WHATSAPP_URL + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank", "noopener");
+    }
+
+    // ====== Drawer ======
+    const drawer = qs("#drawer");
+    const backdrop = qs("#drawerBackdrop");
     function openDrawer(){
       drawer.classList.add("open");
       backdrop.classList.add("open");
-      hamburger.classList.add("active");
-      hamburger.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
     }
     function closeDrawer(){
       drawer.classList.remove("open");
       backdrop.classList.remove("open");
-      hamburger.classList.remove("active");
-      hamburger.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "";
     }
+    qs("#openDrawer")?.addEventListener("click", openDrawer);
+    qs("#closeDrawer")?.addEventListener("click", closeDrawer);
+    backdrop?.addEventListener("click", closeDrawer);
+    qsa(".drawer-nav a").forEach(a => a.addEventListener("click", closeDrawer));
 
-    hamburger.addEventListener("click", () => {
-      if(drawer.classList.contains("open")) closeDrawer();
-      else openDrawer();
-    });
-    backdrop.addEventListener("click", closeDrawer);
-    closeDrawerBtn.addEventListener("click", closeDrawer);
-    drawer.addEventListener("click", (e) => {
-      const a = e.target.closest("[data-close]");
-      if(a) closeDrawer();
-    });
-
-    // Close on ESC
-    window.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
+    // Quick order button
+    qs("#quickOrder")?.addEventListener("click", () => {
+      const msg = `Здравствуйте! Нужен эвакуатор в Астане.\nТелефон для связи: \nАдрес/ориентир: \nЧто случилось:`;
+      openWhatsAppWithMessage(msg);
     });
 
-    // Reveal on scroll (IntersectionObserver)
-    const revealEls = document.querySelectorAll("[data-reveal]");
-    const io = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in");
-          io.unobserve(entry.target);
-        }
-      }
-    }, { threshold: 0.14 });
-
-    revealEls.forEach(el => io.observe(el));
-
-    // Back to top button
-    const toTop = document.getElementById("toTop");
-    const onScroll = () => {
-      if (window.scrollY > 520) toTop.classList.add("show");
-      else toTop.classList.remove("show");
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
-    toTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    // ====== Morph button text (auto build spans) ======
+    function buildMorphText(btn){
+      const text = btn.dataset.morphText || "WhatsApp";
+      const box = btn.querySelector(".btn-text");
+      box.innerHTML = "";
+      [...text].forEach((ch, i) => {
+        const span = document.createElement("span");
+        span.textContent = ch;
+        span.style.setProperty("--i", i);
+        box.appendChild(span);
+      });
+    }
+    buildMorphText(qs("#morphCta"));
+    qs("#morphCta")?.addEventListener("click", () => {
+      const msg = `Здравствуйте! Нужен эвакуатор.\nГород: Астана\nАдрес/ориентир: \nМарка/модель: \nЧто случилось:`;
+      openWhatsAppWithMessage(msg);
     });
 
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Pricing order buttons
+    qsa("[data-order]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const pack = btn.getAttribute("data-order");
+        const msg = `Здравствуйте! Нужен эвакуатор.\nГород: Астана\nЗапрос: ${pack}\nАдрес/ориентир: \nМарка/модель: \nЧто случилось:`;
+        openWhatsAppWithMessage(msg);
+      });
+    });
 
-    // Lead form -> WhatsApp
-    const form = document.getElementById("leadForm");
-    form.addEventListener("submit", (e) => {
+    // Services quick fill
+    qsa("[data-service]").forEach(card => {
+      card.addEventListener("click", () => {
+        const svc = card.getAttribute("data-service");
+        const loc = qs('input[name="location"]');
+        const det = qs('textarea[name="details"]');
+        if(det && !det.value) det.value = svc;
+        if(loc) loc.focus({preventScroll:false});
+      });
+    });
+
+    // Form -> WhatsApp
+    qs("#orderForm")?.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = (document.getElementById("name").value || "").trim();
-      const phone = (document.getElementById("phone").value || "").trim();
-      const place = (document.getElementById("place").value || "").trim();
-      const msg = (document.getElementById("msg").value || "").trim();
+      const fd = new FormData(e.currentTarget);
+      const name = (fd.get("name") || "").toString().trim();
+      const phone = (fd.get("phone") || "").toString().trim();
+      const location = (fd.get("location") || "").toString().trim();
+      const details = (fd.get("details") || "").toString().trim();
 
-      const lines = [];
-      lines.push("Заявка на эвакуатор (Астана)");
-      if (name)  lines.push("Имя: " + name);
-      if (phone) lines.push("Телефон: " + phone);
-      if (place) lines.push("Локация: " + place);
-      if (msg)   lines.push("Ситуация: " + msg);
-      lines.push("Контакт: " + PHONE_DISPLAY);
+      const msg =
+        `Здравствуйте! Нужен эвакуатор в Астане.\n` +
+        `Имя: ${name}\n` +
+        `Мой телефон: ${phone}\n` +
+        `Где нахожусь: ${location}\n` +
+        (details ? `Что случилось: ${details}\n` : "") +
+        `Спасибо!`;
 
-      const text = encodeURIComponent(lines.join("\n"));
-      const url = "https://wa.me/" + PHONE_E164 + "?text=" + text;
-      window.open(url, "_blank", "noopener");
+      openWhatsAppWithMessage(msg);
     });
+
+    // ====== Reveal on scroll ======
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(ent => {
+        if(ent.isIntersecting){
+          ent.target.classList.add("is-visible");
+          io.unobserve(ent.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    qsa(".reveal").forEach(el => io.observe(el));
+
+    // ====== Active nav ======
+    const navLinks = qsa(".nav a");
+    const sections = ["#services","#pricing","#coverage","#gallery","#faq","#contact"].map(id => qs(id)).filter(Boolean);
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach(ent => {
+        if(ent.isIntersecting){
+          const id = "#" + ent.target.id;
+          navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === id));
+        }
+      });
+    }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
+    sections.forEach(s => navIO.observe(s));
+
+    // ====== Back to top ======
+    const topBtn = qs("#toTop");
+    function onScroll(){
+      if(window.scrollY > 520) topBtn.classList.add("show");
+      else topBtn.classList.remove("show");
+    }
+    window.addEventListener("scroll", onScroll, {passive:true});
+    onScroll();
+    topBtn?.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+    // ====== Year ======
+    qs("#year").textContent = new Date().getFullYear();
+
+    // Init
+    setLinks();
   </script>
+
+  <!--
+  ===========================
+  THIRD-PARTY (KODESET) MIT LICENSE NOTICES
+  Components were accessed via "Kodeset > Components > Get Code" and are labeled MIT License.
+  ===========================
+
+  1) Glow Input (adapted into class-based .ks-* fields)
+  MIT License
+  Copyright © 2025 Lakshay Gupta
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+  2) Morph Button (adapted)
+  MIT License
+  Copyright © 2025 adham_9641 (adham emara)
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+  3) Expanding Gallery Cards (adapted)
+  MIT License
+  Copyright © 2026 Kodeset
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  -->
 </body>
 </html>
