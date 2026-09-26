@@ -959,5 +959,18 @@
     toggleTop();
     toTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
+
+  <!-- Google Ads — отслеживание конверсий (звонок + WhatsApp) -->
+  <script>
+  (function(){
+    function fire(label){ try{ gtag('event','conversion',{'send_to':label,'value':1.0,'currency':'USD'}); }catch(e){} }
+    document.addEventListener('click',function(e){
+      var a=e.target.closest && e.target.closest('a[href]'); if(!a)return;
+      var h=a.getAttribute('href')||'';
+      if(h.indexOf('tel:')===0) fire('AW-18476418057/vjRCCM2_wIYdEImIn-pE');
+      else if(h.indexOf('wa.me')!==-1 || h.indexOf('api.whatsapp.com')!==-1) fire('AW-18476418057/T4hrCPOXyIYdEImIn-pE');
+    },true);
+  })();
+  </script>
 </body>
 </html>
