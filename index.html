@@ -17,6 +17,24 @@
 
   gtag('config', 'AW-18476418057');
 </script>
+
+<!-- Event snippet for Контакт (1) conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18476418057/IQWZCJyBs78dEImIn-pE',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
   
   <!-- Fonts: Manrope (display + body) + JetBrains Mono (accents) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -967,8 +985,13 @@
     document.addEventListener('click',function(e){
       var a=e.target.closest && e.target.closest('a[href]'); if(!a)return;
       var h=a.getAttribute('href')||'';
-      if(h.indexOf('tel:')===0) fire('AW-18476418057/vjRCCM2_wIYdEImIn-pE');
-      else if(h.indexOf('wa.me')!==-1 || h.indexOf('api.whatsapp.com')!==-1) fire('AW-18476418057/T4hrCPOXyIYdEImIn-pE');
+      var isTel = h.indexOf('tel:')===0;
+      var isWa = h.indexOf('wa.me')!==-1 || h.indexOf('api.whatsapp.com')!==-1;
+      if(isTel) fire('AW-18476418057/vjRCCM2_wIYdEImIn-pE');
+      else if(isWa) fire('AW-18476418057/T4hrCPOXyIYdEImIn-pE');
+      // Конверсия «Контакт (1)» — любой клик по звонку или WhatsApp.
+      // Вызов без url: переход по ссылке выполняет сам браузер, ничего не блокируется.
+      if(isTel || isWa){ try{ gtag_report_conversion(); }catch(e){} }
     },true);
   })();
   </script>
